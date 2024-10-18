@@ -1,11 +1,9 @@
 import React from "react";
-import NavBar from "../features/Navbar";
-import Hero from "../features/Hero";
-import Footer from "../features/Footer";
-import { FaCouch, FaLeaf, FaShield } from "react-icons/fa6";
-import { PiTShirtDuotone } from "react-icons/pi";
-import { FaShieldAlt, FaSmile } from "react-icons/fa";
 import { BsBackpack3 } from "react-icons/bs";
+import { FaShieldAlt, FaSmile } from "react-icons/fa";
+import { FaCouch, FaLeaf } from "react-icons/fa6";
+import Footer from "../features/Footer";
+import Hero from "../features/Hero";
 
 const About = () => {
   return (
