@@ -1,12 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Discount from "../components/features/Discount";
-import Navbar from "../components/features/Navbar";
-import Home from "../components/Home";
-import Footer from "../components/features/Footer";
-import AdminPanel from "../components/features/admin/AdminPanel";
-import About from "../components/test/About";
 import Contact from "../components/Contact";
+import Home from "../components/Home";
+import Discount from "../components/features/Discount";
+import AdminPanel from "../components/features/admin/AdminPanel";
+import About from "../components/About";
 
 const MyRoutes = () => {
   return (
