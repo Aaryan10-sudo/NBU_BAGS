@@ -80,10 +80,10 @@ const NavBar = ({ className }) => {
           <NavLink to={"/about"} className="text-[13px] focus:text-[#c38233]">
             ABOUT
           </NavLink>
-          <NavLink to={"/"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink to={"/product"} className="text-[13px] focus:text-[#c38233]">
             PRODUCT
           </NavLink>
-          <NavLink to={"/"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink to={"/contact"} className="text-[13px] focus:text-[#c38233]">
             CONTACT
           </NavLink>
           <NavLink to={"/offers"} className="text-[13px] focus:text-[#c38233]">
@@ -124,9 +124,9 @@ const NavBar = ({ className }) => {
           <ul className="flex flex-col justify-center items-center gap-[15px] mt-[15px] cursor-pointer">
             <NavLink to={"/"}>HOME</NavLink>
             <NavLink to={"/about"}>ABOUT</NavLink>
-            <li>PRODUCTS</li>
-            <li>CONTACT</li>
-            <li>OFFERS</li>
+            <NavLink to={"/product"}>PRODUCTS</NavLink>
+            <NavLink to={"/contact"}>CONTACT </NavLink>
+            <NavLink to={"/offers"}>OFFERS </NavLink>
           </ul>
         </div>
       ) : null}

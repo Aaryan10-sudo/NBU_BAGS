@@ -9,6 +9,7 @@ import {
   FaLocationDot,
   FaXTwitter,
 } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -44,18 +45,22 @@ const Footer = () => {
           <br />
           <ul className="flex flex-col gap-[20px] cursor-pointer">
             <li className="hover:text-black">Home</li>
-            <li className="hover:text-black">About</li>
-            <li className="hover:text-black">Products</li>
-            <li className="hover:text-black">Contact</li>
-            <li className="hover:text-black">Offers</li>
+            <NavLink to={"/about"} className="hover:text-black">
+              About
+            </NavLink>
+            <NavLink className="hover:text-black">Products</NavLink>
+            <NavLink className="hover:text-black">Contact</NavLink>
+            <NavLink className="hover:text-black">Offers</NavLink>
           </ul>
         </div>
         <div>
           <p className="font-extrabold text-[20px]">Information</p>
           <br />
           <ul className="flex flex-col gap-[20px] cursor-pointer">
-            <li className="hover:text-black">About</li>
-            <li className="hover:text-black">Contact</li>
+            <NavLink to={"/about"} className="hover:text-black">
+              About
+            </NavLink>
+            <NavLink className="hover:text-black">Contact</NavLink>
           </ul>
         </div>
         <div>
