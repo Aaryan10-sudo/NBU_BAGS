@@ -10,7 +10,7 @@ const Collection = () => {
   const getAllProduct = async () => {
     try {
       let result = await axios({
-        url: "http://localhost:5555/product/read-all",
+        url: "https://nbu-bags.onrender.com/readall",
         method: "GET",
       });
       console.log(result?.data?.data);

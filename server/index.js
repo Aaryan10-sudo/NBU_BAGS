@@ -6,7 +6,7 @@ import webuserRouter from "./src/routes/webuserRouter.js";
 import productRouter from "./src/routes/productRouter.js";
 connectDB();
 let app = express();
-let port = 5555;
+let port = process.env.PORT || 10000;
 app.use(json());
 app.use(cors());
 app.use("/token", tokenRouter);
