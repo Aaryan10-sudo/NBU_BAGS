@@ -11,13 +11,10 @@ const About = () => {
       <Hero />
       <main className="md:mx-[40px] mx-[10px] relative">
         <img
-          className="absolute opacity-50 ml-[1000px] mt-[70px] h-[250px] hidden md:block"
+          className="absolute opacity-50 right-0 mt-[70px] h-[250px] hidden md:block"
           src="okay.png "
         />
-        <img
-          className="absolute opacity-30 ml-[600px] mt-[250px] h-[250px] hidden md:block"
-          src="okay2.png "
-        />
+
         <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px]">
           About Us
         </h1>
@@ -41,6 +38,7 @@ const About = () => {
             <h1 className="font-bold text-[30px] mt-[20px] sm:mt-0">
               ABOUT NBU BAGS
             </h1>
+
             <p className="py-[20px] sm:font-medium font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

@@ -77,7 +77,10 @@ const NavBar = ({ className }) => {
           <NavLink to={"/"} className="text-[13px] focus:text-[#c38233]">
             HOME
           </NavLink>
-          <NavLink to={"/about"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink
+            to={"/about"}
+            className="text-[13px] focus:text-[#c38233] active:text-[#c38233]"
+          >
             ABOUT
           </NavLink>
           <NavLink to={"/product"} className="text-[13px] focus:text-[#c38233]">
