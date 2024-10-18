@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "./Navbar";
-import Hero from "./Hero";
-import Footer from "./Footer";
+import NavBar from "../features/Navbar";
+import Hero from "../features/Hero";
+import Footer from "../features/Footer";
 import { FaCouch, FaLeaf, FaShield } from "react-icons/fa6";
 import { PiTShirtDuotone } from "react-icons/pi";
 import { FaShieldAlt, FaSmile } from "react-icons/fa";
