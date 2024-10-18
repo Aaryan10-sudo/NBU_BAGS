@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cursive {
+  font-family: cursive;
+}
+
+.swiper {
+  height: auto;
+  width: 100%;
+  transition: linear 0.5s;
+}
+
+.swiper-slide {
+  background: #fff;
+
+  /* Center slide text vertically */
+}
+
+.swiper-slide img {
+}
