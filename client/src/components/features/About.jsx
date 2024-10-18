@@ -11,20 +11,20 @@ const About = () => {
   return (
     <div>
       <Hero />
-      <main className="sm:mx-[40px] mx-[10px] relative">
+      <main className="md:mx-[40px] mx-[10px] relative">
         <img
-          className="absolute opacity-50 ml-[1000px] mt-[70px] h-[250px] hidden sm:block"
+          className="absolute opacity-50 ml-[1000px] mt-[70px] h-[250px] hidden md:block"
           src="okay.png "
         />
         <img
-          className="absolute opacity-30 ml-[600px] mt-[250px] h-[250px] hidden sm:block"
+          className="absolute opacity-30 ml-[600px] mt-[250px] h-[250px] hidden md:block"
           src="okay2.png "
         />
         <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px]">
           About Us
         </h1>
-        <div className="flex justify-between sm:flex-row flex-col">
-          <div className="bg-slate-500 flex sm:h-[400px] sm:w-[600px] ">
+        <div className="flex justify-between md:flex-row flex-col">
+          <div className="bg-slate-500 flex sm:h-[400px] md:w-[600px] ">
             <video
               src="WhatsApp Video 2024-10-05 at 19.52.09_99ca10d3.mp4"
               className="sm:h-[400px] h-[220px] "
@@ -39,7 +39,7 @@ const About = () => {
               autoPlay="true"
             />
           </div>
-          <span className="sm:w-[550px] sm:h-[400px] ">
+          <span className="md:w-[550px] md:h-[400px] ">
             <h1 className="font-bold text-[30px] mt-[20px] sm:mt-0">
               ABOUT NBU BAGS
             </h1>
@@ -69,8 +69,8 @@ const About = () => {
         <h1 className="text-center p-[30px] font-bold text-[30px]">
           Why NBU BAGS ?
         </h1>
-        <div className="flex justify-between pb-[30px] flex-wrap gap-[20px] sm:flex-nowrap sm:gap-0">
-          <div className="sm:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px] ">
+        <div className="flex justify-between pb-[30px] flex-wrap gap-[20px] md:flex-nowrap md:gap-0">
+          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px] ">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaShieldAlt className="text-blue-700" />{" "}
               <p className="">Durability</p>
@@ -80,7 +80,7 @@ const About = () => {
               strength to withstand everyday wear and tear.
             </p>
           </div>
-          <div className="sm:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <BsBackpack3 />
               <p className="">Stylish Design</p>
@@ -90,7 +90,7 @@ const About = () => {
               that suit any occasion while making a bold statement.
             </p>
           </div>
-          <div className="sm:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaLeaf className="text-green-800" />
               <p className="">Eco- Friendly</p>
@@ -101,7 +101,7 @@ const About = () => {
               planet-friendly.
             </p>
           </div>
-          <div className="sm:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaSmile className="text-yellow-500" />{" "}
               <p className="">Satisfaction</p>
@@ -112,7 +112,7 @@ const About = () => {
               usability.
             </p>
           </div>
-          <div className="sm:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaCouch /> <p className="">Comfortable</p>
             </span>

@@ -32,12 +32,12 @@ const Collection = () => {
         </center>
         <br />
 
-        <div className="flex justify-between flex-wrap sm:mx-[40px] mx-[20px]">
+        <div className="flex md:justify-between sm:justify-around  flex-wrap md:mx-[40px] mx-[10px]">
           {product.map((value, index) => {
             return (
               <div
                 key={index}
-                className="sm:w-[250px] w-[190px] h-[300px] shadow-lg sm:mt-[50px] mt-[20px] rounded-xl"
+                className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[50px] mt-[20px] rounded-xl"
               >
                 <div className="h-[250px] bg-slate-400 rounded-tl-xl rounded-tr-xl"></div>
                 <div className="flex justify-between p-[10px]">

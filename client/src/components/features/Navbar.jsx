@@ -61,9 +61,9 @@ const NavBar = ({ className }) => {
         <p className="lg:ml-[50px] text-white">Carry your world in style</p>
         <p className="lg:mr-[50px] text-white">Pyukha Marg, Kathmandu</p>
       </header>
-      <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 sm:mx-[50px] mx-[10px]">
+      <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 md:mx-[50px] mx-[10px]">
         <FaBars
-          className="sm:hidden"
+          className="sm:hidden cursor-pointer"
           onClick={() => {
             setMenu(!menu);
           }}
@@ -73,7 +73,7 @@ const NavBar = ({ className }) => {
           <p className=" font-extrabold text-white sm:block">NBU BAGS</p>
         </div>
 
-        <ul className="sm:inline-flex gap-[20px] font-bold text-white text-[15px]  hidden">
+        <ul className="md:inline-flex gap-[20px] font-bold text-white text-[15px]  hidden">
           <NavLink to={"/"} className="text-[13px] focus:text-[#c38233]">
             HOME
           </NavLink>
@@ -111,10 +111,16 @@ const NavBar = ({ className }) => {
           </form>
           <FaCartShopping />
           <FaUser />
+          <FaBars
+            className="md:hidden sm:block cursor-pointer hidden"
+            onClick={() => {
+              setMenu(!menu);
+            }}
+          />
         </div>
       </nav>
       {menu ? (
-        <div className="h-[215px] w-[150px] bg-white absolute rounded-tr-xl rounded-br-xl mt-[-10px]">
+        <div className="h-[215px] w-[150px] bg-white absolute rounded-tr-xl rounded-br-xl mt-[-10px] sm:mt-[0px] sm:right-0 sm:rounded-none sm:rounded-tl-xl sm:rounded-bl-xl">
           <ul className="flex flex-col justify-center items-center gap-[15px] mt-[15px] cursor-pointer">
             <NavLink to={"/"}>HOME</NavLink>
             <NavLink to={"/about"}>ABOUT</NavLink>
