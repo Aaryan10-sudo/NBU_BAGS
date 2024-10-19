@@ -3,6 +3,7 @@ import {
   createProductController,
   deleteProductController,
   readAllProductController,
+  readEightProductController,
   readSpecificProductController,
   updateProductController,
 } from "../controller/productController.js";
@@ -10,7 +11,7 @@ import {
 let productRouter = Router();
 productRouter.route("/create").post(createProductController);
 productRouter.route("/readall").get(readAllProductController);
-productRouter.route("/read-all").get(readAllProductController);
+productRouter.route("/read-all").get(readEightProductController);
 
 productRouter.route("/:id").get(readSpecificProductController);
 productRouter.route("/update/:id").patch(updateProductController);
