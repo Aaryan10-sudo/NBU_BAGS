@@ -24,13 +24,13 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[200px]">
+              <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
                 <MdOutlineWifiCalling3 className="pr-2 h-5 w-auto" />
                 Via WhatsApp
               </button>
             </a>
             <a href="tel:+1234567890 w-[50%]">
-              <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[200px]">
+              <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
                 <MdOutlineWifiCalling3 className="pr-2 h-5 w-auto" />
                 Via Call
               </button>
