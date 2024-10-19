@@ -6,7 +6,7 @@ const Product = () => {
   const getAllProduct = async () => {
     try {
       let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/read-all",
+        url: "https://nbu-bags.onrender.com/product/readall",
         method: "GET",
       });
       setProduct(result?.data?.data);

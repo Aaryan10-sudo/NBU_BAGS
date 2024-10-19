@@ -9,6 +9,7 @@ import {
 
 let productRouter = Router();
 productRouter.route("/create").post(createProductController);
+productRouter.route("/readall").get(readAllProductController);
 productRouter.route("/read-all").get(readAllProductController);
 
 productRouter.route("/:id").get(readSpecificProductController);
