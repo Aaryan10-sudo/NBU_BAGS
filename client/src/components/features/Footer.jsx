@@ -84,12 +84,12 @@ const Footer = () => {
         </span>
         <div className="flex group">
           <div
-            className="bg-slate-400 sm:w-[200px] w-[200px] p-[10px] text-white font-bold
+            className="bg-slate-400 sm:w-[200px] w-[210px] p-[10px] text-white font-bold
             "
           >
             Connect with Nexorith
           </div>
-          <button className="bg-white group-hover:w-[180px] w-[50px] text-center items-center justify-center flex group transition-all ease-linear px-[10px]">
+          <button className="bg-white group-hover:w-[180px] w-[55px] text-center items-center justify-center flex group transition-all ease-linear px-[10px]">
             <FaArrowRight className="text-[20px] group-hover:opacity-0" />
             <div className="opacity-0 group-hover:opacity-100 flex gap-[20px]">
               <FaFacebook />

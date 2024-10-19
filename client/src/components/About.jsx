@@ -18,7 +18,7 @@ const About = () => {
         <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px]">
           About Us
         </h1>
-        <div className="flex justify-between md:flex-row flex-col">
+        <div className="flex justify-between md:flex-row flex-col flex-wrap">
           <div className="bg-slate-500 flex sm:h-[400px] md:w-[600px] ">
             <video
               src="WhatsApp Video 2024-10-05 at 19.52.09_99ca10d3.mp4"
@@ -35,11 +35,11 @@ const About = () => {
             />
           </div>
           <span className="md:w-[550px] md:h-[400px] ">
-            <h1 className="font-bold text-[30px] mt-[20px] sm:mt-0">
+            <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0">
               ABOUT NBU BAGS
             </h1>
 
-            <p className="py-[20px] sm:font-medium font-normal">
+            <p className="py-[10px] sm:font-medium font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris.
@@ -57,16 +57,14 @@ const About = () => {
               reprehenderit in voluptate velit esse cillum dolore. Eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia. Deserunt mollit anim id est laborum.
-              Curabitur pretium tincidunt lacus. Aenean nec eros pellentesque in
-              massa quis arcu.
             </p>
           </span>
         </div>
         <h1 className="text-center p-[30px] font-bold text-[30px]">
           Why NBU BAGS ?
         </h1>
-        <div className="flex justify-between pb-[30px] flex-wrap gap-[20px] md:flex-nowrap md:gap-0">
-          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px] ">
+        <div className="flex justify-between pb-[30px] flex-wrap gap-[20px]  md:gap-0">
+          <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px] ">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaShieldAlt className="text-blue-700" />{" "}
               <p className="">Durability</p>
@@ -76,7 +74,7 @@ const About = () => {
               strength to withstand everyday wear and tear.
             </p>
           </div>
-          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <BsBackpack3 />
               <p className="">Stylish Design</p>
@@ -86,7 +84,7 @@ const About = () => {
               that suit any occasion while making a bold statement.
             </p>
           </div>
-          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaLeaf className="text-green-800" />
               <p className="">Eco- Friendly</p>
@@ -97,7 +95,7 @@ const About = () => {
               planet-friendly.
             </p>
           </div>
-          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaSmile className="text-yellow-500" />{" "}
               <p className="">Satisfaction</p>
@@ -108,7 +106,7 @@ const About = () => {
               usability.
             </p>
           </div>
-          <div className="md:w-[230px] h-[180px] shadow-xl rounded-xl p-[10px]">
+          <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
               <FaCouch /> <p className="">Comfortable</p>
             </span>

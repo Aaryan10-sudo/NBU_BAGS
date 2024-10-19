@@ -61,7 +61,7 @@ const NavBar = ({ className }) => {
         <p className="lg:ml-[50px] text-white">Carry your world in style</p>
         <p className="lg:mr-[50px] text-white">Pyukha Marg, Kathmandu</p>
       </header>
-      <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 md:mx-[50px] mx-[10px]">
+      <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 md:mx-[40px] mx-[10px]">
         <FaBars
           className="sm:hidden cursor-pointer"
           onClick={() => {
@@ -73,46 +73,65 @@ const NavBar = ({ className }) => {
           <p className=" font-extrabold text-white sm:block">NBU BAGS</p>
         </div>
 
-        <ul className="md:inline-flex gap-[20px] font-bold text-white text-[15px]  hidden">
-          <NavLink to={"/"} className="text-[13px] focus:text-[#c38233]">
+        <ul className="md:inline-flex gap-[20px] font-bold text-white text-[15px] hidden">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
+            }
+          >
             HOME
           </NavLink>
           <NavLink
-            to={"/about"}
-            className="text-[13px] focus:text-[#c38233] active:text-[#c38233]"
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
+            }
           >
             ABOUT
           </NavLink>
-          <NavLink to={"/product"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink
+            to="/product"
+            className={({ isActive }) =>
+              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
+            }
+          >
             PRODUCT
           </NavLink>
-          <NavLink to={"/contact"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
+            }
+          >
             CONTACT
           </NavLink>
-          <NavLink to={"/offers"} className="text-[13px] focus:text-[#c38233]">
+          <NavLink
+            to="/offers"
+            className={({ isActive }) =>
+              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
+            }
+          >
             OFFERS
           </NavLink>
         </ul>
 
         <div className="flex gap-[25px] items-center">
           <form
-            className="bg-[#ede9dd] sm:flex p-[5px] rounded-xl w-[150px] sm:w-[200px] hidden"
+            className="bg-[#ede9dd] md:flex justify-between p-[5px] rounded-xl w-[150px] sm:w-[150px] hidden"
             onSubmit={handleSubmit}
           >
             <input
               type="text"
               placeholder="Search..."
-              className="bg-[#ede9dd] focus:outline-none w-[150px] sm:w-[200px]"
+              className="bg-transparent focus:outline-none w-[140px]"
               value={item}
               onChange={(e) => {
                 setItem(e.target.value);
               }}
             />
-            <button type="submit">
-              <FaMagnifyingGlass />
-            </button>
           </form>
-          <FaCartShopping />
+
           <FaUser />
           <FaBars
             className="md:hidden sm:block cursor-pointer hidden"
@@ -125,11 +144,56 @@ const NavBar = ({ className }) => {
       {menu ? (
         <div className="h-[215px] w-[150px] bg-white absolute rounded-tr-xl rounded-br-xl mt-[-10px] sm:mt-[0px] sm:right-0 sm:rounded-none sm:rounded-tl-xl sm:rounded-bl-xl">
           <ul className="flex flex-col justify-center items-center gap-[15px] mt-[15px] cursor-pointer">
-            <NavLink to={"/"}>HOME</NavLink>
-            <NavLink to={"/about"}>ABOUT</NavLink>
-            <NavLink to={"/product"}>PRODUCTS</NavLink>
-            <NavLink to={"/contact"}>CONTACT </NavLink>
-            <NavLink to={"/offers"}>OFFERS </NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#c38233] text-[15px]"
+                  : "text-black text-[15px]"
+              }
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#c38233] text-[15px]"
+                  : "text-black text-[15px]"
+              }
+            >
+              ABOUT
+            </NavLink>
+            <NavLink
+              to="/product"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#c38233] text-[15px]"
+                  : "text-black text-[15px]"
+              }
+            >
+              PRODUCT
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#c38233] text-[15px]"
+                  : "text-black text-[15px]"
+              }
+            >
+              CONTACT
+            </NavLink>
+            <NavLink
+              to="/offers"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#c38233] text-[15px]"
+                  : "text-black text-[15px]"
+              }
+            >
+              OFFERS
+            </NavLink>
           </ul>
         </div>
       ) : null}
