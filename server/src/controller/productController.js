@@ -17,9 +17,25 @@ export const createProductController = async (req, res, next) => {
   }
 };
 
+export const readEightProductController = async (req, res, next) => {
+  try {
+    let result = await Product.find({}).limit(8);
+    res.status(200).json({
+      success: true,
+      message: "Products retrieved successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 export const readAllProductController = async (req, res, next) => {
   try {
-    let result = await Product.find({}).limit(4);
+    let result = await Product.find({});
     res.status(200).json({
       success: true,
       message: "Products retrieved successfully",

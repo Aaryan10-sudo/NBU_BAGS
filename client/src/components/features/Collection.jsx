@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,13 +8,13 @@ import "swiper/css/pagination";
 
 const Collection = () => {
   let [product, setProduct] = useState([]);
+  let navigate = useNavigate();
   const getAllProduct = async () => {
     try {
       let result = await axios({
         url: "https://nbu-bags.onrender.com/product/read-all",
         method: "GET",
       });
-      console.log(result?.data?.data);
       setProduct(result?.data?.data);
     } catch (error) {
       console.log(error.message);
@@ -26,18 +27,17 @@ const Collection = () => {
     <>
       <div className="mx-[]">
         <center>
-          <h1 className="font-extrabold text-black text-[30px]">
+          <h1 className="font-extrabold text-black text-[30px] my-[30px]">
             Our Featured Collection
           </h1>
         </center>
-        <br />
 
         <div className="flex md:justify-between sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px]">
           {product.map((value, index) => {
             return (
               <div
                 key={index}
-                className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[50px] mt-[20px] rounded-xl"
+                className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[0px] mt-[px] rounded-xl"
               >
                 <div className="h-[250px] bg-slate-400 rounded-tl-xl rounded-tr-xl"></div>
                 <div className="flex justify-between p-[10px]">
@@ -54,7 +54,12 @@ const Collection = () => {
         </div>
         <br />
         <center>
-          <button className="font-bold text-[15px] border-2 border-blue-600 w-[170px] rounded-xl hover:scale-105 transition-all ease-linear duration-200">
+          <button
+            className="font-bold text-[15px] border-2 border-blue-600 w-[170px] rounded-xl hover:scale-105 transition-all ease-linear duration-200"
+            onClick={() => {
+              navigate("/product");
+            }}
+          >
             Browse all products
           </button>
         </center>

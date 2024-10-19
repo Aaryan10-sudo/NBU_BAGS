@@ -58,7 +58,7 @@ const Contact = () => {
 
             <span
               type="submit"
-              className=" hover:bg-gray-950 mt-3 font-semibold py-3 flex rounded-md gap-[10px] text-[20px] float-start items-center"
+              className="mt-3 font-semibold py-3 flex rounded-md gap-[10px] text-[20px] float-start items-center"
             >
               <p>Follow us on : </p>
               <div className="flex gap-[20px]">

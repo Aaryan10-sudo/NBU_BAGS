@@ -10,6 +10,7 @@ import Hero from "../components/features/Hero";
 import Footer from "../components/features/Footer";
 import BestSelling from "../components/features/BestSelling";
 import Blog from "../components/features/Blog";
+import Product from "../components/Product";
 
 const HomePage = () => {
   <div>
@@ -38,6 +39,7 @@ const MyRoutes = () => {
           <Route path="admin" element={<AdminPanel />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="contact" element={<Contact />}></Route>
+          <Route path="product" element={<Product />}></Route>
         </Route>
       </Routes>
     </div>
