@@ -19,7 +19,7 @@ export const createProductController = async (req, res, next) => {
 
 export const readAllProductController = async (req, res, next) => {
   try {
-    let result = await Product.find({});
+    let result = await Product.find({}).limit(4);
     res.status(200).json({
       success: true,
       message: "Products retrieved successfully",
