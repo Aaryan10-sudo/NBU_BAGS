@@ -10,11 +10,9 @@ const Home = () => {
   return (
     <div className="mx-[0px]">
       {/* <Navbar /> */}
-      <Hero />
       <Collection />
       <BestSelling />
       <Blog />
-      <Footer />
     </div>
   );
 };

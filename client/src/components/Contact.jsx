@@ -13,7 +13,6 @@ import {
 const Contact = () => {
   return (
     <div>
-      <Hero />
       <div className=" w-full bg-gray-300 text-gray-700  sm:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
         <div className="main flex items-start justify-center flex-col">
           <h1 className="text-4xl font-bold">
@@ -90,7 +89,6 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

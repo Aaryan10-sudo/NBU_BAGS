@@ -8,7 +8,6 @@ import Hero from "./features/Hero";
 const About = () => {
   return (
     <div>
-      <Hero />
       <main className="md:mx-[40px] mx-[10px] relative">
         <img
           className="absolute opacity-50 right-0 mt-[70px] h-[250px] hidden md:block"
@@ -117,7 +116,6 @@ const About = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
