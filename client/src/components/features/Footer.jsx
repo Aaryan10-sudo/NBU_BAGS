@@ -80,7 +80,7 @@ const Footer = () => {
       <div className="flex sm:flex-row flex-col sm:justify-between justify-center items-center sm:mx-[20px] p-[20px] sm:gap-[0] gap-[15px] w-[full]">
         <span className="flex gap-[10px]">
           <p className="text-white sm:text-[20px] font-bold">Powered By :</p>
-          <img src="nexorith.png" className="sm:h-[30px] mt-[2px] h-[20px]" />
+          <img src="nexorith.png" className="sm:h-[30px] h-[20px]" />
         </span>
         <div className="flex group">
           <div

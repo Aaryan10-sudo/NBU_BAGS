@@ -25,7 +25,7 @@ const Contact = () => {
               rel="noopener noreferrer"
             >
               <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
-                <MdOutlineWifiCalling3 className="pr-2 h-5 w-auto" />
+                <FaWhatsapp className="pr-2 h-5 w-auto" />
                 Via WhatsApp
               </button>
             </a>

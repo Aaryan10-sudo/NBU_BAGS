@@ -27,7 +27,7 @@ const Collection = () => {
     <>
       <div className="mx-[]">
         <center>
-          <h1 className="font-extrabold text-black text-[30px] my-[30px]">
+          <h1 className="font-extrabold text-black text-[30px] mt-[30px]">
             Our Featured Collection
           </h1>
         </center>
@@ -37,7 +37,7 @@ const Collection = () => {
             return (
               <div
                 key={index}
-                className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[0px] mt-[px] rounded-xl"
+                className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[30px] mt-[30px]  rounded-xl"
               >
                 <div className="h-[250px] bg-slate-400 rounded-tl-xl rounded-tr-xl"></div>
                 <div className="flex justify-between p-[10px]">

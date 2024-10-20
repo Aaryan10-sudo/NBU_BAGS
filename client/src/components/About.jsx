@@ -31,6 +31,7 @@ const About = () => {
               className="sm:h-[400px] h-[220px]"
               controls="true"
               autoPlay="true"
+              muted
             />
           </div>
           <span className="md:w-[550px] md:h-[400px] ">
