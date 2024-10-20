@@ -52,7 +52,7 @@ const AddProducts = () => {
 
     try {
       let result = await axios({
-        url: `http://localhost:10000/file/single`,
+        url: `https://nbu-bags.onrender.com/file/single`,
         method: "POST",
         data: data,
       });
