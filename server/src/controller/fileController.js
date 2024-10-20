@@ -1,6 +1,6 @@
 export const handleSingleFileController = async (req, res, next) => {
   try {
-    let link = `http://localhost:10000/${req.file.filename}`;
+    let link = `https://nbu-bags.onrender.com${req.file.filename}`;
     res.status(200).json({
       success: true,
       message: "File Uploaded Successfully",
@@ -17,7 +17,7 @@ export const handleSingleFileController = async (req, res, next) => {
 export const handleMultipleFileController = async (req, res, next) => {
   try {
     let link = req.files.map((value, index) => {
-      return `http://localhost:10000/${value.filename}`;
+      return `https://nbu-bags.onrender.com/${value.filename}`;
     });
     res.status(200).json({
       success: true,
