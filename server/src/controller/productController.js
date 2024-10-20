@@ -111,3 +111,32 @@ export const deleteProductController = async (req, res, next) => {
     });
   }
 };
+
+export const searchBar = async (req, res, next) => {
+  let item = req.query.item;
+  try {
+    let pipeline = [];
+
+    let matchStage = {
+      $match: {
+        $or: [
+          { brand: { $regex: item, $options: "i" } },
+          { category: { $regex: item, $options: "i" } },
+          { productName: { $regex: item, $options: "i" } },
+        ],
+      },
+    };
+    pipeline.push(matchStage);
+    let result = await Product.aggregate(pipeline);
+    res.status(200).json({
+      success: true,
+      message: "Search Bar Results",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
