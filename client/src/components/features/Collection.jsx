@@ -39,14 +39,9 @@ const Collection = () => {
                 key={index}
                 className="md:w-[250px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[30px] mt-[30px]  rounded-xl"
               >
-                <div
-                  className="h-[250px] rounded-tl-xl rounded-tr-xl"
-                  style={{
-                    backgroundImage: `url(${value.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
+                <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
+                  <img src={value.image} className="h-[200px]" />
+                </div>
                 <div className="flex justify-between p-[10px]">
                   <h1 className="font-bold sm:text-[17px] text-[17px]">
                     {value.productName}

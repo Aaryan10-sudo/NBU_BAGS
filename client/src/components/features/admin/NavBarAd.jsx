@@ -18,7 +18,7 @@ const NavBarAd = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="bg-[#ede9dd] focus:outline-none w-[150px] sm:w-[200px]"
+                className="bg-transparent focus:outline-none w-[140px] sm:w-[190px]"
               />
               <button type="submit">
                 <FaMagnifyingGlass />

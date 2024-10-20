@@ -109,3 +109,16 @@ export const login = async (req, res, next) => {
     });
   }
 };
+
+export const totalWebuser = async (req, res, next) => {
+  try {
+    let result = await WebUser.countDocuments();
+    res.status(200).json({
+      success: true,
+      message: "Total user count retrieved successfully",
+      count: result,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching product count", error });
+  }
+};

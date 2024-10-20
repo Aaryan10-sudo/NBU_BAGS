@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
   let [productCount, setProductCount] = useState(0);
+  let [webuserCount, setWebuserCount] = useState(0);
+
   const totalProduct = async () => {
     try {
       let result = await axios({
@@ -14,8 +16,20 @@ const Dashboard = () => {
       console.log(error.message);
     }
   };
+  const totalUser = async () => {
+    try {
+      let result = await axios({
+        url: "https://nbu-bags.onrender.com/product/total-user",
+        method: "GET",
+      });
+      setWebuserCount(result?.data?.count);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   useEffect(() => {
     totalProduct();
+    totalUser();
   }, []);
   return (
     <>
@@ -37,7 +51,7 @@ const Dashboard = () => {
           {" "}
           <p className="shadow-sm h-[40px]">Total Users</p>
           <br />
-          <p className="font-extrabold text-[30px]">2</p>
+          <p className="font-extrabold text-[30px]">{webuserCount}</p>
         </div>
         <div className="bg-red-500 h-[180px] w-[230px]">
           {" "}
