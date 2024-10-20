@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  let [product, setProduct] = useState(0);
+  let [productCount, setProductCount] = useState(0);
   const totalProduct = async () => {
     try {
       let result = await axios({
         url: "https://nbu-bags.onrender.com/product/total-product",
         method: "GET",
       });
-      console.log(result);
+      setProductCount(result?.data?.count);
     } catch (error) {
       console.log(error.message);
     }
@@ -19,9 +19,10 @@ const Dashboard = () => {
   }, []);
   return (
     <>
-      <h1 className="text-center font-extrabold text-[20px]">Dashboard</h1>
-      <br />
-      <div className="flex justify-between text-center text-white items-center mx-[30px]">
+      <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px]">
+        Dashboard
+      </h1>
+      <div className="flex justify-between flex-wrap text-center text-white items-center mx-[30px] sm:gap-0 gap-[20px]">
         <div className="bg-[#8a2edf] h-[180px] w-[230px]">
           <p className="shadow-sm h-[40px]">Total Sales</p>
           <br />
@@ -30,7 +31,7 @@ const Dashboard = () => {
         <div className="bg-green-500 h-[180px] w-[230px]">
           <p className="shadow-sm h-[40px]">Total Products</p>
           <br />
-          <p className="font-extrabold text-[30px]">30</p>
+          <p className="font-extrabold text-[30px]">{productCount}</p>
         </div>
         <div className="bg-blue-500 h-[180px] w-[230px]">
           {" "}

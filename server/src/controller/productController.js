@@ -64,7 +64,7 @@ export const readAllProductController = async (req, res, next) => {
 
 export const readSpecificProductController = async (req, res, next) => {
   try {
-    let result = await Product.findOne(req.params.id);
+    let result = await Product.findById(req.params.id);
     res.status(200).json({
       success: true,
       message: "Product retrieved successfully",

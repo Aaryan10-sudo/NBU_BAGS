@@ -11,6 +11,7 @@ import Footer from "../components/features/Footer";
 import BestSelling from "../components/features/BestSelling";
 import Blog from "../components/features/Blog";
 import Product from "../components/Product";
+import UpdateProduct from "../components/features/admin/UpdateProduct";
 
 const HomePage = () => {
   <div>
@@ -42,6 +43,7 @@ const MyRoutes = () => {
           <Route path="product" element={<Product />}></Route>
         </Route>
         <Route path="/admin" element={<AdminPanel />}></Route>
+        <Route path="admin/update/:id" element={<UpdateProduct />}></Route>
       </Routes>
     </div>
   );

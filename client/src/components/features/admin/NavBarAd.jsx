@@ -4,7 +4,7 @@ import { MdLogout } from "react-icons/md";
 
 const NavBarAd = () => {
   return (
-    <div className="h-[50px] shadow-lg w-[100%] px-[30px] flex items-center justify-between">
+    <div className="h-[50px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between">
       <div className="flex items-center text-black">
         <img src="logo.png" className="h-[50px]" />
         <p>NBU Bags</p>
@@ -12,7 +12,7 @@ const NavBarAd = () => {
       <div>
         <ul className="inline-flex">
           <div className="flex gap-[25px] items-center">
-            <form className="bg-[#ede9dd] flex p-[5px] rounded-xl w-[150px] sm:w-[200px]">
+            <form className="bg-[#ede9dd] sm:flex p-[5px] rounded-xl w-[150px] sm:w-[200px] hidden">
               <input
                 type="text"
                 placeholder="Search..."
@@ -23,7 +23,7 @@ const NavBarAd = () => {
               </button>
             </form>
 
-            <MdLogout className="font-bold text-[20px]" />
+            <MdLogout className="font-bold text-[20px] sm:mt-0 mt-[7px]" />
           </div>
         </ul>
       </div>
