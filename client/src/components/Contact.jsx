@@ -76,7 +76,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="">
+        <div className="sm:mt-0 mt-[20px]">
           <h1 className="text-4xl font-bold text-start">
             Come<span className="text-blue-800"> visit us!</span>
           </h1>

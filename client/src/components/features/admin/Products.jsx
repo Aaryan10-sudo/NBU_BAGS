@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SideBar from "./SideBar";
+import NavBarAd from "./NavBarAd";
 
 const Products = () => {
   let [product, setProduct] = useState([]);
@@ -57,54 +59,67 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px] ">
-        Products
-      </h1>
-      <div>
-        <div className="mx-[10px] flex flex-wrap gap-[20px] sm:mx-[50px] sm:gap-[50px] justify-center">
-          {product.map((value, index) => {
-            return (
-              <div
-                key={index}
-                className="sm:w-[250px] w-full sm:h-[370px] h-[370px] border-2 border-black"
-              >
-                <div className="h-[200px] bg-black"></div>
-                <h1 className="px-[10px] text-[19px] font-bold">
-                  {value.productName}
-                </h1>
+    <>
+      <div className="flex ">
+        {/* Sidebar */}
+        <SideBar />
 
-                <p className="mx-[10px] bg-slate-400 w-[100px] px-[5px] ">
-                  {value.category}
-                </p>
-                <p className="mx-[10px] mt-[10px]">
-                  {value.productDescription}
-                </p>
-                <p className="mx-[10px] bg-blue-600 h-[30px] text-center flex items-center justify-center text-white">
-                  Rs. {value.price}
-                </p>
-                <div className="flex justify-center gap-5 my-[15px]">
-                  <button
-                    onClick={handleEdit(value._id)}
-                    className="border border-black w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => {
-                      sweetalert2(value._id);
-                    }}
-                    className="bg-red-700 text-white w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
-                  >
-                    Delete
-                  </button>
+        {/* Main Content: NavBar + Dashboard */}
+        <div className="flex flex-col w-full">
+          <NavBarAd />
+          <div className="overflow-auto h-screen">
+            <div>
+              <h1 className="text-center font-extrabold text-[30px] sm:my-[20px] my-[10px] ">
+                Products
+              </h1>
+              <div>
+                <div className="mx-[10px] flex flex-wrap gap-[20px] sm:mx-[50px] sm:gap-[50px] justify-center">
+                  {product.map((value, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="sm:w-[270px] w-full  h-[470px] border-2 border-black"
+                      >
+                        <div className="h-[300px] bg-[url('/bag5.jpg')] bg-cover bg-center"></div>
+                        <h1 className="px-[10px] text-[19px] font-bold">
+                          {value.productName}
+                        </h1>
+
+                        <p className="mx-[10px] bg-slate-400 w-[100px] px-[5px] ">
+                          {value.category}
+                        </p>
+                        <p className="mx-[10px] mt-[10px]">
+                          {value.productDescription}
+                        </p>
+                        <p className="mx-[10px] bg-blue-600 h-[30px] text-center flex items-center justify-center text-white">
+                          Rs. {value.price}
+                        </p>
+                        <div className="flex justify-center gap-5 my-[15px]">
+                          <button
+                            onClick={handleEdit(value._id)}
+                            className="border border-black w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => {
+                              sweetalert2(value._id);
+                            }}
+                            className="bg-red-700 text-white w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

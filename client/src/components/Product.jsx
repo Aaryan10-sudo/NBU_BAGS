@@ -20,7 +20,7 @@ const Product = () => {
       <h1 className="font-bold text-center text-[20px] my-[20px]">
         Discover Your Next Favorite{" "}
       </h1>
-      <div className="flex gap-[30px] sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] my-[20px]">
+      <div className="flex gap-[20px] sm:justify-between justify-between  flex-wrap md:mx-[40px] mx-[10px] my-[20px]">
         {product.map((value, index) => {
           return (
             <div

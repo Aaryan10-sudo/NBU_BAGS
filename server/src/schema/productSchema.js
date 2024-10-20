@@ -16,6 +16,10 @@ let productSchema = new mongoose.Schema({
     type: String,
     required: [true, "Product description is required"],
   },
+  image: {
+    type: String,
+    required: [true, "Image is required"],
+  },
   brand: {
     type: String,
     required: [true, "Brand is required"],

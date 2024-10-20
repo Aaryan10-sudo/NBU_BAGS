@@ -1,11 +1,13 @@
 import React from "react";
 import { FaCartShopping, FaMagnifyingGlass, FaUser } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const NavBarAd = () => {
+  let navigate = useNavigate();
   return (
     <div className="h-[50px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between">
-      <div className="flex items-center text-black">
+      <div className="flex items-center text-black cursor-pointer">
         <img src="logo.png" className="h-[50px]" />
         <p>NBU Bags</p>
       </div>
@@ -23,7 +25,12 @@ const NavBarAd = () => {
               </button>
             </form>
 
-            <MdLogout className="font-bold text-[20px] sm:mt-0 mt-[7px]" />
+            <MdLogout
+              className="font-bold text-[20px] sm:mt-0 mt-[7px]"
+              onClick={() => {
+                navigate("/");
+              }}
+            />
           </div>
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -16,6 +16,7 @@ const NavBar = ({ className }) => {
   let [isAnimateBouncing, setIsAnimateBouncing] = useState(false);
   let [login, setLogin] = useState(false);
   let [menu, setMenu] = useState(false);
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,8 +59,12 @@ const NavBar = ({ className }) => {
     <div className="w-[100vw]">
       <ToastContainer />
       <header className="bg-[#32609e] px-[10px] sm:px-0 h-[50px] flex justify-between items-center">
-        <p className="lg:ml-[50px] text-white">Carry your world in style</p>
-        <p className="lg:mr-[50px] text-white">Pyukha Marg, Kathmandu</p>
+        <p className="lg:ml-[50px] text-white text-[15px]">
+          Carry your world in style
+        </p>
+        <p className="lg:mr-[50px] text-white text-[15px]">
+          Pyukha Marg, Kathmandu
+        </p>
       </header>
       <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 md:mx-[40px] mx-[10px]">
         <FaBars
@@ -68,7 +73,12 @@ const NavBar = ({ className }) => {
             setMenu(!menu);
           }}
         />
-        <div className="flex items-center">
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img src="logo.png" className=" ml-[0px] h-[60px]"></img>
           <p className=" font-extrabold text-white sm:block">NBU BAGS</p>
         </div>
@@ -132,7 +142,11 @@ const NavBar = ({ className }) => {
             />
           </form>
 
-          <FaUser />
+          <FaUser
+            onClick={() => {
+              navigate("/admin");
+            }}
+          />
           <FaBars
             className="md:hidden sm:block cursor-pointer hidden"
             onClick={() => {

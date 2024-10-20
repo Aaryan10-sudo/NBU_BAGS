@@ -12,6 +12,8 @@ import BestSelling from "../components/features/BestSelling";
 import Blog from "../components/features/Blog";
 import Product from "../components/Product";
 import UpdateProduct from "../components/features/admin/UpdateProduct";
+import Products from "../components/features/admin/Products";
+import AddProducts from "../components/features/admin/AddProducts";
 
 const HomePage = () => {
   <div>
@@ -44,6 +46,8 @@ const MyRoutes = () => {
         </Route>
         <Route path="/admin" element={<AdminPanel />}></Route>
         <Route path="admin/update/:id" element={<UpdateProduct />}></Route>
+        <Route path="admin/product" element={<Products />}></Route>
+        <Route path="admin/add-product" element={<AddProducts />}></Route>
       </Routes>
     </div>
   );

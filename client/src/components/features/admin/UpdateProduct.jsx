@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SideBar from "./SideBar";
+import NavBarAd from "./NavBarAd";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -57,58 +58,95 @@ const UpdateProduct = () => {
       setProductDescription("");
       setBrand("");
 
-      navigate(`/admin`);
+      navigate(`/admin/product`);
     } catch (error) {}
   };
   return (
     <>
-      <ToastContainer />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Product Name :</label>
-          <br />
-          <input
-            type="text"
-            name="productName"
-            id="productName"
-            value={productName}
-            onChange={(e) => {
-              setProductName(e.target.value);
-            }}
-          ></input>
-        </div>
-        <br />
-        <div>
-          <label>Category</label>
-          <br />
-          <input
-            type="text"
-            name="category"
-            id="category"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-            }}
-          ></input>
-        </div>
-        <br />
-        <div>
-          <label>Price :</label>
-          <br />
-          <input
-            type="number"
-            name="price"
-            id="price"
-            value={price}
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          ></input>
-        </div>
-        <br />
+      <div className="flex ">
+        {/* Sidebar */}
+        <SideBar />
 
-        <button type="submit">UPDATE</button>
-      </form>
+        {/* Main Content: NavBar + Dashboard */}
+        <div className="flex flex-col w-full">
+          <NavBarAd />
+          <div className="overflow-auto h-screen">
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>Product Name :</label>
+                <br />
+                <input
+                  type="text"
+                  name="productName"
+                  id="productName"
+                  value={productName}
+                  onChange={(e) => {
+                    setProductName(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+              <div>
+                <label>Category</label>
+                <br />
+                <input
+                  type="text"
+                  name="category"
+                  id="category"
+                  value={category}
+                  onChange={(e) => {
+                    setCategory(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+              <div>
+                <label>Price :</label>
+                <br />
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  value={price}
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+              <div>
+                <label>Product Description</label>
+                <br />
+                <input
+                  type="string"
+                  name="productDescription"
+                  id="productDescription"
+                  value={productDescription}
+                  onChange={(e) => {
+                    setProductDescription(e.target.value);
+                  }}
+                ></input>
+              </div>
+              <br />
+              <div>
+                <label>Brand</label>
+                <br />
+                <input
+                  type="string"
+                  name="brand"
+                  id="brand"
+                  value={brand}
+                  onChange={(e) => {
+                    setBrand(e.target.value);
+                  }}
+                ></input>
+              </div>
+
+              <button type="submit">UPDATE</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -16,7 +16,7 @@ const AdminPanel = () => {
         <div className="flex flex-col w-full">
           <NavBarAd />
           <div className="overflow-auto h-screen">
-            <Products />
+            <Dashboard />
           </div>
         </div>
       </div>
