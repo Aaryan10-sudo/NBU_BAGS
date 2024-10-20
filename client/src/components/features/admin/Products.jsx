@@ -80,7 +80,9 @@ const Products = () => {
                         key={index}
                         className="sm:w-[270px] w-full  h-[470px] border-2 border-black"
                       >
-                        <div className="h-[300px] bg-[url('/bag5.jpg')] bg-cover bg-center"></div>
+                        <div className="h-[300px] object-cover object-center">
+                          <img src={value.image} className="h-[300px] w-full" />
+                        </div>
                         <h1 className="px-[10px] text-[19px] font-bold">
                           {value.productName}
                         </h1>
