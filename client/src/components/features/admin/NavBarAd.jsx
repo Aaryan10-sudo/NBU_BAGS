@@ -8,7 +8,7 @@ const NavBarAd = () => {
   return (
     <div className="h-[50px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between">
       <div className="flex items-center text-black cursor-pointer">
-        <img src="logo.png" className="h-[50px]" />
+        <img src="/logo.png" className="h-[50px]" />
         <p>NBU Bags</p>
       </div>
       <div>
