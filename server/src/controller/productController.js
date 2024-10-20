@@ -17,6 +17,19 @@ export const createProductController = async (req, res, next) => {
   }
 };
 
+export const totalProduct = async (req, res, next) => {
+  try {
+    let result = await Product.countDocuments();
+    res.status(200).json({
+      success: true,
+      message: "Total product count retrieved successfully",
+      count: result,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching product count", error });
+  }
+};
+
 export const readEightProductController = async (req, res, next) => {
   try {
     let result = await Product.find({}).limit(8);

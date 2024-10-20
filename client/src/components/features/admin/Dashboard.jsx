@@ -1,6 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  let [product, setProduct] = useState(0);
+  const totalProduct = async () => {
+    try {
+      let result = await axios({
+        url: "https://nbu-bags.onrender.com/product/total-product",
+        method: "GET",
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  useEffect(() => {
+    totalProduct();
+  }, []);
   return (
     <>
       <h1 className="text-center font-extrabold text-[20px]">Dashboard</h1>

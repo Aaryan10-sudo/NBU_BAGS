@@ -36,11 +36,12 @@ const MyRoutes = () => {
         >
           <Route index element={<Home />}></Route>
           <Route path="offers" element={<Discount />}></Route>
-          <Route path="admin" element={<AdminPanel />}></Route>
+
           <Route path="about" element={<About />}></Route>
           <Route path="contact" element={<Contact />}></Route>
           <Route path="product" element={<Product />}></Route>
         </Route>
+        <Route path="/admin" element={<AdminPanel />}></Route>
       </Routes>
     </div>
   );
