@@ -1,6 +1,6 @@
 export const handleSingleFileController = async (req, res, next) => {
   try {
-    let link = `https://nbu-bags.onrender.com${req.file.filename}`;
+    let link = `https://nbu-bags.onrender.com/${req.file.filename}`;
     res.status(200).json({
       success: true,
       message: "File Uploaded Successfully",
