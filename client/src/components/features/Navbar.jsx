@@ -144,7 +144,7 @@ const NavBar = ({ className }) => {
 
           <FaUser
             onClick={() => {
-              navigate("/admin");
+              navigate("/admin/dashboard");
             }}
           />
           <FaBars

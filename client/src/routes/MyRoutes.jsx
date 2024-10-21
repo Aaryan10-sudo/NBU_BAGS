@@ -44,7 +44,7 @@ const MyRoutes = () => {
           <Route path="contact" element={<Contact />}></Route>
           <Route path="product" element={<Product />}></Route>
         </Route>
-        <Route path="/admin" element={<AdminPanel />}></Route>
+        <Route path="/admin/dashboard" element={<AdminPanel />}></Route>
         <Route path="admin/update/:id" element={<UpdateProduct />}></Route>
         <Route path="admin/product" element={<Products />}></Route>
         <Route path="admin/add-product" element={<AddProducts />}></Route>

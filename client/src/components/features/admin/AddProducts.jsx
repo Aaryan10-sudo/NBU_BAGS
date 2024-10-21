@@ -36,12 +36,12 @@ const AddProducts = () => {
         data: data,
       });
       setLoader(true);
-      console.log(result);
       setProductName("");
       setCategory("");
       setPrice("");
       setProductDescription("");
       setBrand("");
+      setImage("");
       toast.success(result.data.message);
     } catch (error) {}
   };
@@ -75,104 +75,117 @@ const AddProducts = () => {
           <NavBarAd />
           <div className="overflow-auto h-screen">
             <form onSubmit={handleSubmit}>
-              <div>
-                <label>Product Name :</label>
-                <br />
-                <input
-                  type="text"
-                  name="productName"
-                  id="productName"
-                  value={productName}
-                  onChange={(e) => {
-                    setProductName(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Category</label>
-                <br />
-                <input
-                  type="text"
-                  name="category"
-                  id="category"
-                  value={category}
-                  onChange={(e) => {
-                    setCategory(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Price :</label>
-                <br />
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  value={price}
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Product Description</label>
-                <br />
-                <input
-                  type="string"
-                  name="productDescription"
-                  id="productDescription"
-                  value={productDescription}
-                  onChange={(e) => {
-                    setProductDescription(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Brand</label>
-                <br />
-                <input
-                  type="string"
-                  name="brand"
-                  id="brand"
-                  value={brand}
-                  onChange={(e) => {
-                    setBrand(e.target.value);
-                  }}
-                ></input>
-              </div>
+              <div className="flex  justify-center gap-[50px] my-[50px]">
+                <div {...getRootProps()} style={{ width: "300px" }}>
+                  <label className="flex justify-center">
+                    Product Image :{" "}
+                  </label>
+                  <input {...getInputProps()} />
+                  {isDragActive ? (
+                    <span className="flex justify-center items-center cursor-pointer">
+                      <p>Drop the files here ...</p>
+                    </span>
+                  ) : (
+                    <div className="flex justify-center my-[10px]">
+                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt="Product"
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <p className="text-[40px] text-white">+</p>
+                        )}
+                      </span>
+                    </div>
+                  )}
+                </div>
 
-              <div
-                {...getRootProps()}
-                style={{ border: "1px solid black", width: "300px" }}
-              >
-                <label>Product Image : </label>
-                <input {...getInputProps()} />
-                {isDragActive ? (
-                  <p>Drop the files here ...</p>
-                ) : (
-                  <p>Drag and drop some files here, or click to select files</p>
-                )}
-                {image ? (
-                  <img
-                    src={image}
-                    alt="Product Image"
-                    height={"100px"}
-                    width={"100px"}
-                  ></img>
-                ) : null}
+                <div>
+                  <div>
+                    <label>Product Name :</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="productName"
+                      id="productName"
+                      value={productName}
+                      onChange={(e) => {
+                        setProductName(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                  <br />
+                  <div>
+                    <label>Category :</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="category"
+                      id="category"
+                      value={category}
+                      onChange={(e) => {
+                        setCategory(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                  <br />
+                  <div>
+                    <label>Price :</label>
+                    <br />
+                    <input
+                      type="number"
+                      name="price"
+                      id="price"
+                      value={price}
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                  <br />
+                  <div>
+                    <label>Product Description :</label>
+                    <br />
+                    <input
+                      type="string"
+                      name="productDescription"
+                      id="productDescription"
+                      value={productDescription}
+                      onChange={(e) => {
+                        setProductDescription(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                  <br />
+                  <div>
+                    <label>Brand :</label>
+                    <br />
+                    <input
+                      type="string"
+                      name="brand"
+                      id="brand"
+                      value={brand}
+                      onChange={(e) => {
+                        setBrand(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                </div>
               </div>
-
-              <button type="submit">
-                {loader ? (
-                  "Create"
-                ) : (
-                  <BiLoaderAlt className="text-20px animate-spin" />
-                )}
-              </button>
+              <div className="flex justify-center items-center ">
+                <button
+                  type="submit"
+                  className="flex justify-center items-center w-[150px] bg-slate-400 h-[30px]"
+                >
+                  {loader ? (
+                    "Create"
+                  ) : (
+                    <BiLoaderAlt className="text-[20px] animate-spin text-white" />
+                  )}
+                </button>
+              </div>
             </form>
           </div>
         </div>

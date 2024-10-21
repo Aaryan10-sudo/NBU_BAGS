@@ -32,27 +32,28 @@ const Collection = () => {
           </h1>
         </center>
 
-        <div className="flex md:justify-between sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px]">
+        <div className="flex md:justify-normal sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] gap-[30px]">
           {product.map((value, index) => {
             return (
               <div
                 key={index}
-                className="md:w-[220px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[30px] mt-[30px]  rounded-xl"
+                className="md:w-[210px] sm:w-[210px] w-[190px] h-auto shadow-lg md:mt-[30px] mt-[30px] "
               >
                 <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
-                  <img
-                    src={value.image}
-                    className="h-[230px] w-full rounded-tr-xl rounded-tl-xl"
-                  />
+                  <img src={value.image} className="h-full w-full" />
                 </div>
-                <div className="flex justify-between p-[10px]">
-                  <h1 className="font-bold sm:text-[17px] text-[17px]">
-                    {value.productName}
-                  </h1>
-                  <span className="h-[30px] bg-blue-400 sm:w-[90px] w-[70px] text-center font-bold text-white flex items-center justify-center rounded-md">
-                    <p>{value.price}</p>
-                  </span>
-                </div>
+                <span className="mx-[10px]">
+                  <p className="w-[100px] bg-slate-400 mx-[10px] mt-[5px]">
+                    {value.category}
+                  </p>
+                </span>
+
+                <h1 className="font-bold sm:text-[17px] text-[17px] mx-[10px]">
+                  {value.productName}
+                </h1>
+                <span className="h-[30px] sm:w-[90px] w-[70px] font-bold text-white rounded-md mx-[10px]">
+                  <p className="mx-[10px]">Rs. {value.price}</p>
+                </span>
               </div>
             );
           })}

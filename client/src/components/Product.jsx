@@ -20,12 +20,12 @@ const Product = () => {
       <h1 className="font-bold text-center text-[20px] my-[20px]">
         Discover Your Next Favorite{" "}
       </h1>
-      <div className="flex gap-[20px] sm:justify-between justify-between  flex-wrap md:mx-[40px] mx-[10px] my-[20px]">
+      <div className="flex gap-[30px] sm:justify-normal  justify-between  flex-wrap md:mx-[40px] mx-[10px] my-[20px]">
         {product.map((value, index) => {
           return (
             <div
               key={index}
-              className="md:w-[220px] sm:w-[220px] w-[190px] h-[300px] shadow-lg md:mt-[0px] mt-[px] rounded-xl"
+              className="md:w-[210px] sm:w-[210px] w-[190px] h-[300px] shadow-lg md:mt-[0px] mt-[px] rounded-xl"
             >
               <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
                 <img

@@ -14,7 +14,6 @@ const Products = () => {
         url: "https://nbu-bags.onrender.com/product/readall",
         method: "GET",
       });
-      console.log(result);
       setProduct(result?.data?.data);
     } catch (error) {
       console.log(error.message);

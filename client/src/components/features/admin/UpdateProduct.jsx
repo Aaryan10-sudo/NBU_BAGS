@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import SideBar from "./SideBar";
 import NavBarAd from "./NavBarAd";
 import { useDropzone } from "react-dropzone";
+import { BiLoaderAlt } from "react-icons/bi";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -13,6 +14,7 @@ const UpdateProduct = () => {
   let [productDescription, setProductDescription] = useState("");
   let [brand, setBrand] = useState("");
   let [image, setImage] = useState("");
+  let [loader, setLoader] = useState(true);
 
   const navigate = useNavigate();
 
@@ -41,6 +43,8 @@ const UpdateProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(false);
+
     let data = {
       productName: productName,
       category: category,
@@ -55,7 +59,7 @@ const UpdateProduct = () => {
         method: "PATCH",
         data: data,
       });
-      console.log(result);
+      setLoader(true);
       setProductName("");
       setCategory("");
       setPrice("");
@@ -94,98 +98,117 @@ const UpdateProduct = () => {
           <NavBarAd />
           <div className="overflow-auto h-screen">
             <form onSubmit={handleSubmit}>
-              <div>
-                <label>Product Name :</label>
-                <br />
-                <input
-                  type="text"
-                  name="productName"
-                  id="productName"
-                  value={productName}
-                  onChange={(e) => {
-                    setProductName(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Category</label>
-                <br />
-                <input
-                  type="text"
-                  name="category"
-                  id="category"
-                  value={category}
-                  onChange={(e) => {
-                    setCategory(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Price :</label>
-                <br />
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  value={price}
-                  onChange={(e) => {
-                    setPrice(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Product Description</label>
-                <br />
-                <input
-                  type="string"
-                  name="productDescription"
-                  id="productDescription"
-                  value={productDescription}
-                  onChange={(e) => {
-                    setProductDescription(e.target.value);
-                  }}
-                ></input>
-              </div>
-              <br />
-              <div>
-                <label>Brand</label>
-                <br />
-                <input
-                  type="string"
-                  name="brand"
-                  id="brand"
-                  value={brand}
-                  onChange={(e) => {
-                    setBrand(e.target.value);
-                  }}
-                ></input>
+              <div className="flex flex-col sm:flex-row  justify-center items-center gap-[50px] my-[50px]">
+                <div {...getRootProps()} style={{ width: "300px" }}>
+                  <label className="flex justify-center">
+                    Product Image :{" "}
+                  </label>
+                  <input {...getInputProps()} />
+                  {isDragActive ? (
+                    <span className="flex justify-center items-center cursor-pointer">
+                      <p>Drop the files here ...</p>
+                    </span>
+                  ) : (
+                    <div className="flex justify-center sm:my-[10px]">
+                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt="Product"
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <p className="text-[40px] text-white">+</p>
+                        )}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="">
+                  <div className="pb-[20px]">
+                    <label>Product Name :</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="productName"
+                      id="productName"
+                      value={productName}
+                      onChange={(e) => {
+                        setProductName(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+
+                  <div className="pb-[20px]">
+                    <label>Category</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="category"
+                      id="category"
+                      value={category}
+                      onChange={(e) => {
+                        setCategory(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+
+                  <div className="pb-[20px]">
+                    <label>Price :</label>
+                    <br />
+                    <input
+                      type="number"
+                      name="price"
+                      id="price"
+                      value={price}
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+
+                  <div className="pb-[20px]">
+                    <label>Product Description</label>
+                    <br />
+                    <input
+                      type="string"
+                      name="productDescription"
+                      id="productDescription"
+                      value={productDescription}
+                      onChange={(e) => {
+                        setProductDescription(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+
+                  <div className="pb-[0px]">
+                    <label>Brand</label>
+                    <br />
+                    <input
+                      type="string"
+                      name="brand"
+                      id="brand"
+                      value={brand}
+                      onChange={(e) => {
+                        setBrand(e.target.value);
+                      }}
+                    ></input>
+                  </div>
+                </div>
               </div>
 
-              <div
-                {...getRootProps()}
-                style={{ border: "1px solid black", width: "300px" }}
-              >
-                <label>Product Image : </label>
-                <input {...getInputProps()} />
-                {isDragActive ? (
-                  <p>Drop the files here ...</p>
-                ) : (
-                  <p>Drag and drop some files here, or click to select files</p>
-                )}
-                {image ? (
-                  <img
-                    src={image}
-                    alt="Product Image"
-                    height={"100px"}
-                    width={"100px"}
-                  ></img>
-                ) : null}
+              <div className="flex justify-center items-center ">
+                <button
+                  type="submit"
+                  className="flex justify-center items-center w-[150px] bg-slate-400 h-[30px]"
+                >
+                  {loader ? (
+                    "Update"
+                  ) : (
+                    <BiLoaderAlt className="text-[20px] animate-spin text-white" />
+                  )}
+                </button>
               </div>
-
-              <button type="submit">UPDATE</button>
             </form>
           </div>
         </div>

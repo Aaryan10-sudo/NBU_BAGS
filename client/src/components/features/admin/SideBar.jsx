@@ -9,9 +9,30 @@ const SideBar = () => {
         <li className="border border-transparent border-b-white h-[40px] font-extrabold cursor-default">
           Admin Panel
         </li>
-        <NavLink to={"/admin"}>Dashboard</NavLink>
-        <NavLink to={"/admin/product"}>Products</NavLink>
-        <NavLink to={"/admin/add-product"}>Add Products</NavLink>
+        <NavLink
+          to={"/admin/dashboard"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-500" : "hover:text-blue-500 text-white"
+          }
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          to={"/admin/product"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-500" : "hover:text-blue-500 text-white"
+          }
+        >
+          Products
+        </NavLink>
+        <NavLink
+          to={"/admin/add-product"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-500" : "hover:text-blue-500 text-white"
+          }
+        >
+          Add Products
+        </NavLink>
         <NavLink to={"/"} className="hover:text-red-700">
           Log Out
         </NavLink>
