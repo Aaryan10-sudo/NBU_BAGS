@@ -32,7 +32,7 @@ const Collection = () => {
           </h1>
         </center>
 
-        <div className="flex md:justify-normal sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] gap-[30px]">
+        <div className="flex md:justify-normal sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[30px] gap-[10px`]">
           {product.map((value, index) => {
             return (
               <div
