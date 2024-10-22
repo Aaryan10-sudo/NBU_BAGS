@@ -11,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const BestSelling = () => {
   return (
     <div className="sm:mx-[20px] mt-[20px] ">
-      <h1 className="text-center font-extrabold text-[30px]">
+      <h1 className="text-center font-extrabold text-[30px] font-ubuntu">
         Our Top Sellings
       </h1>
       <br />
@@ -33,7 +33,7 @@ const BestSelling = () => {
             <div className="sm:mx-[50px] mx-[20px] flex sm:flex-row flex-col">
               <img src="bestselling1.png" className="sm:h-[250px]" />
               <div className="">
-                <h1 className="text-[30px] mt-[10px] font-extrabold">
+                <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
                   BAG 20211
                 </h1>
                 <span className="bg-slate-400">550 sold</span>
@@ -59,7 +59,7 @@ const BestSelling = () => {
             <div className="sm:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">
               <img src="banner3.png" className="sm:h-[250px]" />
               <div className="">
-                <h1 className="text-[30px] mt-[10px] font-extrabold">
+                <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
                   BAG 20211
                 </h1>
                 <span className="">230 sold</span>

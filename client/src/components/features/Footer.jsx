@@ -14,11 +14,13 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-[#32609e] bottom-0 w-[100%]">
-      <div className="sm:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap">
+      <div className="sm:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap font-raleway">
         <div className="w-[350px]">
-          <h1 className=" font-extrabold text-[20px]">Store Info</h1>
+          <h1 className=" font-extrabold text-[20px] font-ubuntu">
+            Store Info
+          </h1>
           <br />
-          <p>
+          <p className="font-raleway">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -28,7 +30,7 @@ const Footer = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <br />
-          <span className="flex gap-[10px]">
+          <span className="flex gap-[10px] font-raleway ">
             {" "}
             <FaLocationDot /> <p>Pyukha Marg, Kathmandu</p>
           </span>
@@ -39,11 +41,11 @@ const Footer = () => {
           </span>
         </div>
         <div>
-          <h1 className="font-extrabold text-[20px] w-[200px] sm:w-auto">
+          <h1 className="font-extrabold text-[20px] w-[200px] sm:w-auto font-ubuntu">
             Quick Links
           </h1>
           <br />
-          <ul className="flex flex-col gap-[20px] cursor-pointer">
+          <ul className="flex flex-col gap-[20px] cursor-pointer font-raleway">
             <li className="hover:text-black">Home</li>
             <NavLink to={"/about"} className="hover:text-black">
               About
@@ -54,7 +56,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="font-extrabold text-[20px]">Information</p>
+          <p className="font-extrabold text-[20px] font-ubuntu">Information</p>
           <br />
           <ul className="flex flex-col gap-[20px] cursor-pointer">
             <NavLink to={"/about"} className="hover:text-black">
@@ -64,7 +66,9 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="font-extrabold text-[20px]">Connect with us</p>
+          <p className="font-extrabold text-[20px] font-ubuntu">
+            Connect with us
+          </p>
           <br />
           <div className="flex flex-col gap-[30px] text-[20px] cursor-pointer">
             <span className="flex">

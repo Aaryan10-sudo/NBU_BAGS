@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
       },
     },
   },

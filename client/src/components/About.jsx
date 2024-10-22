@@ -14,7 +14,7 @@ const About = () => {
           src="okay.png "
         />
 
-        <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px]">
+        <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px] font-ubuntu">
           About Us
         </h1>
         <div className="flex justify-between md:flex-row flex-col flex-wrap">
@@ -35,7 +35,7 @@ const About = () => {
             />
           </div>
           <span className="md:w-[550px] md:h-[400px] ">
-            <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0">
+            <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0 font-ubuntu py-[10px]">
               ABOUT NBU BAGS
             </h1>
 
@@ -60,7 +60,7 @@ const About = () => {
             </p>
           </span>
         </div>
-        <h1 className="text-center p-[30px] font-bold text-[30px]">
+        <h1 className="text-center p-[30px] font-bold text-[30px] font-ubuntu">
           Why NBU BAGS ?
         </h1>
         <div className="flex justify-between pb-[30px] flex-wrap gap-[20px]  md:gap-0">

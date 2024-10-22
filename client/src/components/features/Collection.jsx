@@ -27,7 +27,7 @@ const Collection = () => {
     <>
       <div className="mx-[]">
         <center>
-          <h1 className="font-extrabold text-black text-[30px] mt-[30px]">
+          <h1 className="font-extrabold text-black text-[30px] mt-[30px] font-ubuntu ">
             Our Featured Collection
           </h1>
         </center>
@@ -48,11 +48,11 @@ const Collection = () => {
                   </p>
                 </span>
 
-                <h1 className="font-bold sm:text-[17px] text-[17px] mx-[10px]">
+                <h1 className="font-bold sm:text-[17px] text-[17px] mx-[10px] font-ubuntu">
                   {value.productName}
                 </h1>
                 <span className="h-[30px] sm:w-[90px] w-[70px] font-bold text-white rounded-md mx-[10px]">
-                  <p className="mx-[10px]">Rs. {value.price}</p>
+                  <p className="mx-[10px] font-ubuntu">Rs. {value.price}</p>
                 </span>
               </div>
             );

@@ -3,6 +3,8 @@ import { GiSchoolBag } from "react-icons/gi";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
 
 const Discount = () => {
   let [token, setToken] = useState("");
@@ -40,8 +42,9 @@ const Discount = () => {
   };
 
   return (
-    <>
+    <div className="h-screen">
       <ToastContainer />
+      <NavBar />
       <center>
         {loader ? (
           <form
@@ -81,7 +84,8 @@ const Discount = () => {
           </form>
         )}
       </center>
-    </>
+      <Footer />
+    </div>
   );
 };
 

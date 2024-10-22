@@ -58,11 +58,11 @@ const NavBar = ({ className }) => {
   return (
     <div className="w-[100vw]">
       <ToastContainer />
-      <header className="bg-[#32609e] px-[10px] sm:px-0 h-[50px] flex justify-between items-center">
-        <p className="lg:ml-[50px] text-white text-[15px]">
+      <header className="bg-[#32609e]  px-[10px] sm:px-0 sm:h-[50px] h-[70px] flex sm:flex-row flex-col sm:justify-between justify-center items-center p-[10px]">
+        <p className="lg:ml-[50px] text-white sm:text-[15px] p-[5px]">
           Carry your world in style
         </p>
-        <p className="lg:mr-[50px] text-white text-[15px]">
+        <p className="lg:mr-[50px] text-white sm:text-[15px]">
           Pyukha Marg, Kathmandu
         </p>
       </header>
@@ -79,7 +79,7 @@ const NavBar = ({ className }) => {
             navigate("/");
           }}
         >
-          <img src="logo.png" className=" ml-[0px] h-[60px]"></img>
+          <img src="logo.png" className=" ml-[0px] h-[50px]"></img>
           <p className=" font-extrabold text-white sm:block">NBU BAGS</p>
         </div>
 

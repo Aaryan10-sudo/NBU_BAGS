@@ -15,7 +15,7 @@ const Contact = () => {
     <div>
       <div className=" w-full bg-gray-300 text-gray-700  sm:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
         <div className="main flex items-start justify-center flex-col">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-4xl font-bold font-ubuntu">
             Contact<span className="text-blue-800"> Us</span>
           </h1>
           <div className="flex justify-between my-6 w-full text-gray-100">
@@ -77,7 +77,7 @@ const Contact = () => {
         </div>
 
         <div className="sm:mt-0 mt-[20px]">
-          <h1 className="text-4xl font-bold text-start">
+          <h1 className="text-4xl font-bold text-start font-ubuntu">
             Come<span className="text-blue-800"> visit us!</span>
           </h1>
           <iframe
