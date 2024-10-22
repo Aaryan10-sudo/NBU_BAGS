@@ -75,7 +75,7 @@ const AddProducts = () => {
           <NavBarAd />
           <div className="overflow-auto h-screen">
             <form onSubmit={handleSubmit}>
-              <div className="flex  justify-center gap-[50px] my-[50px]">
+              <div className="flex sm:flex-row flex-col justify-center items-center gap-[50px] my-[50px]">
                 <div {...getRootProps()} style={{ width: "300px" }}>
                   <label className="flex justify-center">
                     Product Image :{" "}
@@ -111,6 +111,7 @@ const AddProducts = () => {
                       name="productName"
                       id="productName"
                       value={productName}
+                      className="w-[200px]"
                       onChange={(e) => {
                         setProductName(e.target.value);
                       }}
@@ -125,6 +126,7 @@ const AddProducts = () => {
                       name="category"
                       id="category"
                       value={category}
+                      className="w-[200px]"
                       onChange={(e) => {
                         setCategory(e.target.value);
                       }}
@@ -139,6 +141,7 @@ const AddProducts = () => {
                       name="price"
                       id="price"
                       value={price}
+                      className="w-[200px]"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
@@ -153,6 +156,7 @@ const AddProducts = () => {
                       name="productDescription"
                       id="productDescription"
                       value={productDescription}
+                      className="w-[200px]"
                       onChange={(e) => {
                         setProductDescription(e.target.value);
                       }}
@@ -167,6 +171,7 @@ const AddProducts = () => {
                       name="brand"
                       id="brand"
                       value={brand}
+                      className="w-[200px]"
                       onChange={(e) => {
                         setBrand(e.target.value);
                       }}

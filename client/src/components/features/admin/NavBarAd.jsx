@@ -29,6 +29,7 @@ const NavBarAd = () => {
               className="font-bold text-[20px] sm:mt-0 mt-[7px]"
               onClick={() => {
                 navigate("/");
+                localStorage.removeItem("token");
               }}
             />
           </div>

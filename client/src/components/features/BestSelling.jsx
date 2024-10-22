@@ -15,7 +15,7 @@ const BestSelling = () => {
         Our Top Sellings
       </h1>
       <br />
-      <div className="h-[300px]">
+      <div className="sm:h-[300px]">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -54,7 +54,6 @@ const BestSelling = () => {
                 </button>
               </div>
             </div>
-            <br />
           </SwiperSlide>
           <SwiperSlide>
             <div className="sm:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">

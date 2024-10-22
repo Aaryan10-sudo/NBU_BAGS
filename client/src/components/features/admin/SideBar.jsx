@@ -33,7 +33,13 @@ const SideBar = () => {
         >
           Add Products
         </NavLink>
-        <NavLink to={"/"} className="hover:text-red-700">
+        <NavLink
+          to={"/"}
+          onClick={() => {
+            localStorage.removeItem("token");
+          }}
+          className="hover:text-red-700"
+        >
           Log Out
         </NavLink>
       </ul>

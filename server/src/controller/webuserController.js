@@ -44,7 +44,12 @@ export const createWebuser = async (req, res, next) => {
       message: "User created successfully",
       data: create,
     });
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
 };
 
 export const verifyMail = async (req, res, next) => {
@@ -78,7 +83,7 @@ export const login = async (req, res, next) => {
   try {
     let result = await WebUser.findOne({ email: data.email });
     if (!result) {
-      throw new Error("Invalid mail");
+      throw new Error("Invalid credentials");
     }
     if (result.isVerifiedMail === false) {
       throw new Error("Please verify your email first");

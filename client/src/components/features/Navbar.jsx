@@ -143,8 +143,9 @@ const NavBar = ({ className }) => {
           </form>
 
           <FaUser
+            className="cursor-pointer"
             onClick={() => {
-              navigate("/admin/dashboard");
+              navigate("/log-in");
             }}
           />
           <FaBars
