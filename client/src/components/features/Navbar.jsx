@@ -9,6 +9,7 @@ import {
   FaMagnifyingGlass,
   FaUser,
 } from "react-icons/fa6";
+import { BsMenuApp } from "react-icons/bs";
 
 const NavBar = ({ className }) => {
   let [cart, setCart] = useState(0);
@@ -160,6 +161,9 @@ const NavBar = ({ className }) => {
         <div className="h-[215px] w-[150px] bg-white absolute rounded-tr-xl rounded-br-xl mt-[-10px] sm:mt-[0px] sm:right-0 sm:rounded-none sm:rounded-tl-xl sm:rounded-bl-xl">
           <ul className="flex flex-col justify-center items-center gap-[15px] mt-[15px] cursor-pointer">
             <NavLink
+              onClick={() => {
+                setMenu(false);
+              }}
               to="/"
               className={({ isActive }) =>
                 isActive
@@ -170,6 +174,9 @@ const NavBar = ({ className }) => {
               HOME
             </NavLink>
             <NavLink
+              onClick={() => {
+                setMenu(false);
+              }}
               to="/about"
               className={({ isActive }) =>
                 isActive
@@ -180,6 +187,9 @@ const NavBar = ({ className }) => {
               ABOUT
             </NavLink>
             <NavLink
+              onClick={() => {
+                setMenu(false);
+              }}
               to="/product"
               className={({ isActive }) =>
                 isActive
@@ -190,6 +200,9 @@ const NavBar = ({ className }) => {
               PRODUCT
             </NavLink>
             <NavLink
+              onClick={() => {
+                setMenu(false);
+              }}
               to="/contact"
               className={({ isActive }) =>
                 isActive
@@ -200,6 +213,9 @@ const NavBar = ({ className }) => {
               CONTACT
             </NavLink>
             <NavLink
+              onClick={() => {
+                setMenu(false);
+              }}
               to="/offers"
               className={({ isActive }) =>
                 isActive

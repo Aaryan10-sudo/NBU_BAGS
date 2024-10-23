@@ -42,18 +42,18 @@ const Collection = () => {
                 <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
                   <img src={value.image} className="h-full w-full" />
                 </div>
-                <span className="mx-[10px]">
-                  <p className="w-[100px] bg-slate-400 mx-[10px] mt-[5px]">
-                    {value.category}
-                  </p>
-                </span>
 
-                <h1 className="font-bold sm:text-[17px] text-[17px] mx-[10px] font-ubuntu">
+                <p className="w-[100px] bg-slate-400 mx-[10px] my-[10px] px-[10px]">
+                  {value.category}
+                </p>
+
+                <h1 className="font-extrabold sm:text-[17px] text-[17px] mx-[10px] font-ubuntu text-center">
                   {value.productName}
                 </h1>
-                <span className="h-[30px] sm:w-[90px] w-[70px] font-bold text-white rounded-md mx-[10px]">
-                  <p className="mx-[10px] font-ubuntu">Rs. {value.price}</p>
-                </span>
+
+                <p className="mx-[10px] font-ubuntu text-center bg-blue-500 mb-[10px] text-white h-[30px] flex items-center justify-center">
+                  Rs. {value.price}
+                </p>
               </div>
             );
           })}

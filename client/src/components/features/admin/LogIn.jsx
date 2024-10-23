@@ -29,8 +29,12 @@ const LogIn = () => {
       console.log(result);
       localStorage.setItem("token", result.data.token);
     } catch (error) {
-      toast.error(error.response.data.message);
       setLoader(true);
+      {
+        error.response.data.message === "Invalid Credentials"
+          ? toast.error("Invalid Credentials")
+          : toast.error("Something went wrong");
+      }
     }
   };
 
