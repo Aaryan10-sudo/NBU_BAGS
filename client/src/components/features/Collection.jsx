@@ -25,19 +25,19 @@ const Collection = () => {
   }, []);
   return (
     <>
-      <div className="mx-[]">
+      <div className="sm:mx-[30px] ">
         <center>
-          <h1 className="font-extrabold text-black text-[30px] mt-[30px] font-ubuntu ">
+          <h1 className="font-extrabold text-black text-[30px] my-[30px] font-ubuntu ">
             Our Featured Collection
           </h1>
         </center>
 
-        <div className="flex md:justify-normal sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[30px] gap-[10px`]">
+        <div className="flex md:justify-center sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[20px] gap-[20px]">
           {product.map((value, index) => {
             return (
               <div
                 key={index}
-                className="md:w-[210px] sm:w-[210px] w-[190px] h-auto shadow-lg md:mt-[30px] mt-[30px] "
+                className="md:w-[210px] sm:w-[210px] w-[190px] h-auto shadow-lg  "
               >
                 <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
                   <img src={value.image} className="h-full w-full" />

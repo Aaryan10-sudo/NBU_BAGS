@@ -36,7 +36,7 @@ const Dashboard = () => {
       <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px]">
         Dashboard
       </h1>
-      <div className="flex justify-between flex-wrap text-center text-white items-center mx-[30px] sm:gap-0 gap-[20px]">
+      <div className="flex md:justify-between  md:flex-nowrap flex-wrap text-center text-white items-center mx-[30px] md:gap-0 gap-[20px]">
         <div className="bg-[#8a2edf] h-[180px] w-[230px]">
           <p className="shadow-sm h-[40px]">Total Sales</p>
           <br />

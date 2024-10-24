@@ -39,8 +39,8 @@ const LogIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-white h-screen">
-      <div className="w-[350px] h-[400px] bg-slate-400 rounded-md">
+    <div className="flex justify-center items-center bg-[url('/bagpackbg.jpg')] bg-contain bg-center sm:h-screen h-[100vh]">
+      <div className="w-[350px] h-[400px] bg-slate-400 rounded-sm shadow-2xl shadow-black">
         <ToastContainer />
 
         <div className="h-[60px] my-[10px] py-[10px]  flex flex-col justify-center items-center">
