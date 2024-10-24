@@ -35,25 +35,31 @@ const Collection = () => {
         <div className="flex md:justify-center sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[20px] gap-[20px]">
           {product.map((value, index) => {
             return (
+              /* From Uiverse.io by Javierrocadev */
               <div
+                class="w-50 h-80 sm:w-60 bg-gray-50 p-3 flex flex-col gap-1"
                 key={index}
-                className="md:w-[210px] sm:w-[210px] w-[190px] h-auto shadow-lg  "
               >
-                <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
-                  <img src={value.image} className="h-full w-full" />
+                <div
+                  class="duration-500 h-48 hover:contrast-100 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${value.image})` }}
+                ></div>
+                <div class="flex flex-col gap-4">
+                  <div class="flex flex-row justify-between">
+                    <div class="flex flex-col">
+                      <span class="text-xl font-bold font-ubuntu">
+                        {value.productName}
+                      </span>
+                      <p class="text-xs text-gray-700">{value.category}</p>
+                    </div>
+                    <span class="font-bold  text-red-600 font-ubuntu">
+                      Rs. {value.price}
+                    </span>
+                  </div>
+                  <button class="hover:bg-sky-700 text-gray-50 bg-sky-800 py-2">
+                    Add to cart
+                  </button>
                 </div>
-
-                <p className="w-[100px] bg-slate-400 mx-[10px] my-[10px] px-[10px]">
-                  {value.category}
-                </p>
-
-                <h1 className="font-extrabold sm:text-[17px] text-[17px] mx-[10px] font-ubuntu text-center">
-                  {value.productName}
-                </h1>
-
-                <p className="mx-[10px] font-ubuntu text-center bg-blue-500 mb-[10px] text-white h-[30px] flex items-center justify-center">
-                  Rs. {value.price}
-                </p>
               </div>
             );
           })}
