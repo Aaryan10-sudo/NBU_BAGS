@@ -35,15 +35,13 @@ const Collection = () => {
         <div className="flex md:justify-center sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[20px] gap-[20px]">
           {product.map((value, index) => {
             return (
-              /* From Uiverse.io by Javierrocadev */
               <div
-                class="w-50 h-80 sm:w-60 bg-gray-50 p-3 flex flex-col gap-1"
+                class="w-[190px] h-[400px] sm:w-60 bg-gray-50 p-3 flex flex-col rounded-sm shadow-md"
                 key={index}
               >
-                <div
-                  class="duration-500 h-48 hover:contrast-100 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${value.image})` }}
-                ></div>
+                <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[500px] rounded-sm">
+                  <img src={value.image} className="rounded-sm" />
+                </div>
                 <div class="flex flex-col gap-4">
                   <div class="flex flex-row justify-between">
                     <div class="flex flex-col">
@@ -56,8 +54,34 @@ const Collection = () => {
                       Rs. {value.price}
                     </span>
                   </div>
-                  <button class="hover:bg-sky-700 text-gray-50 bg-sky-800 py-2">
-                    Add to cart
+
+                  <button className="buttonTest">
+                    <div class="default-btn sm:px-[30px] px-[20px]">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        stroke="#ffffff"
+                        stroke-width="2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="cart-icon"
+                      >
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </div>
+                    <div class="hover-btn">
+                      <center>
+                        <span className="text-center font-ubuntu">
+                          Rs. {value.price}
+                        </span>
+                      </center>
+                    </div>
                   </button>
                 </div>
               </div>
