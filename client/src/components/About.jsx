@@ -9,31 +9,11 @@ const About = () => {
   return (
     <div>
       <main className="md:mx-[40px] mx-[10px] relative">
-        <img
-          className="absolute opacity-50 right-0 mt-[70px] h-[250px] hidden md:block"
-          src="okay.png "
-        />
-
         <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px] font-ubuntu">
           About Us
         </h1>
         <div className="flex justify-between md:flex-row flex-col flex-wrap">
-          <div className="bg-slate-500 flex sm:h-[400px] md:w-[600px] ">
-            <video
-              src="WhatsApp Video 2024-10-05 at 19.52.09_99ca10d3.mp4"
-              className="sm:h-[400px] h-[220px] "
-              controls="true"
-              autoPlay
-              muted
-            />
-            <video
-              src="WhatsApp Video 2024-10-05 at 19.52.09_ec38def4.mp4"
-              className="sm:h-[400px] h-[220px]"
-              controls="true"
-              autoPlay="true"
-              muted
-            />
-          </div>
+          <div className="bg-slate-500 flex sm:h-[300px] md:w-[600px] self-center "></div>
           <span className="md:w-[550px] md:h-[400px] ">
             <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0 font-ubuntu py-[10px]">
               ABOUT NBU BAGS

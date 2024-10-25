@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         ubuntu: ["Ubuntu", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },
