@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTiktok } from "react-icons/fa";
 import {
   FaArrowRight,
   FaEnvelope,
@@ -77,6 +78,9 @@ const Footer = () => {
             <span className="flex">
               <FaInstagram /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
             </span>
+            <span className="flex">
+              <FaTiktok /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
+            </span>
           </div>
         </div>
       </div>
@@ -86,14 +90,14 @@ const Footer = () => {
           <p className="text-white sm:text-[20px] font-bold">Powered By :</p>
           <img src="nexorith.png" className="sm:h-[30px] h-[20px]" />
         </span>
-        <div className="flex group">
+        <div className="flex group shadow-xl">
           <div
-            className="bg-slate-400 sm:w-[200px] w-[210px] p-[10px] text-white font-bold
+            className="bg-white sm:w-[200px] w-[210px] p-[10px] text-blue-700 font-bold 
             "
           >
             Connect with Nexorith
           </div>
-          <button className="bg-white group-hover:w-[180px] w-[55px] text-center items-center justify-center flex group transition-all ease-linear px-[10px]">
+          <button className="bg-[url('/forfooter.jpg')] bg-contain bg-center group-hover:bg-none hover:bg-slate-300 group-hover:w-[180px] w-[55px] text-center items-center justify-center flex group transition-all ease-linear px-[10px] duration-300">
             <FaArrowRight className="text-[20px] group-hover:opacity-0" />
             <div className="opacity-0 group-hover:opacity-100 flex gap-[20px]">
               <FaFacebook />

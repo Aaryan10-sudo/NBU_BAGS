@@ -16,32 +16,68 @@ const Product = () => {
     getAllProduct();
   }, []);
   return (
-    <div>
+    <div className="pb-[20px]">
       <h1 className="font-bold text-center text-[25px] my-[20px] font-ubuntu">
         Discover Your Next Favorite{" "}
       </h1>
-      <div className="flex md:justify-normal sm:justify-around justify-between  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[30px] gap-[10px`]">
+      <div className="flex md:justify-center sm:justify-around justify-center  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[20px] gap-[10px]">
         {product.map((value, index) => {
           return (
             <div
+              class="w-[190px] h-[400px] sm:w-60 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
               key={index}
-              className="md:w-[210px] sm:w-[210px] w-[190px] h-auto shadow-lg md:mt-[30px] mt-[30px] "
             >
-              <div className="h-[250px] rounded-tl-xl rounded-tr-xl object-cover object-center">
-                <img src={value.image} className="h-full w-full" />
+              <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[500px] rounded-lg ">
+                <img src={value.image} className="rounded-lg" alt="BagImage" />
               </div>
+              <div class="flex flex-col gap-[10px] w-full">
+                <div class="flex flex-col justify-center items-center w-full">
+                  <div class="w-full flex justify-center">
+                    <span class="text-xl font-montserrat font-extrabold text-center">
+                      {value.productName}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-700 py-[5px] text-center flex items-center justify-center">
+                    {value.productDescription}
+                  </p>
+                  <span class="flex text-black font-ubuntu gap-[20px]">
+                    <p className="text-[12px] flex items-center text-black">
+                      {value.category}
+                    </p>
+                    <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600">
+                      रु. {value.price}
+                    </p>
+                  </span>
+                </div>
 
-              <p className="w-[100px] bg-slate-400 mx-[10px] my-[10px] px-[10px]">
-                {value.category}
-              </p>
-
-              <h1 className="font-extrabold sm:text-[17px] text-[17px] mx-[10px] font-ubuntu text-center">
-                {value.productName}
-              </h1>
-
-              <p className="mx-[10px] font-ubuntu text-center bg-blue-500 mb-[10px] text-white h-[30px] flex items-center justify-center">
-                Rs. {value.price}
-              </p>
+                <button className="buttonTest rounded-lg">
+                  <div class="default-btn sm:px-[30px] px-[20px] flex items-center gap-2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      stroke="#ffffff"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="cart-icon"
+                    >
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Add to Cart</span>
+                  </div>
+                  <div class="hover-btn">
+                    <center>
+                      <span className="text-center font-ubuntu">
+                        Rs. {value.price}
+                      </span>
+                    </center>
+                  </div>
+                </button>
+              </div>
             </div>
           );
         })}

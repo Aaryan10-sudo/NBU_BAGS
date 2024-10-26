@@ -7,6 +7,7 @@ import {
   FaFacebookSquare,
   FaInstagram,
   FaInstagramSquare,
+  FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa";
 
@@ -20,7 +21,7 @@ const Contact = () => {
           </h1>
           <div className="flex justify-between my-6 w-full text-gray-100">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/9779803087763"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -29,7 +30,7 @@ const Contact = () => {
                 Via WhatsApp
               </button>
             </a>
-            <a href="tel:+1234567890 w-[50%]">
+            <a href="tel:9803087763">
               <button className="bg-gray-800 font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
                 <MdOutlineWifiCalling3 className="pr-2 h-5 w-auto" />
                 Via Call
@@ -64,6 +65,7 @@ const Contact = () => {
               <div className="flex gap-[20px]">
                 <FaFacebookSquare />
                 <FaInstagram />
+                <FaTiktok />
               </div>
             </span>
             <button
