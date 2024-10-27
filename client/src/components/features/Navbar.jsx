@@ -52,12 +52,12 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Menu Links */}
-        <ul className="hidden md:flex gap-8 font-bold text-black text-[15px] items-center">
-          {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(
+        <ul className="hidden md:flex gap-5 font-medium text-black text-[11px] items-center tracking-wider">
+          {["Home", "About", "Product", "Contact", "Offers"].map(
             (link, index) => (
               <NavLink
                 key={index}
-                to={link === "HOME" ? "/" : `/${link.toLowerCase()}`}
+                to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
                 className={({ isActive }) =>
                   isActive
                     ? "text-[#e3a253] text-[13px]"
@@ -95,27 +95,32 @@ const NavBar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu with Slide-In/Out Animation */}
       <div
-        className={`fixed top-0 left-0 h-full w-full z-50 flex transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-full z-50 flex transition-all duration-300 ease-in-out ${
           menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
         }`}
       >
         <div className="w-[70%] bg-white h-full flex flex-col items-start p-6">
-          <div className="flex justify-between w-full items-center">
-            <h1>NBU BAGS</h1>
+          <div className="flex justify-between w-full items-center pb-[10px] border-b border-black">
+            <div className="flex gap-2 items-center">
+              <img src="logo.png" className="h-[30px] " alt="Logo" />
+              <h1 className="font-bold">NBU BAGS</h1>
+            </div>
             <FaTimes
-              className="text-black text-2xl self-end cursor-pointer"
+              className="text-black text-2xl cursor-pointer"
               onClick={toggleMenu}
             />
           </div>
-          <ul className="flex flex-col gap-8 mt-6 text-black text-[15px] font-bold">
+          <ul className="flex flex-col gap-8 mt-10 text-black text-[15px]">
             {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(
               (link, index) => (
                 <NavLink
                   key={index}
                   to={link === "HOME" ? "/" : `/${link.toLowerCase()}`}
-                  className="hover:text-[#e3a253]"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#e3a253]" : "hover:text-[#e3a253]"
+                  }
                   onClick={toggleMenu}
                 >
                   {link}
@@ -134,7 +139,12 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-        <div className="w-[30%] bg-black bg-opacity-75" onClick={toggleMenu} />
+        {/* Overlay */}
+        <div
+          className="w-[30%] bg-black bg-opacity-75 transition-opacity duration-300 ease-in-out"
+          onClick={toggleMenu}
+          style={{ opacity: menuOpen ? 1 : 0 }}
+        />
       </div>
     </>
   );
