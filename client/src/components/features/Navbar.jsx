@@ -1,233 +1,141 @@
 import React, { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {
-  FaBars,
-  FaCartShopping,
-  FaMagnifyingGlass,
-  FaUser,
-} from "react-icons/fa6";
-import { BsMenuApp } from "react-icons/bs";
+const NavBar = () => {
+  const [item, setItem] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-const NavBar = ({ className }) => {
-  let [cart, setCart] = useState(0);
-  let [item, setItem] = useState([]);
-  let [isAnimateBouncing, setIsAnimateBouncing] = useState(false);
-  let [login, setLogin] = useState(false);
-  let [menu, setMenu] = useState(false);
-  let navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     let query = item;
     navigate(`/search?product=${query}`);
   };
 
-  const handleLogOut = () => {
-    setLogin(false);
-    setMenu(false);
-    sessionStorage.removeItem("fullName");
-    localStorage.removeItem("token");
-  };
-
-  const searchItem = async () => {
-    try {
-      let result = await axios({
-        url: `http://localhost:1111/product/search?item=${product}`,
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(result.data.data);
-      setSearch(result.data.data);
-    } catch (error) {}
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   useEffect(() => {
-    searchItem();
-    // const fullName = sessionStorage.getItem("fullName");
-    // if (fullName) {
-    //   toast(`Interacting as ${fullName}`);
-    setLogin(true);
-    // } else {
-    //   setLogin(false);
-    // }
-  }, []);
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
   return (
-    <div className="w-[100vw]">
+    <div className="w-full">
       <ToastContainer />
-      <header className="bg-[#32609e]  px-[10px] sm:px-0 sm:h-[50px] h-[70px] flex sm:flex-row flex-col sm:justify-between justify-center items-center p-[10px]">
-        <p className="lg:ml-[50px] text-white sm:text-[15px] p-[5px]">
-          Carry your world in style
-        </p>
-        <p className="lg:mr-[50px] text-white sm:text-[15px]">
-          Pyukha Marg, Kathmandu
-        </p>
+      {/* Top Header */}
+      <header className="bg-[#32609e] flex justify-between items-center px-4 h-[50px] text-white text-[15px]">
+        <p>Carry your world in style</p>
+        <p>Pyukha Marg, Kathmandu</p>
       </header>
-      <nav className="flex justify-between items-center bg-transparent h-[60px] sticky top-0 z-50 md:mx-[40px] mx-[10px]">
-        <FaBars
-          className="sm:hidden cursor-pointer"
-          onClick={() => {
-            setMenu(!menu);
-          }}
-        />
+
+      {/* Main Navbar */}
+      <nav className="flex items-center justify-between bg-transparent backdrop-blur-sm h-[60px] sticky top-0 z-50 px-4 md:px-8">
+        {/* Logo */}
         <div
-          className="flex items-center cursor-pointer"
-          onClick={() => {
-            navigate("/");
-          }}
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => navigate("/")}
         >
-          <img src="logo.png" className=" ml-[0px] h-[50px]"></img>
-          <p className=" font-extrabold text-white sm:block">NBU BAGS</p>
+          <img src="logo.png" className="h-[50px]" alt="Logo" />
+          <p className="font-extrabold text-white">NBU BAGS</p>
         </div>
 
-        <ul className="md:inline-flex gap-[20px] font-bold text-white text-[15px] hidden">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
-            }
-          >
-            HOME
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
-            }
-          >
-            ABOUT
-          </NavLink>
-          <NavLink
-            to="/product"
-            className={({ isActive }) =>
-              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
-            }
-          >
-            PRODUCT
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
-            }
-          >
-            CONTACT
-          </NavLink>
-          <NavLink
-            to="/offers"
-            className={({ isActive }) =>
-              isActive ? "text-[#c38233] text-[13px]" : "text-black text-[13px]"
-            }
-          >
-            OFFERS
-          </NavLink>
+        {/* Desktop Menu Links */}
+        <ul className="hidden md:flex gap-8 font-bold text-white text-[15px] items-center">
+          {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(
+            (link, index) => (
+              <NavLink
+                key={index}
+                to={link === "HOME" ? "/" : `/${link.toLowerCase()}`}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#e3a253] text-[13px]"
+                    : "hover:text-[#e3a253] text-[13px]"
+                }
+              >
+                {link}
+              </NavLink>
+            )
+          )}
         </ul>
 
-        <div className="flex gap-[25px] items-center">
-          <form
-            className="bg-[#ede9dd] md:flex justify-between p-[5px] rounded-xl w-[150px] sm:w-[150px] hidden"
-            onSubmit={handleSubmit}
-          >
+        {/* Search and Icons */}
+        <div className="hidden md:flex gap-4 items-center">
+          <form onSubmit={handleSubmit} className="relative">
             <input
               type="text"
               placeholder="Search..."
-              className="bg-transparent focus:outline-none w-[140px]"
+              className="bg-[#ede9dd] w-[160px] h-[28px] rounded-[5px] px-2"
               value={item}
-              onChange={(e) => {
-                setItem(e.target.value);
-              }}
+              onChange={(e) => setItem(e.target.value)}
             />
           </form>
+          <NavLink
+            className="cursor-pointer font-semibold text-white"
+            to={"/log-in"}
+          >
+            Log In
+          </NavLink>
+        </div>
 
-          <FaUser
-            className="cursor-pointer"
-            onClick={() => {
-              navigate("/log-in");
-            }}
-          />
-          <FaBars
-            className="md:hidden sm:block cursor-pointer hidden"
-            onClick={() => {
-              setMenu(!menu);
-            }}
-          />
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden flex items-center">
+          <FaBars className="text-white cursor-pointer" onClick={toggleMenu} />
         </div>
       </nav>
-      {menu ? (
-        <div className="h-[215px] w-[150px] bg-white absolute rounded-tr-xl rounded-br-xl mt-[-10px] sm:mt-[0px] sm:right-0 sm:rounded-none sm:rounded-tl-xl sm:rounded-bl-xl">
-          <ul className="flex flex-col justify-center items-center gap-[15px] mt-[15px] cursor-pointer">
-            <NavLink
-              onClick={() => {
-                setMenu(false);
-              }}
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#c38233] text-[15px]"
-                  : "text-black text-[15px]"
-              }
-            >
-              HOME
-            </NavLink>
-            <NavLink
-              onClick={() => {
-                setMenu(false);
-              }}
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#c38233] text-[15px]"
-                  : "text-black text-[15px]"
-              }
-            >
-              ABOUT
-            </NavLink>
-            <NavLink
-              onClick={() => {
-                setMenu(false);
-              }}
-              to="/product"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#c38233] text-[15px]"
-                  : "text-black text-[15px]"
-              }
-            >
-              PRODUCT
-            </NavLink>
-            <NavLink
-              onClick={() => {
-                setMenu(false);
-              }}
-              to="/contact"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#c38233] text-[15px]"
-                  : "text-black text-[15px]"
-              }
-            >
-              CONTACT
-            </NavLink>
-            <NavLink
-              onClick={() => {
-                setMenu(false);
-              }}
-              to="/offers"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#c38233] text-[15px]"
-                  : "text-black text-[15px]"
-              }
-            >
-              OFFERS
-            </NavLink>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-full z-50 flex transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+        }`}
+      >
+        <div className="w-[70%] bg-white h-full flex flex-col items-start p-6">
+          <div className="flex justify-between w-full items-center">
+            <h1>NBU BAGS</h1>
+            <FaTimes
+              className="text-black text-2xl self-end cursor-pointer"
+              onClick={toggleMenu}
+            />
+          </div>
+          <ul className="flex flex-col gap-8 mt-6 text-black text-[15px] font-bold">
+            {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(
+              (link, index) => (
+                <NavLink
+                  key={index}
+                  to={link === "HOME" ? "/" : `/${link.toLowerCase()}`}
+                  className="hover:text-[#e3a253]"
+                  onClick={toggleMenu}
+                >
+                  {link}
+                </NavLink>
+              )
+            )}
           </ul>
+
+          <div className="w-full flex justify-center">
+            <NavLink
+              to={"/log-in"}
+              className="mt-6 text-blue-500 font-semibold text-center"
+              onClick={toggleMenu}
+            >
+              Log In
+            </NavLink>
+          </div>
         </div>
-      ) : null}
+        <div className="w-[30%] bg-black bg-opacity-75" onClick={toggleMenu} />
+      </div>
     </div>
   );
 };
