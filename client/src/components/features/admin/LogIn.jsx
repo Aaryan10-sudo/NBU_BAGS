@@ -31,7 +31,7 @@ const LogIn = () => {
     } catch (error) {
       setLoader(true);
       {
-        error.response.data.message === "Invalid Credentials"
+        error.response.data.message === "Invalid credentials"
           ? toast.error("Invalid Credentials")
           : toast.error("Something went wrong");
       }
