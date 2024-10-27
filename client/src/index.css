@@ -32,19 +32,19 @@
   cursor: pointer;
   border-radius: 0px;
   border: none;
-  background-color: hsl(255deg 50% 40%);
+  background-color: #32609e;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   font-family: "Inter", sans-serif;
 }
 
-.default-btn {
+/* .default-btn {
   background-image: linear-gradient(
     90.1deg,
     rgba(84, 212, 228, 1) 0.2%,
     rgba(68, 36, 164, 1) 99.9%
   );
-}
+} */
 
 .default-btn {
   display: flex;
@@ -76,12 +76,8 @@
   font-size: 15px;
   padding: 1em 3em;
   text-align: center;
-  background: rgb(26, 35, 126);
-  background: linear-gradient(
-    63deg,
-    rgba(26, 35, 126, 1) 0%,
-    rgba(69, 39, 160, 1) 100%
-  );
+  background: #32609e;
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   transform: translate(0%, 100%);
