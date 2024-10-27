@@ -15,6 +15,7 @@ import UpdateProduct from "../components/features/admin/UpdateProduct";
 import Products from "../components/features/admin/Products";
 import AddProducts from "../components/features/admin/AddProducts";
 import LogIn from "../components/features/admin/LogIn";
+import NavBar from "../components/features/Navbar";
 
 const MyRoutes = () => {
   const navigate = useNavigate();
