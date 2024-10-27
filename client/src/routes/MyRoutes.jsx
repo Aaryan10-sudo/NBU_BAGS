@@ -27,7 +27,7 @@ const MyRoutes = () => {
       // Navigate to the admin dashboard if token exists
       navigate("/admin/dashboard");
     }
-  }, []); // Only run when the component mounts or when navigate changes
+  }, []);
 
   return (
     <div>
@@ -36,6 +36,7 @@ const MyRoutes = () => {
           path="/"
           element={
             <div>
+              <NavBar />
               <Hero />
               <Outlet />
               <Footer />

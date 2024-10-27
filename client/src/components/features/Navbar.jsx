@@ -32,7 +32,7 @@ const NavBar = () => {
   }, [menuOpen]);
 
   return (
-    <div className="w-full">
+    <>
       <ToastContainer />
       {/* Top Header */}
       <header className="bg-[#32609e] flex justify-between items-center px-4 h-[50px] text-white text-[15px]">
@@ -41,18 +41,18 @@ const NavBar = () => {
       </header>
 
       {/* Main Navbar */}
-      <nav className="flex items-center justify-between bg-transparent backdrop-blur-sm h-[60px] sticky top-0 z-50 px-4 md:px-8">
+      <nav className="flex items-center justify-between bg-white backdrop-blur-sm h-[55px] sm:h-[50px] sticky top-0 z-50 px-4 md:px-8">
         {/* Logo */}
         <div
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => navigate("/")}
         >
           <img src="logo.png" className="h-[50px]" alt="Logo" />
-          <p className="font-extrabold text-white">NBU BAGS</p>
+          <p className="font-bold text-[18px] sm:text-[17px]">NBU BAGS</p>
         </div>
 
         {/* Desktop Menu Links */}
-        <ul className="hidden md:flex gap-8 font-bold text-white text-[15px] items-center">
+        <ul className="hidden md:flex gap-8 font-bold text-black text-[15px] items-center">
           {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(
             (link, index) => (
               <NavLink
@@ -82,7 +82,7 @@ const NavBar = () => {
             />
           </form>
           <NavLink
-            className="cursor-pointer font-semibold text-white"
+            className="cursor-pointer font-semibold text-blue-500"
             to={"/log-in"}
           >
             Log In
@@ -91,7 +91,7 @@ const NavBar = () => {
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden flex items-center">
-          <FaBars className="text-white cursor-pointer" onClick={toggleMenu} />
+          <FaBars className="text-black cursor-pointer" onClick={toggleMenu} />
         </div>
       </nav>
 
@@ -136,7 +136,7 @@ const NavBar = () => {
         </div>
         <div className="w-[30%] bg-black bg-opacity-75" onClick={toggleMenu} />
       </div>
-    </div>
+    </>
   );
 };
 
