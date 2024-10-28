@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaSearch, FaSearchDollar, FaTimes } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,7 +41,7 @@ const NavBar = () => {
       </header>
 
       {/* Main Navbar */}
-      <nav className="flex items-center justify-between bg-white backdrop-blur-sm h-[55px] sm:h-[50px] sticky top-0 z-50 px-4 md:px-8">
+      <nav className="flex items-center justify-between bg-white shadow-xl h-[55px] sm:h-[55px] sticky top-0 z-50 px-4 md:px-8">
         {/* Logo */}
         <div
           className="flex items-center gap-2 cursor-pointer"
@@ -52,16 +52,14 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Menu Links */}
-        <ul className="hidden md:flex gap-5 font-medium text-black text-[11px] items-center tracking-wider">
+        <ul className="hidden lg:flex gap-8 font-medium text-black items-center tracking-wider">
           {["Home", "About", "Product", "Contact", "Offers"].map(
             (link, index) => (
               <NavLink
                 key={index}
                 to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-[#e3a253] text-[13px]"
-                    : "hover:text-[#e3a253] text-[13px]"
+                  isActive ? "text-[#e3a253] " : "hover:text-[#e3a253]"
                 }
               >
                 {link}
@@ -76,13 +74,19 @@ const NavBar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-[#ede9dd] w-[160px] h-[28px] rounded-[5px] px-2"
+              className="bg-[#ede9dd] w-[170px] h-[30px] rounded-[5px] px-2 pr-8 outline outline-slate-400"
               value={item}
               onChange={(e) => setItem(e.target.value)}
             />
+            <button type="submit">
+              <FaSearch
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black font-normal"
+                onClick={() => {}}
+              />
+            </button>
           </form>
           <NavLink
-            className="cursor-pointer font-semibold text-blue-500 hidden md:block"
+            className="cursor-pointer font-semibold text-blue-500 hidden md:block underline"
             to={"/log-in"}
           >
             Log In

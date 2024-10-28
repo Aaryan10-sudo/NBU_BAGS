@@ -112,7 +112,7 @@ export const deleteProductController = async (req, res, next) => {
   }
 };
 
-export const searchBar = async (req, res, next) => {
+export const searchProduct = async (req, res, next) => {
   let item = req.query.item;
   try {
     let pipeline = [];

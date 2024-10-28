@@ -5,6 +5,7 @@ import {
   readAllProductController,
   readEightProductController,
   readSpecificProductController,
+  searchProduct,
   totalProduct,
   updateProductController,
 } from "../controller/productController.js";
@@ -14,6 +15,7 @@ productRouter.route("/create").post(createProductController);
 productRouter.route("/readall").get(readAllProductController);
 productRouter.route("/read-all").get(readEightProductController);
 productRouter.route("/total-product").get(totalProduct);
+productRouter.route("/search").get(searchProduct);
 
 productRouter.route("/:id").get(readSpecificProductController);
 productRouter.route("/update/:id").patch(updateProductController);

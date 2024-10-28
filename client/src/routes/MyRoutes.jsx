@@ -16,6 +16,7 @@ import Products from "../components/features/admin/Products";
 import AddProducts from "../components/features/admin/AddProducts";
 import LogIn from "../components/features/admin/LogIn";
 import NavBar from "../components/features/Navbar";
+import Search from "../components/features/Search";
 
 const MyRoutes = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ const MyRoutes = () => {
         </Route>
         <Route path="/log-in" element={<LogIn />}></Route>
         <Route path="/offers" element={<Discount />}></Route>
+        <Route path="/search" element={<Search />}></Route>
 
         <Route
           path="/admin/dashboard"
