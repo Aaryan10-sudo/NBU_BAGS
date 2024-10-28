@@ -20,14 +20,14 @@ const Product = () => {
       <h1 className="font-bold text-center text-[25px] my-[20px] font-ubuntu">
         Discover Your Next Favorite{" "}
       </h1>
-      <div className="flex md:justify-center sm:justify-around justify-center  flex-wrap md:mx-[40px] mx-[10px] sm:gap-[20px] gap-[10px]">
+      <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] ">
         {product.map((value, index) => {
           return (
             <div
-              class="w-[190px] h-[400px] sm:w-60 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+              class="w-[190px] h-[400px] md:w-60 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
               key={index}
             >
-              <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[500px] rounded-lg ">
+              <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[600px] rounded-lg ">
                 <img src={value.image} className="rounded-lg" alt="BagImage" />
               </div>
               <div class="flex flex-col gap-[10px] w-full">

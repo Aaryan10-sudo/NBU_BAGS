@@ -10,12 +10,12 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const BestSelling = () => {
   return (
-    <div className="sm:mx-[20px] mt-[20px] ">
+    <div className="md:mx-[20px] mt-[20px] ">
       <h1 className="text-center font-extrabold text-[30px] font-ubuntu">
         Our Top Sellings
       </h1>
       <br />
-      <div className="sm:h-[300px]">
+      <div className="md:h-[300px]">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -30,7 +30,7 @@ const BestSelling = () => {
           className="mySwiper bg-gray-300"
         >
           <SwiperSlide>
-            <div className="sm:mx-[50px] mx-[20px] flex sm:flex-row flex-col">
+            <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col">
               <img src="bestselling1.png" className="sm:h-[250px]" />
               <div className="">
                 <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
@@ -49,14 +49,14 @@ const BestSelling = () => {
                   mollit anim id est laborum.
                 </p>
                 <br />
-                <button className="border-2 border-blue-600 w-[100px] hidden sm:block">
+                <button className="border-2 border-blue-600 w-[100px] hidden md:block">
                   Rs. 5500
                 </button>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="sm:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">
+            <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">
               <img src="banner3.png" className="sm:h-[250px]" />
               <div className="">
                 <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
@@ -75,7 +75,7 @@ const BestSelling = () => {
                   mollit anim id est laborum.
                 </p>
                 <br />
-                <button className="border-2 border-blue-600 w-[100px] hidden sm:block">
+                <button className="border-2 border-blue-600 w-[100px] hidden md:block">
                   Rs. 4500
                 </button>
               </div>

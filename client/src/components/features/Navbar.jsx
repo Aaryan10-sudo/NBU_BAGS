@@ -70,8 +70,8 @@ const NavBar = () => {
           )}
         </ul>
 
-        {/* Search and Icons */}
-        <div className="hidden md:flex gap-4 items-center">
+        {/* Search */}
+        <div className="hidden sm:flex gap-4 items-center">
           <form onSubmit={handleSubmit} className="relative">
             <input
               type="text"
@@ -82,20 +82,26 @@ const NavBar = () => {
             />
           </form>
           <NavLink
-            className="cursor-pointer font-semibold text-blue-500"
+            className="cursor-pointer font-semibold text-blue-500 hidden md:block"
             to={"/log-in"}
           >
             Log In
           </NavLink>
+          <div className="md:hidden flex items-center">
+            <FaBars
+              className="text-black cursor-pointer"
+              onClick={toggleMenu}
+            />
+          </div>
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden flex items-center">
+        <div className="sm:hidden flex items-center">
           <FaBars className="text-black cursor-pointer" onClick={toggleMenu} />
         </div>
       </nav>
 
-      {/* Mobile Menu with Slide-In/Out Animation */}
+      {/* Mobile Menu*/}
       <div
         className={`fixed top-0 left-0 h-full w-full z-50 flex transition-all duration-300 ease-in-out ${
           menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
@@ -108,7 +114,7 @@ const NavBar = () => {
               <h1 className="font-bold">NBU BAGS</h1>
             </div>
             <FaTimes
-              className="text-black text-2xl cursor-pointer"
+              className="text-black text-2xl cursor-pointer border-2"
               onClick={toggleMenu}
             />
           </div>

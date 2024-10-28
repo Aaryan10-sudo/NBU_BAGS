@@ -15,8 +15,8 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-[#32609e] bottom-0 w-[100%]">
-      <div className="sm:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap font-raleway">
-        <div className="w-[350px]">
+      <div className="md:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap font-raleway">
+        <div className="md:w-[350px]">
           <h1 className=" font-extrabold text-[20px] font-ubuntu">
             Store Info
           </h1>
