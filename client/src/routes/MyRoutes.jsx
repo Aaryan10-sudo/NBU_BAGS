@@ -13,7 +13,7 @@ import AdminPanel from "../components/features/admin/AdminPanel";
 import LogIn from "../components/features/admin/LogIn";
 import Products from "../components/features/admin/Products";
 import UpdateProduct from "../components/features/admin/UpdateProduct";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 const MyRoutes = () => {
   const navigate = useNavigate();
