@@ -2,8 +2,6 @@ import React from "react";
 import { BsBackpack3 } from "react-icons/bs";
 import { FaShieldAlt, FaSmile } from "react-icons/fa";
 import { FaCouch, FaLeaf } from "react-icons/fa6";
-import Footer from "./features/Footer";
-import Hero from "./features/Hero";
 
 const About = () => {
   return (
