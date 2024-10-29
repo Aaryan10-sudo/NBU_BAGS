@@ -1,15 +1,11 @@
 import React from "react";
-import Hero from "./features/Hero";
-import Footer from "./features/Footer";
-import { MdOutlineWifiCalling3, MdOutlineMessage } from "react-icons/md";
 import {
-  FaFacebook,
   FaFacebookSquare,
   FaInstagram,
-  FaInstagramSquare,
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa";
+import { MdOutlineWifiCalling3 } from "react-icons/md";
 
 const Contact = () => {
   return (
