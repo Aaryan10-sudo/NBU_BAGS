@@ -1,18 +1,18 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { hitApi } from "../../services/HitApi";
 
 const Collection = () => {
   let [product, setProduct] = useState([]);
   let navigate = useNavigate();
   const getAllProduct = async () => {
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/read-all",
+      let result = await hitApi({
+        url: "/product/read-all",
         method: "GET",
       });
       setProduct(result?.data?.data);
