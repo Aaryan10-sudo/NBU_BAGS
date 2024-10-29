@@ -1,11 +1,11 @@
-import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
-import SideBar from "./SideBar";
-import NavBarAd from "./NavBarAd";
 import { useDropzone } from "react-dropzone";
 import { BiLoaderAlt } from "react-icons/bi";
+import { useNavigate, useParams } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { hitApi } from "../../../services/HitApi";
+import NavBarAd from "./NavBarAd";
+import SideBar from "./SideBar";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -23,8 +23,8 @@ const UpdateProduct = () => {
 
   let getData = async () => {
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/product/${id}`,
+      let result = await hitApi({
+        url: `/product/${id}`,
         method: `GET`,
       });
       let data = result.data.data;
@@ -54,8 +54,8 @@ const UpdateProduct = () => {
       image: image,
     };
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/product/update/${id}`,
+      let result = await hitApi({
+        url: `/product/update/${id}`,
         method: "PATCH",
         data: data,
       });
@@ -77,8 +77,8 @@ const UpdateProduct = () => {
     data.append("document", fileData);
 
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/file/single`,
+      let result = await hitApi({
+        url: `/file/single`,
         method: "POST",
         data: data,
       });

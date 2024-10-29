@@ -1,7 +1,7 @@
 import React from "react";
-import { FaCartShopping, FaMagnifyingGlass, FaUser } from "react-icons/fa6";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBarAd = () => {
   let navigate = useNavigate();

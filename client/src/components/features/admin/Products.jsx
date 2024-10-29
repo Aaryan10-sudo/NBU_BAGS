@@ -4,14 +4,15 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import SideBar from "./SideBar";
 import NavBarAd from "./NavBarAd";
+import { hitApi } from "../../../services/HitApi";
 
 const Products = () => {
   let [product, setProduct] = useState([]);
   let navigate = useNavigate();
   const getAllProduct = async () => {
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/readall",
+      let result = await hitApi({
+        url: "/product/readall",
         method: "GET",
       });
       setProduct(result?.data?.data);

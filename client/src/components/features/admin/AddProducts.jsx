@@ -7,6 +7,7 @@ import NavBarAd from "./NavBarAd";
 import { useDropzone } from "react-dropzone";
 import { TbLoaderQuarter, TbRulerMeasure } from "react-icons/tb";
 import { BiLoaderAlt } from "react-icons/bi";
+import { hitApi } from "../../../services/HitApi";
 
 const AddProducts = () => {
   let [productName, setProductName] = useState("");
@@ -30,8 +31,8 @@ const AddProducts = () => {
       image: image,
     };
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/product/create`,
+      let result = await hitApi({
+        url: `/product/create`,
         method: "POST",
         data: data,
       });

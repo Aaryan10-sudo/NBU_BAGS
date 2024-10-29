@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
-import { BsEye } from "react-icons/bs";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import { hitApi } from "../../../services/HitApi";
 
 const LogIn = () => {
   let [email, setEmail] = useState("");
@@ -19,8 +19,8 @@ const LogIn = () => {
       password: password,
     };
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/webuser/login",
+      let result = await hitApi({
+        url: "/webuser/login",
         method: "POST",
         data: data,
       });

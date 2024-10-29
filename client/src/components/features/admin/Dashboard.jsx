@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { hitApi } from "../../../services/HitApi";
 
 const Dashboard = () => {
   let [productCount, setProductCount] = useState(0);
@@ -7,8 +7,8 @@ const Dashboard = () => {
 
   const totalProduct = async () => {
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/total-product",
+      let result = await hitApi({
+        url: "/product/total-product",
         method: "GET",
       });
       setProductCount(result?.data?.count);
@@ -18,8 +18,8 @@ const Dashboard = () => {
   };
   const totalUser = async () => {
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/total-user",
+      let result = await hitApi({
+        url: "/product/total-user",
         method: "GET",
       });
       setWebuserCount(result?.data?.count);
