@@ -12,9 +12,12 @@ const Contact = () => {
     <div>
       <div className=" w-full bg-gray-300 text-gray-700  md:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
         <div className="main flex items-start justify-center flex-col">
+          {/* Header */}
           <h1 className="text-4xl font-bold font-ubuntu">
             Contact<span className="text-[#32609e]"> Us</span>
           </h1>
+
+          {/* Contact Section */}
           <div className="flex justify-between my-6 w-full text-gray-100">
             <a
               href="https://wa.me/9779803087763"
@@ -57,6 +60,7 @@ const Contact = () => {
               type="submit"
               className="mt-3 font-semibold py-3 flex rounded-md gap-[10px] text-[20px] float-start items-center"
             >
+              {/* Social media link */}
               <p>Follow us on : </p>
               <div className="flex gap-[20px]">
                 <FaFacebookSquare />
@@ -74,6 +78,7 @@ const Contact = () => {
           </div>
         </div>
 
+        {/* Store Location / map  */}
         <div className="md:mt-0 mt-[20px]">
           <h1 className="text-4xl font-bold text-start font-ubuntu">
             Come<span className="text-[#32609e]"> visit us!</span>

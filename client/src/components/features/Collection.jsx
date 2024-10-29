@@ -26,12 +26,14 @@ const Collection = () => {
   return (
     <>
       <div className="sm:mx-[30px] ">
+        {/* Header */}
         <center>
           <h1 className="font-extrabold text-black text-[30px] my-[30px] font-ubuntu ">
             Our Featured Collection
           </h1>
         </center>
 
+        {/* Product Cards */}
         <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] ">
           {product.map((value, index) => {
             return (
@@ -66,6 +68,7 @@ const Collection = () => {
                     </span>
                   </div>
 
+                  {/* Add to cart button */}
                   <button className="buttonTest rounded-lg">
                     <div class="default-btn sm:px-[30px] px-[20px] flex items-center gap-2">
                       <svg
@@ -98,6 +101,8 @@ const Collection = () => {
             );
           })}
         </div>
+
+        {/* Browse all product button */}
         <br />
         <center>
           <button

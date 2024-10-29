@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
-import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import About from "../components/About";
 import Contact from "../components/Contact";
 import Home from "../components/Home";
-import Discount from "../components/features/Discount";
-import AdminPanel from "../components/features/admin/AdminPanel";
-import About from "../components/About";
-import Collection from "../components/features/Collection";
-import Hero from "../components/features/Hero";
-import Footer from "../components/features/Footer";
-import BestSelling from "../components/features/BestSelling";
-import Blog from "../components/features/Blog";
 import Product from "../components/Product";
-import UpdateProduct from "../components/features/admin/UpdateProduct";
-import Products from "../components/features/admin/Products";
-import AddProducts from "../components/features/admin/AddProducts";
-import LogIn from "../components/features/admin/LogIn";
+import Discount from "../components/features/Discount";
+import Footer from "../components/features/Footer";
+import Hero from "../components/features/Hero";
 import NavBar from "../components/features/Navbar";
 import Search from "../components/features/Search";
+import AddProducts from "../components/features/admin/AddProducts";
+import AdminPanel from "../components/features/admin/AdminPanel";
+import LogIn from "../components/features/admin/LogIn";
+import Products from "../components/features/admin/Products";
+import UpdateProduct from "../components/features/admin/UpdateProduct";
+import { Route, Routes } from "react-router-dom";
 
 const MyRoutes = () => {
   const navigate = useNavigate();

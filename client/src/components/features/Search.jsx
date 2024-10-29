@@ -26,10 +26,14 @@ const Search = () => {
   return (
     <div className="">
       <NavBar />
+      {/* Header */}
       <p className="pl-[40px] p-[20px] text-[20px] font-semibold">
         Search result for{" "}
+        {/* User's Input */}
         <span className="text-blue-500">{query.get("product")}</span>
       </p>
+
+      {/*Searched Product List */}
       <div className="flex  justify-start  flex-wrap md:mx-[45px] mx-[10px] md:gap-[10px] gap-[10px] pb-[20px]">
         {search.map((value, index) => {
           return (
@@ -59,7 +63,7 @@ const Search = () => {
                     </p>
                   </span>
                 </div>
-
+              {/* Add to cart button */}
                 <button className="buttonTest rounded-lg">
                   <div class="default-btn sm:px-[30px] px-[20px] flex items-center gap-2">
                     <svg

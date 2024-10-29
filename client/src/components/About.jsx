@@ -13,10 +13,12 @@ const About = () => {
         <div className="flex justify-between md:flex-row flex-col flex-wrap">
           <div className="bg-slate-500 flex sm:h-[300px] md:w-[600px] self-center "></div>
           <span className="md:w-[550px] md:h-[400px] ">
+          {/* Header */}
             <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0 font-ubuntu py-[10px]">
               ABOUT NBU BAGS
             </h1>
 
+          {/* Store Paragraph */}
             <p className="py-[10px] sm:font-medium font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -38,9 +40,12 @@ const About = () => {
             </p>
           </span>
         </div>
+        {/* Header */}
         <h1 className="text-center p-[30px] font-bold text-[30px] font-ubuntu">
           Why NBU BAGS ?
         </h1>
+
+        {/* Features card */}
         <div className="flex justify-between pb-[30px] flex-wrap gap-[20px]  md:gap-0">
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px] ">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">

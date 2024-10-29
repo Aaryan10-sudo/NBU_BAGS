@@ -17,9 +17,12 @@ const Product = () => {
   }, []);
   return (
     <div className="pb-[20px]">
+      {/* Header */}
       <h1 className="font-bold text-center text-[25px] my-[20px] font-ubuntu">
         Discover Your Next Favorite{" "}
       </h1>
+
+      {/* Product card */}
       <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] ">
         {product.map((value, index) => {
           return (

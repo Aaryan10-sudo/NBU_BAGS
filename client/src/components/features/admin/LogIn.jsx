@@ -43,13 +43,18 @@ const LogIn = () => {
       <div className="w-[350px] h-[400px] bg-slate-400 rounded-sm shadow-2xl shadow-black">
         <ToastContainer />
 
+        {/* Logo section */}
         <div className="h-[60px] my-[10px] py-[10px]  flex flex-col justify-center items-center">
           <img src="logo.png" className="h-[50px]" />
           <h1 className="pb-[10px] font-extrabold text-white">NBU BAGS</h1>
         </div>
+
+        {/* Header */}
         <h1 className="mx-[20px] text-[20px] font-bold">Log In</h1>
         <p className="mx-[20px]">Log In to continue access</p>
         <br />
+
+        {/* Log-in form */}
         <form onSubmit={handleSubmit} className="flex flex-col mx-[20px]">
           <label htmlFor="">Username:</label>
           <input
@@ -74,6 +79,8 @@ const LogIn = () => {
             placeholder="Password"
           />
           <br />
+
+          {/* Submit button */}
           <button
             type="submit"
             className="flex items-center justify-center text-white font-bold  bg-slate-600 h-[40px]"

@@ -9,7 +9,6 @@ import Blog from "./features/Blog";
 const Home = () => {
   return (
     <div className="mx-[0px]">
-      {/* <Navbar /> */}
       <Collection />
       <BestSelling />
       <Blog />

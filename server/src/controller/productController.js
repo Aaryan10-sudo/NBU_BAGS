@@ -123,6 +123,7 @@ export const searchProduct = async (req, res, next) => {
           { brand: { $regex: item, $options: "i" } },
           { category: { $regex: item, $options: "i" } },
           { productName: { $regex: item, $options: "i" } },
+          { productDescription: { $regex: item, $options: "i" } },
         ],
       },
     };
@@ -130,7 +131,7 @@ export const searchProduct = async (req, res, next) => {
     let result = await Product.aggregate(pipeline);
     res.status(200).json({
       success: true,
-      message: "Search Bar Results",
+      message: "Search Results",
       data: result,
     });
   } catch (error) {

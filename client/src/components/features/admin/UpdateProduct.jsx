@@ -97,34 +97,44 @@ const UpdateProduct = () => {
         <div className="flex flex-col w-full">
           <NavBarAd />
           <div className="overflow-auto h-screen">
+            {/* Form section */}
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col sm:flex-row  justify-center items-center gap-[50px] my-[50px]">
+                {/* Add image using react-dropzone */}
                 <div {...getRootProps()} style={{ width: "300px" }}>
                   <label className="flex justify-center">
                     Product Image :{" "}
                   </label>
                   <input {...getInputProps()} />
+                  {/* Allows user to drag and drop pictures */}
                   {isDragActive ? (
                     <span className="flex justify-center items-center cursor-pointer">
                       <p>Drop the files here ...</p>
                     </span>
                   ) : (
-                    <div className="flex justify-center sm:my-[10px]">
-                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
-                        {image ? (
-                          <img
-                            src={image}
-                            alt="Product"
-                            className="h-full w-full object-cover"
-                          />
-                        ) : (
-                          <p className="text-[40px] text-white">+</p>
-                        )}
-                      </span>
-                    </div>
+                    {
+                      /* Allows user to upload picture from device */
+                    }(
+                      <div className="flex justify-center sm:my-[10px]">
+                        <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                          {image ? (
+                            <img
+                              src={image}
+                              alt="Product"
+                              className="h-full w-full object-cover"
+                            />
+                          ) : (
+                            <p className="text-[40px] text-white">+</p>
+                          )}
+                        </span>
+                      </div>
+                    )
                   )}
                 </div>
+
+                {/* Product Details */}
                 <div className="">
+                  {/* Product Name */}
                   <div className="pb-[20px]">
                     <label>Product Name :</label>
                     <br />
@@ -139,6 +149,7 @@ const UpdateProduct = () => {
                     ></input>
                   </div>
 
+                  {/* Category */}
                   <div className="pb-[20px]">
                     <label>Category</label>
                     <br />
@@ -153,6 +164,7 @@ const UpdateProduct = () => {
                     ></input>
                   </div>
 
+                  {/* Price */}
                   <div className="pb-[20px]">
                     <label>Price :</label>
                     <br />
@@ -167,6 +179,7 @@ const UpdateProduct = () => {
                     ></input>
                   </div>
 
+                  {/* Product Description */}
                   <div className="pb-[20px]">
                     <label>Product Description</label>
                     <br />
@@ -181,6 +194,7 @@ const UpdateProduct = () => {
                     ></input>
                   </div>
 
+                  {/* Brand */}
                   <div className="pb-[0px]">
                     <label>Brand</label>
                     <br />
@@ -197,6 +211,7 @@ const UpdateProduct = () => {
                 </div>
               </div>
 
+              {/* Submit button */}
               <div className="flex justify-center items-center ">
                 <button
                   type="submit"

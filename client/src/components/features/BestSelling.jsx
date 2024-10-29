@@ -16,6 +16,7 @@ const BestSelling = () => {
       </h1>
       <br />
       <div className="md:h-[300px]">
+        {/* Swiper package */}
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -29,6 +30,7 @@ const BestSelling = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper bg-gray-300"
         >
+          {/* Product 1 */}
           <SwiperSlide>
             <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col">
               <img src="bestselling1.png" className="sm:h-[250px]" />
@@ -55,6 +57,8 @@ const BestSelling = () => {
               </div>
             </div>
           </SwiperSlide>
+
+          {/* Product 2 */}
           <SwiperSlide>
             <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">
               <img src="banner3.png" className="sm:h-[250px]" />
