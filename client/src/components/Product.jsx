@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { hitApi } from "../services/HitApi";
 
 const Product = () => {
   let [product, setProduct] = useState([]);
   const getAllProduct = async () => {
     try {
-      let result = await axios({
-        url: "https://nbu-bags.onrender.com/product/readall",
+      let result = await hitApi({
+        url: "/product/readall",
         method: "GET",
       });
       setProduct(result?.data?.data);
