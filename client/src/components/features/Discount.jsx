@@ -1,10 +1,10 @@
-import axios from "axios";
-import { GiSchoolBag } from "react-icons/gi";
 import React, { useState } from "react";
+import { GiSchoolBag } from "react-icons/gi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import NavBar from "./Navbar";
+import { hitApi } from "../../services/HitApi";
 import Footer from "./Footer";
+import NavBar from "./Navbar";
 
 const Discount = () => {
   let [token, setToken] = useState("");
@@ -12,9 +12,9 @@ const Discount = () => {
 
   const handleDelete = async (id) => {
     try {
-      let result = await axios({
+      let result = await hitApi({
         method: "DELETE",
-        url: `http://localhost:5555/token/delete/${id}`,
+        url: `/token/delete/${id}`,
       });
       console.log(result);
     } catch (error) {}
@@ -26,9 +26,9 @@ const Discount = () => {
       token: token,
     };
     try {
-      let result = await axios({
+      let result = await hitApi({
         method: "POST",
-        url: "http://localhost:5555/token/validate",
+        url: "/token/validate",
         data: data,
       });
       console.log(result);
