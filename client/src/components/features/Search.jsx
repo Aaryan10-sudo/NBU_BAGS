@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import NavBar from "./Navbar";
 import axios from "axios";
 import Footer from "./Footer";
+import { hitApi } from "../../services/HitApi";
 
 const Search = () => {
   const [query] = useSearchParams();
@@ -11,8 +12,8 @@ const Search = () => {
 
   const searchItem = async () => {
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/product/search?item=${product}`,
+      let result = await hitApi({
+        url: `/product/search?item=${product}`,
         method: "GET",
       });
       setSearch(result.data.data);

@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./Navbar";
 
 const Hero = () => {
   return (
