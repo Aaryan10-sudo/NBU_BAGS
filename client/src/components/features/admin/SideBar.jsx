@@ -1,8 +1,7 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
-  let navigate = useNavigate();
   return (
     <div className="bg-blue-900 sm:w-[220px] w-[200px] h-[110vh]">
       <ul className="text-[white] flex flex-col gap-[40px] text-[15px] text-center pt-[10px] cursor-pointer">
