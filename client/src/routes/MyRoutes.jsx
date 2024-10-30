@@ -14,10 +14,10 @@ import LogIn from "../components/features/admin/LogIn";
 import Products from "../components/features/admin/Products";
 import UpdateProduct from "../components/features/admin/UpdateProduct";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import MobileNavbar from "../components/features/admin/MobileNavbar";
 
 const MyRoutes = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     // Check if the token exists in localStorage
     const token = localStorage.getItem("token");
@@ -68,6 +68,7 @@ const MyRoutes = () => {
           path="admin/add-product"
           element={localStorage.getItem("token") ? <AddProducts /> : <LogIn />}
         ></Route>
+        <Route path="/test" element={<MobileNavbar />}></Route>
       </Routes>
     </div>
   );

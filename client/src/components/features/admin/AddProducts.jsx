@@ -8,6 +8,7 @@ import { useDropzone } from "react-dropzone";
 import { TbLoaderQuarter, TbRulerMeasure } from "react-icons/tb";
 import { BiLoaderAlt } from "react-icons/bi";
 import { hitApi } from "../../../services/HitApi";
+import MobileNavbar from "./MobileNavbar";
 
 const AddProducts = () => {
   let [productName, setProductName] = useState("");
@@ -18,6 +19,7 @@ const AddProducts = () => {
   let [image, setImage] = useState(null);
 
   let [loader, setLoader] = useState(true);
+  let [loaders, setLoaders] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,7 +69,7 @@ const AddProducts = () => {
   return (
     <>
       <ToastContainer />
-      <div className="flex ">
+      <div className="flex sm:p-0 pb-[50px]">
         {/* Sidebar */}
         <SideBar />
 
@@ -196,6 +198,7 @@ const AddProducts = () => {
           </div>
         </div>
       </div>
+      <MobileNavbar />
     </>
   );
 };

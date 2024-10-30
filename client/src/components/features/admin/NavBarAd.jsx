@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const NavBarAd = () => {
   let navigate = useNavigate();
   return (
-    <div className="h-[50px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between">
+    <div className="h-[60px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between  sticky z-50 top-0 bg-white">
       <div className="flex items-center text-black cursor-pointer">
         <img src="/logo.png" className="h-[50px]" />
         <p>NBU Bags</p>

@@ -5,17 +5,21 @@ import Swal from "sweetalert2";
 import SideBar from "./SideBar";
 import NavBarAd from "./NavBarAd";
 import { hitApi } from "../../../services/HitApi";
+import MobileNavbar from "./MobileNavbar";
 
 const Products = () => {
   let [product, setProduct] = useState([]);
+  let [loader, setLoader] = useState(false);
   let navigate = useNavigate();
   const getAllProduct = async () => {
+    setLoader(true);
     try {
       let result = await hitApi({
         url: "/product/readall",
         method: "GET",
       });
       setProduct(result?.data?.data);
+      setLoader(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -60,67 +64,87 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex ">
-        {/* Sidebar */}
-        <SideBar />
+      {loader ? (
+        <div className="flex justify-center items-center h-screen bg-gray-300">
+          <div class="loader"></div>
+        </div>
+      ) : (
+        <div className="flex ">
+          {/* Sidebar */}
+          <SideBar />
 
-        {/* Main Content: NavBar + Dashboard */}
-        <div className="flex flex-col w-full">
-          <NavBarAd />
-          <div className="overflow-auto h-screen">
-            <div>
-              <h1 className="text-center font-extrabold text-[30px] sm:my-[20px] my-[10px] ">
-                Products
-              </h1>
+          {/* Main Content: NavBar + Dashboard */}
+          <div className="flex flex-col w-full">
+            <NavBarAd />
+            <div className="overflow-auto h-screen">
               <div>
-                <div className="mx-[10px] flex flex-wrap gap-[20px] sm:mx-[50px] sm:gap-[50px] justify-center">
-                  {product.map((value, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className="sm:w-[270px] w-full  h-[470px] border-2 border-black"
-                      >
-                        <div className="h-[300px] object-cover object-center">
-                          <img src={value.image} className="h-[300px] w-full" />
-                        </div>
-                        <h1 className="px-[10px] text-[19px] font-bold">
-                          {value.productName}
-                        </h1>
+                <h1 className="text-center font-extrabold text-[30px] sm:my-[20px] my-[10px] ">
+                  Products
+                </h1>
+                <div>
+                  <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] sm:pb-[20px] pb-[100px] ">
+                    {product.map((value, index) => {
+                      return (
+                        <div
+                          class="w-[190px] h-[400px] md:w-60 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+                          key={index}
+                        >
+                          <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[600px] rounded-lg ">
+                            <img
+                              src={value.image}
+                              className="rounded-lg"
+                              alt="BagImage"
+                            />
+                          </div>
+                          <div class="flex flex-col gap-[10px] w-full">
+                            <div class="flex flex-col justify-center items-center w-full">
+                              <div class="w-full flex justify-center">
+                                <span class="text-xl font-montserrat font-extrabold text-center">
+                                  {value.productName}
+                                </span>
+                              </div>
+                              <p class="text-xs text-gray-700 py-[5px] text-center flex items-center justify-center">
+                                {value.productDescription}
+                              </p>
+                              <span class="flex text-black font-ubuntu gap-[20px]">
+                                <p className="text-[12px] flex items-center text-black">
+                                  {value.category}
+                                </p>
+                                <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600">
+                                  रु. {value.price}
+                                </p>
+                              </span>
+                            </div>
 
-                        <p className="mx-[10px] bg-slate-400 w-[100px] px-[5px] ">
-                          {value.category}
-                        </p>
-                        <p className="mx-[10px] mt-[10px]">
-                          {value.productDescription}
-                        </p>
-                        <p className="mx-[10px] bg-blue-600 h-[30px] text-center flex items-center justify-center text-white">
-                          Rs. {value.price}
-                        </p>
-                        <div className="flex justify-center gap-5 my-[15px]">
-                          <button
-                            onClick={handleEdit(value._id)}
-                            className="border border-black w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
-                          >
-                            Edit
-                          </button>
-                          <button
-                            onClick={() => {
-                              sweetalert2(value._id);
-                            }}
-                            className="bg-red-700 text-white w-[80px] hover:scale-105 transform transition-all ease-linear duration-100"
-                          >
-                            Delete
-                          </button>
+                            {/* Add to cart button */}
+                            <div className="flex justify-center gap-[20px] text-white font-bold">
+                              <button
+                                className="w-[230px] h-[0p3x] flex justify-center items-center bg-[#32609e]"
+                                onClick={handleEdit(value._id)}
+                              >
+                                Update
+                              </button>
+                              <button
+                                className="w-[230px] h-[30px] flex justify-center items-center bg-red-600"
+                                onClick={() => {
+                                  sweetalert2(value._id);
+                                }}
+                              >
+                                Delete
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <MobileNavbar />
         </div>
-      </div>
+      )}
     </>
   );
 };

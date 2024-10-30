@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { hitApi } from "../../../services/HitApi";
 import NavBarAd from "./NavBarAd";
 import SideBar from "./SideBar";
+import MobileNavbar from "./MobileNavbar";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -112,23 +113,19 @@ const UpdateProduct = () => {
                       <p>Drop the files here ...</p>
                     </span>
                   ) : (
-                    {
-                      /* Allows user to upload picture from device */
-                    }(
-                      <div className="flex justify-center sm:my-[10px]">
-                        <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
-                          {image ? (
-                            <img
-                              src={image}
-                              alt="Product"
-                              className="h-full w-full object-cover"
-                            />
-                          ) : (
-                            <p className="text-[40px] text-white">+</p>
-                          )}
-                        </span>
-                      </div>
-                    )
+                    <div className="flex justify-center sm:my-[10px]">
+                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt="Product"
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <p className="text-[40px] text-white">+</p>
+                        )}
+                      </span>
+                    </div>
                   )}
                 </div>
 
@@ -227,6 +224,7 @@ const UpdateProduct = () => {
             </form>
           </div>
         </div>
+        <MobileNavbar />
       </div>
     </>
   );

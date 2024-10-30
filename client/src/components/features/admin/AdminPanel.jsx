@@ -4,6 +4,7 @@ import SideBar from "./SideBar";
 import Dashboard from "./Dashboard";
 import Products from "./Products";
 import UpdateProduct from "./UpdateProduct";
+import MobileNavbar from "./MobileNavbar";
 
 const AdminPanel = () => {
   return (
@@ -17,6 +18,7 @@ const AdminPanel = () => {
           <NavBarAd />
           <div className="overflow-auto h-screen">
             <Dashboard />
+            <MobileNavbar />
           </div>
         </div>
       </div>
