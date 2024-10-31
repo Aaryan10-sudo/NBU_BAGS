@@ -63,7 +63,7 @@ const Products = () => {
   }, []);
 
   return (
-    <>
+    <div>
       {loader ? (
         <div className="flex justify-center items-center h-screen bg-gray-300">
           <div class="loader"></div>
@@ -76,7 +76,7 @@ const Products = () => {
           {/* Main Content: NavBar + Dashboard */}
           <div className="flex flex-col w-full">
             <NavBarAd />
-            <div className="overflow-auto h-screen">
+            <div className="overflow-auto h-screen 2xl:px-40">
               <div>
                 <h1 className="text-center font-extrabold text-[30px] sm:my-[20px] my-[10px] ">
                   Products
@@ -145,7 +145,7 @@ const Products = () => {
           <MobileNavbar />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

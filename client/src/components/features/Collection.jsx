@@ -25,10 +25,10 @@ const Collection = () => {
   }, []);
   return (
     <>
-      <div className="sm:mx-[30px] ">
+      <div className="sm:mx-[30px] 2xl:px-40 ">
         {/* Header */}
         <center>
-          <h1 className="font-extrabold text-black text-[30px] my-[30px] font-ubuntu ">
+          <h1 className="font-extrabold text-black text-[30px] my-[30px] font-ubuntu 2xl:text-[40px]">
             Our Featured Collection
           </h1>
         </center>
@@ -117,7 +117,7 @@ const Collection = () => {
       </div>
       <br />
       <br />
-      <div className="sm:mx-[50px] mx-[20px] sm:h-[250px] h-[200px] bg-[url('/banner2.jpg')] bg-cover bg-center shadow-xl"></div>
+      <div className="sm:mx-[50px] 2xl:mx-40 mx-[20px] sm:h-[250px] h-[200px] bg-[url('/banner2.jpg')] bg-cover bg-center shadow-xl"></div>
       <br />
     </>
   );

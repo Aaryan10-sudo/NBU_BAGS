@@ -10,7 +10,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const BestSelling = () => {
   return (
-    <div className="md:mx-[20px] mt-[20px] ">
+    <div className="md:mx-[20px] mt-[20px] 2xl:px-40 2xl:mx-0">
       <h1 className="text-center font-extrabold text-[30px] font-ubuntu">
         Our Top Sellings
       </h1>
@@ -32,7 +32,7 @@ const BestSelling = () => {
         >
           {/* Product 1 */}
           <SwiperSlide>
-            <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col">
+            <div className="md:mx-[50px] mx-[20px] 2xl:mx-0 flex sm:flex-row flex-col">
               <img src="bestselling1.png" className="sm:h-[250px]" />
               <div className="">
                 <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">

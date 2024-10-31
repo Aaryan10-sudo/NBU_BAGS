@@ -5,7 +5,7 @@ import { FaCouch, FaLeaf } from "react-icons/fa6";
 
 const About = () => {
   return (
-    <div>
+    <div className="2xl:px-40">
       <main className="md:mx-[40px] mx-[10px] relative">
         <h1 className="text-center sm:p-[30px] p-[10px] font-bold text-[30px] font-ubuntu">
           About Us
@@ -13,12 +13,12 @@ const About = () => {
         <div className="flex justify-between md:flex-row flex-col flex-wrap">
           <div className="bg-slate-500 flex sm:h-[300px] md:w-[600px] self-center "></div>
           <span className="md:w-[550px] md:h-[400px] ">
-          {/* Header */}
+            {/* Header */}
             <h1 className="font-bold text-[30px] mt-[0px] sm:mt-0 font-ubuntu py-[10px]">
               ABOUT NBU BAGS
             </h1>
 
-          {/* Store Paragraph */}
+            {/* Store Paragraph */}
             <p className="py-[10px] sm:font-medium font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

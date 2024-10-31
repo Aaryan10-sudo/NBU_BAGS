@@ -16,7 +16,7 @@ const Product = () => {
     getAllProduct();
   }, []);
   return (
-    <div className="pb-[20px]">
+    <div className="pb-[20px] 2xl:px-40">
       {/* Header */}
       <h1 className="font-bold text-center text-[25px] my-[20px] font-ubuntu">
         Discover Your Next Favorite{" "}

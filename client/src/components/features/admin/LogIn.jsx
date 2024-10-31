@@ -64,7 +64,7 @@ const LogIn = () => {
               setEmail(e.target.value);
             }}
             placeholder="Username"
-            className="placeholder:mx-[10px] h-[40px]"
+            className="px-[5px] h-[40px] "
           />
 
           <br />
@@ -75,7 +75,7 @@ const LogIn = () => {
             onChange={(e) => {
               setPassword(e.target.value);
             }}
-            className="h-[40px]"
+            className="px-[5px] h-[40px]"
             placeholder="Password"
           />
           <br />

@@ -9,7 +9,7 @@ import { MdOutlineWifiCalling3 } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="2xl:px-40">
       <div className=" w-full bg-gray-300 text-gray-700  md:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
         <div className="main flex items-start justify-center flex-col">
           {/* Header */}

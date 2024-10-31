@@ -35,7 +35,7 @@ const Dashboard = () => {
     totalUser();
   }, []);
   return (
-    <>
+    <div className="2xl:px-40">
       {loader ? (
         <div className="flex justify-center items-center h-screen bg-gray-300">
           <div class="loader"></div>
@@ -71,7 +71,7 @@ const Dashboard = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -36,12 +36,12 @@ const NavBar = () => {
       <ToastContainer />
       {/* Top Header */}
 
-      <header className="bg-[#32609e] flex justify-between items-center px-4 h-[50px] text-white text-[15px]">
+      <header className="bg-[#32609e] flex justify-between items-center px-4 h-[50px] text-white text-[15px] 2xl:px-40">
         <p>Carry your world in style</p>
         <p>Pyukha Marg, Kathmandu</p>
       </header>
       {/* Main Navbar */}
-      <nav className="flex items-center justify-between bg-white shadow-xl h-[55px] sm:h-[55px] sticky top-0 z-50 px-4 md:px-8">
+      <nav className="flex items-center justify-between bg-white shadow-xl h-[55px] sm:h-[55px] sticky top-0 z-50 px-4 md:px-8 2xl:px-40">
         {/* Logo */}
         <div
           className="flex items-center gap-2 cursor-pointer"
