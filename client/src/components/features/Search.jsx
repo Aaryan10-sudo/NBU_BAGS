@@ -34,7 +34,7 @@ const Search = () => {
 
       {/*Searched Product List */}
       <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] ">
-        {product.map((value, index) => {
+        {search.map((value, index) => {
           return (
             <div
               class="w-[190px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
