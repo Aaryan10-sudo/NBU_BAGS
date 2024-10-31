@@ -32,7 +32,10 @@ const MobileNavbar = () => {
         <MdGeneratingTokens />
         <p>Tokens</p>
       </NavLink>
-      <NavLink className="flex flex-col items-center justify-center">
+      <NavLink
+        className="flex flex-col items-center justify-center"
+        to={"/admin/password"}
+      >
         <IoSettingsSharp />
         <p>Settings</p>
       </NavLink>

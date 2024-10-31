@@ -26,9 +26,9 @@ const NavBarAd = () => {
             </form>
 
             <MdLogout
-              className="font-bold text-[20px] sm:mt-0 mt-[7px]"
+              className="font-bold text-[20px] sm:mt-0 mt-[7px] cursor-pointer"
               onClick={() => {
-                navigate("/");
+                navigate("/log-in");
                 localStorage.removeItem("token");
               }}
             />

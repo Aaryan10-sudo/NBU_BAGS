@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { WebUser } from "../schema/model.js";
+import { Password, WebUser } from "../schema/model.js";
 import { secretKey } from "../utils/constant.js";
 import { sendMail } from "../utils/sendEmail.js";
 
@@ -42,7 +42,6 @@ export const createWebuser = async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: "User created successfully",
-      data: create,
     });
   } catch (error) {
     res.status(400).json({
@@ -90,7 +89,7 @@ export const login = async (req, res, next) => {
     }
     let verifyPassword = await bcrypt.compare(data.password, result.password);
     if (!verifyPassword) {
-      throw new Error("Invalid Credentials");
+      throw new Error("Invalid credentials");
     }
     let infoObj = {
       id: result._id,
@@ -104,7 +103,6 @@ export const login = async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: "Login Successful",
-      data: result,
       token: token,
     });
   } catch (error) {
@@ -125,5 +123,55 @@ export const totalWebuser = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Error fetching product count", error });
+  }
+};
+
+export const resetPassword = async (req, res, next) => {
+  try {
+    let id = req._id;
+    let oldPassword = req.body.oldPassword;
+    let newPassword = req.body.newPassword;
+
+    let data = await WebUser.findById(id);
+    let hashedPassword = data.password;
+
+    let isValidPassword = await bcrypt.compare(oldPassword, hashedPassword);
+
+    if (!isValidPassword) {
+      throw new Error("Incorrect Password");
+    }
+    let newHashedPassword = await bcrypt.hash(newPassword, 10);
+
+    let result = await WebUser.findByIdAndUpdate(
+      id,
+      { password: newHashedPassword },
+      { new: true }
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Password updated successfully",
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const storePassword = async (req, res, next) => {
+  try {
+    let result = await Password.create(req.body);
+    res.status(200).json({
+      success: true,
+      message: "Password stored successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
   }
 };

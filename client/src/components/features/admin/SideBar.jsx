@@ -32,6 +32,16 @@ const SideBar = () => {
         >
           Add Products
         </NavLink>
+
+        <NavLink
+          to={"/admin/password"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-500" : "hover:text-blue-500 text-white"
+          }
+        >
+          Change Password
+        </NavLink>
+
         <NavLink
           to={"/"}
           onClick={() => {

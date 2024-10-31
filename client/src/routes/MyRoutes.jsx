@@ -15,14 +15,19 @@ import Products from "../components/features/admin/Products";
 import UpdateProduct from "../components/features/admin/UpdateProduct";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import MobileNavbar from "../components/features/admin/MobileNavbar";
+import Password from "../components/features/admin/Password";
+
+const AdminLayout = ({ children }) => {
+  const token = localStorage.getItem("token");
+  return token ? children : <LogIn />;
+};
 
 const MyRoutes = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
-    // Check if the token exists in localStorage
     const token = localStorage.getItem("token");
     if (token) {
-      // Navigate to the admin dashboard if token exists
       navigate("/admin/dashboard");
     }
   }, []);
@@ -30,6 +35,7 @@ const MyRoutes = () => {
   return (
     <div>
       <Routes>
+        {/* Main site routes */}
         <Route
           path="/"
           element={
@@ -41,34 +47,32 @@ const MyRoutes = () => {
             </div>
           }
         >
-          <Route index element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="contact" element={<Contact />}></Route>
-          <Route path="product" element={<Product />}></Route>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="product" element={<Product />} />
         </Route>
-        <Route path="/log-in" element={<LogIn />}></Route>
-        <Route path="/offers" element={<Discount />}></Route>
-        <Route path="/search" element={<Search />}></Route>
 
+        <Route path="/log-in" element={<LogIn />} />
+        <Route path="/offers" element={<Discount />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/test" element={<MobileNavbar />} />
+
+        {/* Admin panel routes */}
         <Route
-          path="/admin/dashboard"
-          element={localStorage.getItem("token") ? <AdminPanel /> : <LogIn />}
-        ></Route>
-        <Route
-          path="admin/update/:id"
+          path="/admin"
           element={
-            localStorage.getItem("token") ? <UpdateProduct /> : <LogIn />
+            <AdminLayout>
+              <Outlet />
+            </AdminLayout>
           }
-        ></Route>
-        <Route
-          path="admin/product"
-          element={localStorage.getItem("token") ? <Products /> : <LogIn />}
-        ></Route>
-        <Route
-          path="admin/add-product"
-          element={localStorage.getItem("token") ? <AddProducts /> : <LogIn />}
-        ></Route>
-        <Route path="/test" element={<MobileNavbar />}></Route>
+        >
+          <Route path="dashboard" element={<AdminPanel />} />
+          <Route path="password" element={<Password />} />
+          <Route path="update/:id" element={<UpdateProduct />} />
+          <Route path="product" element={<Products />} />
+          <Route path="add-product" element={<AddProducts />} />
+        </Route>
       </Routes>
     </div>
   );
