@@ -61,7 +61,7 @@ const Dashboard = () => {
             Dashboard
           </h1>
           <div className="flex md:justify-between justify-center  md:flex-nowrap flex-wrap text-center text-white items-center sm:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
-            <div className="bg-[#8a2edf] h-[190px] sm:w-[210px] w-[190px]">
+            <div className="bg-[#8a2edf] h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-xl ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
               </p>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                 Rs. 0
               </p>
             </div>
-            <div className="bg-green-600 h-[190px] sm:w-[210px] w-[190px]">
+            <div className="bg-green-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-xl ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Products
               </p>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                 {productCount}
               </p>
             </div>
-            <div className="bg-blue-600 h-[190px] sm:w-[210px] w-[190px] ">
+            <div className="bg-blue-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-xl  ">
               {" "}
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Users
@@ -87,7 +87,7 @@ const Dashboard = () => {
               <br />
               <p className="font-extrabold text-[30px]">{webuserCount}</p>
             </div>
-            <div className="bg-red-600 h-[190px] sm:w-[210px] w-[190px]">
+            <div className="bg-red-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-xl ">
               {" "}
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Profit
@@ -107,7 +107,7 @@ const Dashboard = () => {
               {activity?.map((value, index) => {
                 return (
                   <div
-                    className={`p-4 rounded-md ${
+                    className={`p-4 rounded-xl  ${
                       value.Activity.startsWith("Created")
                         ? "shadow-sm bg-green-600 border border-green-500"
                         : value.Activity.startsWith("Updated")
