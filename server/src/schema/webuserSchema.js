@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-let webuserSchema = new mongoose.Schema({
+export const webuserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, "Please provide a username"],
@@ -21,5 +21,3 @@ let webuserSchema = new mongoose.Schema({
     type: Boolean,
   },
 });
-
-export default webuserSchema;

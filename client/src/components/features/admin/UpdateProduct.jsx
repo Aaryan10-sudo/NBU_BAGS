@@ -42,6 +42,22 @@ const UpdateProduct = () => {
     getData();
   }, []);
 
+  const activity = async (product) => {
+    const data = {
+      Activity: `Updated ${product} at ${new Date().toLocaleString()}`,
+    };
+    try {
+      let result = await hitApi({
+        url: "/activity/create",
+        method: "POST",
+        data: data,
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(false);
@@ -69,6 +85,7 @@ const UpdateProduct = () => {
       setImage("");
 
       navigate(`/admin/product`);
+      activity(productName);
     } catch (error) {}
   };
 

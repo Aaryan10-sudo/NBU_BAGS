@@ -11,6 +11,22 @@ const Password = () => {
   let [newPassword, setNewPassword] = useState("");
   let navigate = useNavigate();
 
+  const activity = async () => {
+    const data = {
+      Activity: `Updated password at ${new Date().toLocaleString()}`,
+    };
+    try {
+      let result = await hitApi({
+        url: "/activity/create",
+        method: "POST",
+        data: data,
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   const storePassword = async (password) => {
     const data = {
       password: password,
@@ -46,6 +62,7 @@ const Password = () => {
       setNewPassword("");
       storePassword(newPassword);
       toast.success(`Password updated successfully`);
+      activity();
     } catch (error) {
       toast.error(error.response.data.message);
     }

@@ -24,12 +24,30 @@ const Products = () => {
       console.log(error.message);
     }
   };
+
+  const activity = async (product) => {
+    const data = {
+      Activity: `Deleted ${product} at ${new Date().toLocaleString()}`,
+    };
+    try {
+      let result = await hitApi({
+        url: "/activity/create",
+        method: "POST",
+        data: data,
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   const handleDelete = async (id) => {
     try {
       let result = await axios({
         url: `https://nbu-bags.onrender.com/product/delete/${id}`,
         method: "DELETE",
       });
+      activity(result.data.data.productName);
       getAllProduct();
     } catch (error) {}
   };

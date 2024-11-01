@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-let productSchema = new mongoose.Schema({
+export const productSchema = new mongoose.Schema({
   productName: {
     type: String,
     required: [true, "Product name is required"],
@@ -25,5 +25,3 @@ let productSchema = new mongoose.Schema({
     required: [true, "Brand is required"],
   },
 });
-
-export default productSchema;

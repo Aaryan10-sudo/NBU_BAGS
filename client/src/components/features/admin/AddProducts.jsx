@@ -21,6 +21,22 @@ const AddProducts = () => {
   let [loader, setLoader] = useState(true);
   let [loaders, setLoaders] = useState(false);
 
+  const activity = async (product) => {
+    const data = {
+      Activity: `Created ${product} at ${new Date().toLocaleString()}`,
+    };
+    try {
+      let result = await hitApi({
+        url: "/activity/create",
+        method: "POST",
+        data: data,
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(false);
@@ -45,6 +61,7 @@ const AddProducts = () => {
       setProductDescription("");
       setBrand("");
       setImage("");
+      activity(productName);
       toast.success(result.data.message);
     } catch (error) {}
   };
