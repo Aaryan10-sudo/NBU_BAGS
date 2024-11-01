@@ -7,14 +7,14 @@ const NavBarAd = () => {
   let navigate = useNavigate();
   return (
     <div className="h-[60px] shadow-lg w-[100%] sm:px-[30px] px-[10px] flex items-center justify-between  sticky z-50 top-0 bg-white">
-      <div className="flex items-center text-black cursor-pointer">
+      <div className="flex items-center text-black cursor-pointer gap-1">
         <img src="/logo.png" className="h-[50px]" />
-        <p>NBU Bags</p>
+        <p className="font-bold ">NBU BAGS</p>
       </div>
       <div>
         <ul className="inline-flex">
           <div className="flex gap-[25px] items-center">
-            <form className="bg-[#ede9dd] sm:flex p-[5px] rounded-xl w-[150px] sm:w-[200px] hidden">
+            <form className="bg-[#ede9dd] sm:flex p-[5px] rounded-xl w-[200px] sm:w-[200px] flex items-center justify-between">
               <input
                 type="text"
                 placeholder="Search..."
@@ -26,7 +26,7 @@ const NavBarAd = () => {
             </form>
 
             <MdLogout
-              className="font-bold text-[20px] sm:mt-0 mt-[7px] cursor-pointer"
+              className="font-bold text-[20px] sm:mt-0  cursor-pointer"
               onClick={() => {
                 navigate("/log-in");
                 localStorage.removeItem("token");

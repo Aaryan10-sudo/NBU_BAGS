@@ -114,7 +114,7 @@ const UpdateProduct = () => {
 
         <div className="flex flex-col w-full">
           <NavBarAd />
-          <div className="overflow-auto h-screen">
+          <div className=" h-screen">
             {/* Form section */}
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col sm:flex-row  justify-center items-center gap-[50px] my-[50px]">

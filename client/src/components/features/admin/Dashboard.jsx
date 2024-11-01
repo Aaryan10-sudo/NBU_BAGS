@@ -50,18 +50,18 @@ const Dashboard = () => {
     getActivity();
   }, []);
   return (
-    <div className="2xl:px-40 px-10">
+    <div className="2xl:px-40 sm:px-10">
       {loader ? (
         <div className="flex justify-center items-center h-screen bg-gray-300">
           <div class="loader"></div>
         </div>
       ) : (
         <div>
-          <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px]">
+          <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px] flex items-center justify-center">
             Dashboard
           </h1>
           <div className="flex md:justify-between justify-center  md:flex-nowrap flex-wrap text-center text-white items-center sm:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
-            <div className="bg-[#8a2edf] h-[180px] sm:w-[210px] w-[180px]">
+            <div className="bg-[#8a2edf] h-[190px] sm:w-[210px] w-[190px]">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
               </p>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                 Rs. 0
               </p>
             </div>
-            <div className="bg-green-500 h-[180px] sm:w-[210px] w-[180px]">
+            <div className="bg-green-600 h-[190px] sm:w-[210px] w-[190px]">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Products
               </p>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                 {productCount}
               </p>
             </div>
-            <div className="bg-blue-500 h-[180px] sm:w-[210px] w-[180px] ">
+            <div className="bg-blue-600 h-[190px] sm:w-[210px] w-[190px] ">
               {" "}
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Users
@@ -87,7 +87,7 @@ const Dashboard = () => {
               <br />
               <p className="font-extrabold text-[30px]">{webuserCount}</p>
             </div>
-            <div className="bg-red-500 h-[180px] sm:w-[210px] w-[180px]">
+            <div className="bg-red-600 h-[190px] sm:w-[210px] w-[190px]">
               {" "}
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Profit
@@ -99,7 +99,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="sm:mx-[30px]">
+          <div className="sm:mx-[30px] mx-[10px] pb-[70px] ">
             <h1 className="font-extrabold text-[30px] py-[20px]">
               Admin Activity
             </h1>
@@ -109,11 +109,11 @@ const Dashboard = () => {
                   <div
                     className={`p-4 rounded-md ${
                       value.Activity.startsWith("Created")
-                        ? "shadow-sm bg-green-500 border border-green-500"
+                        ? "shadow-sm bg-green-600 border border-green-500"
                         : value.Activity.startsWith("Updated")
-                        ? "shadow-sm bg-blue-500 border border-blue-500"
+                        ? "shadow-sm bg-blue-600 border border-blue-500"
                         : value.Activity.startsWith("Deleted")
-                        ? "shadow bg-red-500 border-2 border-red-500"
+                        ? "shadow bg-red-600 "
                         : ""
                     }`}
                     key={index}

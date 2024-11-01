@@ -18,10 +18,10 @@ const AdminPanel = () => {
           <NavBarAd />
           <div className="overflow-auto h-screen">
             <Dashboard />
-            <MobileNavbar />
           </div>
         </div>
       </div>
+      <MobileNavbar />
     </>
   );
 };

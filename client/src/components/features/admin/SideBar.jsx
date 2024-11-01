@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <div className="bg-blue-900 sm:w-[220px] w-[200px] h-[110vh] sm:block hidden">
+    <div className="bg-blue-900 sm:w-[220px] w-[200px] h-[110vh] sm:block hidden top-0">
       <ul className="text-[white] flex flex-col gap-[40px] text-[15px] text-center pt-[10px] cursor-pointer">
-        <li className="border border-transparent border-b-white h-[50px] font-extrabold cursor-default relative">
+        <li className="border border-transparent border-b-white h-[50px] font-extrabold cursor-default relative flex items-center justify-center">
           Admin Panel
         </li>
         <NavLink

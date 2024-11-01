@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const MobileNavbar = () => {
   return (
-    <div className="bg-white h-[60px] w-full flex justify-between items-center px-[20px] fixed bottom-0 sm:hidden">
+    <div className="bg-white h-[60px] w-full flex justify-between items-center px-[20px] fixed bottom-0 sm:hidden shadow-lg">
       <NavLink
         className="flex flex-col items-center justify-center"
         to={"/admin/dashboard"}
