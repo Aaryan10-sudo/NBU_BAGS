@@ -69,10 +69,9 @@ const AddProducts = () => {
     let fileData = acceptedFiles[0];
     let data = new FormData();
     data.append("document", fileData);
-
     try {
-      let result = await axios({
-        url: `https://nbu-bags.onrender.com/file/single`,
+      let result = await hitApi({
+        url: `/file/single`,
         method: "POST",
         data: data,
       });

@@ -1,40 +1,37 @@
 import multer from "multer";
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import dotenv from "dotenv";
 import path from "path";
 
-let limits = {
-  fileSize: 1024 * 1024 * 2, //2MB
-};
+dotenv.config();
 
-let storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    let staticFolder = "./public";
-    cb(null, staticFolder);
-  },
-  filename: (req, file, cb) => {
-    let fileName = Date.now() + "-" + file.originalname;
-    cb(null, fileName);
+// Cloudinary configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// Set up Cloudinary storage
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "uploads", // folder name in Cloudinary
+    public_id: (req, file) => Date.now() + "-" + file.originalname,
   },
 });
 
-let fileFilter = (req, file, cb) => {
-  let validExtension = [".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG"];
+// Define accepted file extensions
+const fileFilter = (req, file, cb) => {
+  const allowedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+  const fileExtension = path.extname(file.originalname).toLowerCase();
 
-  let originalName = file.originalname;
-
-  let originalExtension = path.extname(originalName);
-
-  let isValidExtension = validExtension.includes(originalExtension);
-
-  if (isValidExtension) {
+  if (allowedExtensions.includes(fileExtension)) {
     cb(null, true);
   } else {
     cb(new Error("Unsupported file format"));
   }
 };
 
-export const upload = multer({
-  limits: limits,
-
-  storage: storage,
-  fileFilter: fileFilter,
-});
+export const upload = multer({ storage: storage, fileFilter: fileFilter });

@@ -83,7 +83,6 @@ const UpdateProduct = () => {
       setProductDescription("");
       setBrand("");
       setImage("");
-
       navigate(`/admin/product`);
       activity(productName);
     } catch (error) {}

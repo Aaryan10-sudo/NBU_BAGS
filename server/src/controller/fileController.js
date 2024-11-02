@@ -1,9 +1,9 @@
 export const handleSingleFileController = async (req, res, next) => {
   try {
-    let link = `https://nbu-bags.onrender.com/${req.file.filename}`;
+    let link = req.file.path;
     res.status(200).json({
       success: true,
-      message: "File Uploaded Successfully",
+      message: "File uploads successfully",
       result: link,
     });
   } catch (error) {
@@ -16,13 +16,12 @@ export const handleSingleFileController = async (req, res, next) => {
 
 export const handleMultipleFileController = async (req, res, next) => {
   try {
-    let link = req.files.map((value, index) => {
-      return `https://nbu-bags.onrender.com/${value.filename}`;
-    });
+    // Map through the files and get each file's Cloudinary URL
+    let links = req.files.map((file) => file.path);
     res.status(200).json({
       success: true,
-      message: "Files Uploaded Successfully",
-      result: link,
+      message: "Files uploaded successfully",
+      result: links,
     });
   } catch (error) {
     res.status(400).json({
