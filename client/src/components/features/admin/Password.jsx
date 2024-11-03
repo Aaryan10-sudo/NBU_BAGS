@@ -69,7 +69,7 @@ const Password = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex ">
       <ToastContainer />
       <SideBar />
       <div className="w-full">
