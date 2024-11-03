@@ -1,9 +1,9 @@
 import React from "react";
-import WhattsApp from "../ui/whattsApp";
 import Phone from "../ui/Phone";
 import Facebook from "../ui/Facebook";
 import Instagram from "../ui/Instagram";
 import Tiktok from "../ui/Tiktok";
+import WhatsApp from "../ui/WhatsApp";
 
 const Contact = () => {
   return (
@@ -23,7 +23,7 @@ const Contact = () => {
               rel="noopener noreferrer"
             >
               <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
-                <WhattsApp className="pr-2 h-5 w-auto" />
+                <WhatsApp className="pr-2 h-5 w-auto" />
                 Via WhatsApp
               </button>
             </a>

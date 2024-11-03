@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhattsApp = () => {
+const WhatsApp = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -46,4 +46,4 @@ const WhattsApp = () => {
   );
 };
 
-export default WhattsApp;
+export default WhatsApp;
