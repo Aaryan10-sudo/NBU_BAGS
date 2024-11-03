@@ -1,9 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { BiLoaderAlt } from "react-icons/bi";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { hitApi } from "../../../services/HitApi";
+import Loader from "../../ui/Loader";
 
 const LogIn = () => {
   let [email, setEmail] = useState("");
@@ -88,7 +87,7 @@ const LogIn = () => {
             {loader ? (
               "Submit"
             ) : (
-              <BiLoaderAlt className="text-[20px] animate-spin text-white" />
+              <Loader className="text-[20px] animate-spin text-white" />
             )}
           </button>
         </form>

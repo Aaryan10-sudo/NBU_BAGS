@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  FaFacebookSquare,
-  FaInstagram,
-  FaTiktok,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { MdOutlineWifiCalling3 } from "react-icons/md";
+import WhattsApp from "../ui/whattsApp";
+import Phone from "../ui/Phone";
+import Facebook from "../ui/Facebook";
+import Instagram from "../ui/Instagram";
+import Tiktok from "../ui/Tiktok";
 
 const Contact = () => {
   return (
@@ -24,14 +22,14 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
-                <FaWhatsapp className="pr-2 h-5 w-auto" />
+              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
+                <WhattsApp className="pr-2 h-5 w-auto" />
                 Via WhatsApp
               </button>
             </a>
             <a href="tel:9803087763">
-              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px]">
-                <MdOutlineWifiCalling3 className="pr-2 h-5 w-auto" />
+              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
+                <Phone className="pr-2 h-5 w-auto" />
                 Via Call
               </button>
             </a>
@@ -63,9 +61,9 @@ const Contact = () => {
               {/* Social media link */}
               <p>Follow us on : </p>
               <div className="flex gap-[20px]">
-                <FaFacebookSquare />
-                <FaInstagram />
-                <FaTiktok />
+                <Facebook />
+                <Instagram />
+                <Tiktok />
               </div>
             </span>
             <button

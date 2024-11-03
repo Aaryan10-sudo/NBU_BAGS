@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Home from "../components/Home";
-import Product from "../components/Product";
-import Discount from "../components/features/Discount";
-import Footer from "../components/features/Footer";
-import Hero from "../components/features/Hero";
-import NavBar from "../components/features/Navbar";
-import Search from "../components/features/Search";
+
+import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import NavBar from "../components/layouts/Navbar";
+import Hero from "../components/container/Hero";
+import Footer from "../components/layouts/Footer";
+import Home from "../components/pages/Home";
+import About from "../components/pages/About";
+import Contact from "../components/pages/Contact";
+import Product from "../components/pages/Product";
+import Discount from "../components/pages/Discount";
+import Search from "../components/pages/Search";
 import AddProducts from "../components/features/admin/AddProducts";
-import AdminPanel from "../components/features/admin/AdminPanel";
-import LogIn from "../components/features/admin/LogIn";
 import Products from "../components/features/admin/Products";
 import UpdateProduct from "../components/features/admin/UpdateProduct";
-import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
-import MobileNavbar from "../components/features/admin/MobileNavbar";
 import Password from "../components/features/admin/Password";
+import AdminPanel from "../components/features/admin/AdminPanel";
+import LogIn from "../components/features/admin/LogIn";
+import MobileNavbar from "../components/features/admin/MobileNavbar";
 
 const AdminLayout = ({ children }) => {
   const token = localStorage.getItem("token");

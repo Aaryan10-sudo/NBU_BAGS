@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import NavBar from "./Navbar";
-import axios from "axios";
-import Footer from "./Footer";
 import { hitApi } from "../../services/HitApi";
+import NavBar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 
 const Search = () => {
   const [query] = useSearchParams();

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { hitApi } from "../../../services/HitApi";
-import { TiTickOutline } from "react-icons/ti";
-import { MdUpdate } from "react-icons/md";
-import { FaTrash } from "react-icons/fa";
-import { TbCheckbox } from "react-icons/tb";
+import Tick from "../../ui/Tick";
+import Trash from "../../ui/Trash";
+import Update from "../../ui/Update";
 
 const Dashboard = () => {
   let [productCount, setProductCount] = useState(0);
@@ -99,13 +98,15 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="sm:mx-[30px] mx-[10px] pb-[70px] ">
+          <div className="sm:mx-[30px] mx-[10px] pb-[70px]">
             <h1 className="font-extrabold text-[30px] py-[20px]">
               Admin Activity
             </h1>
-            <div className="flex flex-col gap-[20px] font-ubuntu fade-in">
-              {activity?.map((value, index) => {
-                return (
+            <div className=" h-[100px]">
+              {" "}
+              {/* Adjust height based on content */}
+              <div className="flex flex-col gap-[20px] font-ubuntu">
+                {activity?.map((value, index) => (
                   <div
                     className={`p-4 rounded-lg  fade${
                       value.Activity.startsWith("Created")
@@ -113,31 +114,28 @@ const Dashboard = () => {
                         : value.Activity.startsWith("Updated")
                         ? "shadow-sm bg-blue-600 border border-blue-500"
                         : value.Activity.startsWith("Deleted")
-                        ? "shadow bg-red-600 "
+                        ? "shadow bg-red-600"
                         : ""
                     }`}
-                    key={index}
+                    key={value.id || index} // Use unique id if available
                   >
                     <span className="flex justify-between">
                       <p className="font-ubuntu text-white text-[15px] font-bold">
-                        {" "}
                         {value.Activity}
                       </p>
                       <p className="text-white text-[20px]">
                         {value.Activity.startsWith("Created") ? (
-                          <TbCheckbox />
-                        ) : value.Activity.startsWith("Update") ? (
-                          <MdUpdate />
+                          <Tick />
+                        ) : value.Activity.startsWith("Updated") ? (
+                          <Update />
                         ) : value.Activity.startsWith("Deleted") ? (
-                          <FaTrash />
-                        ) : (
-                          ""
-                        )}
+                          <Trash />
+                        ) : null}
                       </p>
                     </span>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </div>

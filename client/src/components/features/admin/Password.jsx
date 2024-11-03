@@ -4,7 +4,7 @@ import NavBarAd from "./NavBarAd";
 import MobileNavbar from "./MobileNavbar";
 import { hitApi } from "../../../services/HitApi";
 import { toast, ToastContainer } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Password = () => {
   let [oldPassword, setOldPassword] = useState("");
@@ -69,7 +69,7 @@ const Password = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-col">
       <ToastContainer />
       <SideBar />
       <div className="w-full">
@@ -108,9 +108,14 @@ const Password = () => {
             >
               Change
             </button>
+
+            <NavLink className="sm:hidden" to={"/"}>
+              <p className="text-red-500 font-bold text-[18px]"> LOG OUT</p>
+            </NavLink>
           </form>
         </div>
       </div>
+
       <MobileNavbar />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { hitApi } from "../services/HitApi";
+import { hitApi } from "../../services/HitApi";
 
 const Product = () => {
   let [product, setProduct] = useState([]);
@@ -23,31 +23,35 @@ const Product = () => {
       </h1>
 
       {/* Product card */}
-      <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] ">
+      <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] max-w-[1536px] ">
         {product.map((value, index) => {
           return (
             <div
-              class="w-[190px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+              class="w-[197px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
               key={index}
             >
-              <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[270px] h-[230px] rounded-lg]">
-                <img src={value.image} className="rounded-lg " alt="BagImage" />
+              <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[280px] h-[222px] rounded-lg bg-slate-300 ">
+                <img
+                  src={value.image}
+                  className="rounded-lg  w-full"
+                  alt="BagImage"
+                />
               </div>
               <div class="flex flex-col gap-[10px] w-full">
                 <div class="flex flex-col justify-center items-center w-full">
                   <div class="w-full flex justify-center">
-                    <span class="text-xl font-montserrat font-extrabold text-center py-[10px]">
+                    <span class="text-xl font-montserrat font-extrabold text-center py-[0px] ">
                       {value.productName}
                     </span>
                   </div>
-                  <p class="text-xs text-gray-700 text-center flex items-center  justify-center h-[60px] tracking-wider">
+                  <p class="text-xs text-gray-700  h-[38px] text-center tracking-wider pt-[5px] line-clamp-2">
                     {value.productDescription}
                   </p>
-                  <span class="flex text-black font-ubuntu gap-[20px] py-[5px]">
+                  <span className="flex text-black font-ubuntu gap-[20px] py-[px]">
                     <p className="text-[12px] flex items-center text-black">
                       {value.category}
                     </p>
-                    <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600">
+                    <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600 pt-[5px]">
                       रु. {value.price}
                     </p>
                   </span>

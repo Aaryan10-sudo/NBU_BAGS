@@ -1,7 +1,7 @@
 import React from "react";
-import { FaMagnifyingGlass } from "react-icons/fa6";
-import { MdLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import LogOut from "../../ui/LogOut";
+import Search from "../../ui/Search";
 
 const NavBarAd = () => {
   let navigate = useNavigate();
@@ -21,17 +21,18 @@ const NavBarAd = () => {
                 className="bg-transparent focus:outline-none w-[140px] sm:w-[190px]"
               />
               <button type="submit">
-                <FaMagnifyingGlass />
+                <Search />
               </button>
             </form>
-
-            <MdLogout
+            <div
               className="font-bold text-[20px] sm:mt-0  cursor-pointer"
               onClick={() => {
-                navigate("/log-in");
+                navigate("/");
                 localStorage.removeItem("token");
               }}
-            />
+            >
+              <LogOut />
+            </div>
           </div>
         </ul>
       </div>

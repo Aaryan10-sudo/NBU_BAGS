@@ -1,20 +1,17 @@
 import React from "react";
-import { FaTiktok } from "react-icons/fa";
-import {
-  FaArrowRight,
-  FaEnvelope,
-  FaFacebook,
-  FaGlobe,
-  FaInstagram,
-  FaLinkedin,
-  FaLocationDot,
-  FaXTwitter,
-} from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import Email from "../ui/Email";
+import Facebook from "../ui/Facebook";
+import Globe from "../ui/Globe";
+import Instagram from "../ui/Instagram";
+import LinkedIn from "../ui/LinkedIn";
+import Location from "../ui/Location";
+import Tiktok from "../ui/Tiktok";
+import ArrowRight from "../ui/ArrowRight";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#32609e] bottom-0 w-[100%] h-full 2xl:px-40">
+    <footer className="bg-[#32609e] bottom-0 w-[100%] 2xl:px-40">
       <div className="md:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap font-raleway 2xl:justify-between">
         <div className="md:w-[350px]">
           {/* Header */}
@@ -35,12 +32,12 @@ const Footer = () => {
           {/* Location / Mail */}
           <span className="flex gap-[10px] font-raleway ">
             {" "}
-            <FaLocationDot /> <p>Pyukha Marg, Kathmandu</p>
+            <Location /> <p>Pyukha Marg, Kathmandu</p>
           </span>
           <br />
           <span className="flex gap-[10px]">
             {" "}
-            <FaEnvelope /> <p className="mt-[-3px]">nbu@gmail.com</p>
+            <Email /> <p className="mt-[-3px]">nbu@gmail.com</p>
           </span>
         </div>
         <div>
@@ -82,15 +79,18 @@ const Footer = () => {
           <br />
           {/* Socail media link */}
           <div className="flex flex-col gap-[30px] text-[20px] cursor-pointer">
-            <span className="flex">
-              <FaFacebook /> <p className="text-[15px] ml-[10px]">NBU Bags</p>
-            </span>
-            <span className="flex">
-              <FaInstagram /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
-            </span>
-            <span className="flex">
-              <FaTiktok /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
-            </span>
+            <NavLink className="flex">
+              <Facebook /> <p className="text-[15px] ml-[10px]">NBU Bags</p>
+            </NavLink>
+            <NavLink
+              className="flex"
+              to={"https://www.instagram.com/nbu_bags?igsh=dGszN2h2b2J0cjl0)"}
+            >
+              <Instagram /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
+            </NavLink>
+            <NavLink className="flex">
+              <Tiktok /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -111,12 +111,12 @@ const Footer = () => {
 
           {/* Nexorith social media link */}
           <button className="bg-[url('/forfooter.jpg')] bg-contain bg-center group-hover:bg-none hover:bg-slate-300 group-hover:w-[180px] w-[55px] text-center items-center justify-center flex group transition-all ease-linear px-[10px] duration-300">
-            <FaArrowRight className="text-[20px] group-hover:opacity-0" />
+            <ArrowRight className="text-[20px] group-hover:opacity-0" />
             <div className="opacity-0 group-hover:opacity-100 flex gap-[20px]">
-              <FaFacebook />
-              <FaInstagram />
-              <FaLinkedin />
-              <FaGlobe />
+              <Facebook />
+              <Instagram />
+              <LinkedIn />
+              <Globe />
             </div>
           </button>
         </div>

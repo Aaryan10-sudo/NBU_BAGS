@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { FaBars, FaSearch, FaSearchDollar, FaTimes } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MenuBar from "../ui/MenuBar";
+import Times from "../ui/Times";
+import Search from "../ui/Search";
 
 const NavBar = () => {
   const [item, setItem] = useState("");
@@ -78,11 +80,11 @@ const NavBar = () => {
               value={item}
               onChange={(e) => setItem(e.target.value)}
             />
-            <button type="submit">
-              <FaSearch
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black font-normal"
-                onClick={() => {}}
-              />
+            <button
+              type="submit"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black font-normal"
+            >
+              <Search onClick={() => {}} />
             </button>
           </form>
           <NavLink
@@ -91,17 +93,20 @@ const NavBar = () => {
           >
             Log In
           </NavLink>
-          <div className="md:hidden flex items-center">
-            <FaBars
-              className="text-black cursor-pointer"
-              onClick={toggleMenu}
-            />
+          <div
+            className="text-black cursor-pointer md:hidden flex items-center"
+            onClick={toggleMenu}
+          >
+            <MenuBar />
           </div>
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="sm:hidden flex items-center">
-          <FaBars className="text-black cursor-pointer" onClick={toggleMenu} />
+        <div
+          className="sm:hidden flex items-center text-black cursor-pointer"
+          onClick={toggleMenu}
+        >
+          <MenuBar />
         </div>
       </nav>
 
@@ -117,10 +122,12 @@ const NavBar = () => {
               <img src="logo.png" className="h-[30px] " alt="Logo" />
               <h1 className="font-bold">NBU BAGS</h1>
             </div>
-            <FaTimes
+            <div
               className="text-black text-2xl cursor-pointer border-2"
               onClick={toggleMenu}
-            />
+            >
+              <Times />
+            </div>
           </div>
           <ul className="flex flex-col gap-8 mt-10 text-black text-[15px]">
             {["HOME", "ABOUT", "PRODUCT", "CONTACT", "OFFERS"].map(

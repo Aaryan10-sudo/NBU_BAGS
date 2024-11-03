@@ -1,14 +1,12 @@
-import axios from "axios";
 import React, { useCallback, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SideBar from "./SideBar";
 import NavBarAd from "./NavBarAd";
 import { useDropzone } from "react-dropzone";
-import { TbLoaderQuarter, TbRulerMeasure } from "react-icons/tb";
-import { BiLoaderAlt } from "react-icons/bi";
 import { hitApi } from "../../../services/HitApi";
 import MobileNavbar from "./MobileNavbar";
+import Loader from "../../ui/Loader";
 
 const AddProducts = () => {
   let [productName, setProductName] = useState("");
@@ -75,9 +73,10 @@ const AddProducts = () => {
         method: "POST",
         data: data,
       });
-      console.log(result);
       setImage(result.data.result);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.data.response);
+    }
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -130,7 +129,7 @@ const AddProducts = () => {
                       name="productName"
                       id="productName"
                       value={productName}
-                      className="w-[200px]"
+                      className="w-[200px] px-[5px]"
                       onChange={(e) => {
                         setProductName(e.target.value);
                       }}
@@ -145,7 +144,7 @@ const AddProducts = () => {
                       name="category"
                       id="category"
                       value={category}
-                      className="w-[200px]"
+                      className="w-[200px] px-[5px]"
                       onChange={(e) => {
                         setCategory(e.target.value);
                       }}
@@ -160,7 +159,7 @@ const AddProducts = () => {
                       name="price"
                       id="price"
                       value={price}
-                      className="w-[200px]"
+                      className="w-[200px] px-[5px]"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
@@ -170,16 +169,16 @@ const AddProducts = () => {
                   <div>
                     <label>Product Description :</label>
                     <br />
-                    <input
-                      type="string"
+                    <textarea
+                      type="textarea"
                       name="productDescription"
                       id="productDescription"
                       value={productDescription}
-                      className="w-[200px]"
+                      className="w-[200px] px-[5px]"
                       onChange={(e) => {
                         setProductDescription(e.target.value);
                       }}
-                    ></input>
+                    ></textarea>
                   </div>
                   <br />
                   <div>
@@ -190,7 +189,7 @@ const AddProducts = () => {
                       name="brand"
                       id="brand"
                       value={brand}
-                      className="w-[200px]"
+                      className="w-[200px] px-[5px]"
                       onChange={(e) => {
                         setBrand(e.target.value);
                       }}
@@ -206,7 +205,7 @@ const AddProducts = () => {
                   {loader ? (
                     "Create"
                   ) : (
-                    <BiLoaderAlt className="text-[20px] animate-spin text-white" />
+                    <Loader className="text-[20px] animate-spin text-white" />
                   )}
                 </button>
               </div>

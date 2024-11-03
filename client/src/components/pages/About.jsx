@@ -1,7 +1,9 @@
 import React from "react";
-import { BsBackpack3 } from "react-icons/bs";
-import { FaShieldAlt, FaSmile } from "react-icons/fa";
-import { FaCouch, FaLeaf } from "react-icons/fa6";
+import Shield from "../ui/Shield";
+import Bag from "../ui/Bag";
+import Leaf from "../ui/Leaf";
+import Smile from "../ui/Smile";
+import Pillow from "../ui/Pillow";
 
 const About = () => {
   return (
@@ -49,8 +51,7 @@ const About = () => {
         <div className="flex justify-between pb-[30px] flex-wrap gap-[20px]  md:gap-0">
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px] ">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
-              <FaShieldAlt className="text-blue-700" />{" "}
-              <p className="">Durability</p>
+              <Shield /> <p className="">Durability</p>
             </span>
             <p className="pt-[10px]">
               NBU Bags are crafted with premium materials, ensuring long-lasting
@@ -59,7 +60,7 @@ const About = () => {
           </div>
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
-              <BsBackpack3 />
+              <Bag />
               <p className="">Stylish Design</p>
             </span>
             <p className="pt-[10px]">
@@ -69,7 +70,7 @@ const About = () => {
           </div>
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
-              <FaLeaf className="text-green-800" />
+              <Leaf className="text-green-800" />
               <p className="">Eco- Friendly</p>
             </span>
             <p className="pt-[10px]">
@@ -80,7 +81,7 @@ const About = () => {
           </div>
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
-              <FaSmile className="text-yellow-500" />{" "}
+              <Smile className="text-yellow-500" />{" "}
               <p className="">Satisfaction</p>
             </span>
             <p className="pt-[10px]">
@@ -91,7 +92,7 @@ const About = () => {
           </div>
           <div className="md:w-[230px] h-[190px] shadow-xl rounded-xl p-[10px]">
             <span className="text-[20px] font-bold flex gap-[10px] items-center">
-              <FaCouch /> <p className="">Comfortable</p>
+              <Pillow /> <p className="">Comfortable</p>
             </span>
             <p className="pt-[10px]">
               Designed for comfort, our bags feature ergonomic designs that make

@@ -1,10 +1,8 @@
 import React from "react";
+import Dashboard from "./Dashboard";
+import MobileNavbar from "./MobileNavbar";
 import NavBarAd from "./NavBarAd";
 import SideBar from "./SideBar";
-import Dashboard from "./Dashboard";
-import Products from "./Products";
-import UpdateProduct from "./UpdateProduct";
-import MobileNavbar from "./MobileNavbar";
 
 const AdminPanel = () => {
   return (

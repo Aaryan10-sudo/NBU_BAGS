@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { BiLoaderAlt } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { hitApi } from "../../../services/HitApi";
 import NavBarAd from "./NavBarAd";
 import SideBar from "./SideBar";
 import MobileNavbar from "./MobileNavbar";
+import Loader from "../../ui/Loader";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -233,7 +233,7 @@ const UpdateProduct = () => {
                   {loader ? (
                     "Update"
                   ) : (
-                    <BiLoaderAlt className="text-[20px] animate-spin text-white" />
+                    <Loader className="text-[20px] animate-spin text-white" />
                   )}
                 </button>
               </div>
