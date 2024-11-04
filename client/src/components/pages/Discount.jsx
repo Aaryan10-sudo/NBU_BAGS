@@ -5,6 +5,10 @@ import { hitApi } from "../../services/HitApi";
 import NavBar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import Bag from "../ui/Bag";
+import Gift from "../ui/Gift";
+import Facebook from "../ui/Facebook";
+import Instagram from "../ui/Instagram";
+import Tiktok from "../ui/Tiktok";
 
 const Discount = () => {
   let [token, setToken] = useState("");
@@ -33,7 +37,7 @@ const Discount = () => {
       });
       console.log(result);
       toast.success(
-        `Congratulations! you got ${result.data.discount} discount`
+        `Congratulations! You have received a ${result.data.discount} discount.`
       );
       handleDelete(result.data.data._id);
     } catch (error) {
@@ -42,52 +46,28 @@ const Discount = () => {
   };
 
   return (
-    <div className="h-screen">
-      <ToastContainer />
+    <>
       <NavBar />
-      <div className="sm:h-[80vh]">
-        <center>
-          {loader ? (
-            <form
-              onSubmit={handleSubmit}
-              className="h-[150px] w-[270px] bg-[#949090] rounded-sm"
-            >
-              <center>
-                <p className="mt-[10px]">Enter your code here</p>
-                <input
-                  type="text"
-                  placeholder="Token"
-                  value={token}
-                  className="mt-[20px] mb-[20px]"
-                  onChange={(e) => {
-                    setToken(e.target.value);
-                  }}
-                />
-                <br />
-              </center>
-              <center>
-                <button type="submit" className="bg-[aqua] w-[100px]">
-                  SUBMIT
-                </button>
-              </center>
-            </form>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="h-[150px] w-[270px] bg-[red]"
-            >
-              <center>
-                <div className="relative h-[50px] w-[50px] flex justify-center items-center">
-                  <div className="absolute h-full w-full border-2 border-transparent border-t-black border-r-black border-b-black rounded-full animate-spin"></div>
-                  <Bag className="text-[30px]" />
-                </div>
-              </center>
-            </form>
-          )}
-        </center>
+      <div className="h-screen flex flex-col gap-10 justify-center items-center">
+        <div className="h-[30px] text-[50px] text-gray-500">
+          <Gift />
+        </div>
+
+        <h2 className="text-xl font-semibold text-center">
+          Sorry, no discount or offers running right now.
+        </h2>
+        <p className=" text-center text-gray-600">
+          Stay tuned for exciting offers coming your way!
+          <span className="flex gap-[20px] items-center justify-center pt-[10px]">
+            <Facebook />
+            <Instagram />
+            <Tiktok />
+          </span>
+        </p>
       </div>
       <Footer />
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 
