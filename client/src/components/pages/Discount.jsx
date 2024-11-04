@@ -9,6 +9,7 @@ import Gift from "../ui/Gift";
 import Facebook from "../ui/Facebook";
 import Instagram from "../ui/Instagram";
 import Tiktok from "../ui/Tiktok";
+import { NavLink } from "react-router-dom";
 
 const Discount = () => {
   let [token, setToken] = useState("");
@@ -59,9 +60,21 @@ const Discount = () => {
         <p className=" text-center text-gray-600">
           Stay tuned for exciting offers coming your way!
           <span className="flex gap-[20px] items-center justify-center pt-[10px]">
-            <Facebook />
-            <Instagram />
-            <Tiktok />
+            <NavLink
+              to={
+                "https://www.facebook.com/profile.php?id=61567289293320&mibextid=LQQJ4d"
+              }
+            >
+              <Facebook />
+            </NavLink>
+            <NavLink
+              to={"https://www.instagram.com/nbu_bags?igsh=dGszN2h2b2J0cjl0)"}
+            >
+              <Instagram />
+            </NavLink>
+            <NavLink to={"https://www.tiktok.com/@nbu_bags"}>
+              <Tiktok />
+            </NavLink>
           </span>
         </p>
       </div>
