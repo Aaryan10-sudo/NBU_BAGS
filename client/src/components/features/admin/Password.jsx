@@ -103,7 +103,7 @@ const Password = () => {
             />
 
             <button
-              className="flex bg-[#32609e] h-[30px] w-[100px] justify-center items-center text-white font-bold"
+              className="flex bg-primary h-[30px] w-[100px] justify-center items-center text-white font-bold"
               type="submit"
             >
               Change

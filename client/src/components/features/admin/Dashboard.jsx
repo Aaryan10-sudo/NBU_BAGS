@@ -16,7 +16,7 @@ const Dashboard = () => {
       method: "GET",
     });
     console.log(result?.data?.data);
-    setActivity(result?.data?.data.reverse() || []);
+    setActivity(result?.data?.data.reverse() || []); // Store all activities
   };
 
   const totalProduct = async () => {
@@ -32,6 +32,7 @@ const Dashboard = () => {
       console.log(error.message);
     }
   };
+
   const totalUser = async () => {
     try {
       let result = await hitApi({
@@ -43,23 +44,25 @@ const Dashboard = () => {
       console.log(error.message);
     }
   };
+
   useEffect(() => {
     totalProduct();
     totalUser();
     getActivity();
   }, []);
+
   return (
     <div className="2xl:px-40 sm:px-10">
       {loader ? (
         <div className="flex justify-center items-center h-screen bg-gray-300">
-          <div class="loader"></div>
+          <div className="loader"></div>
         </div>
       ) : (
         <div>
           <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px] flex items-center justify-center">
             Dashboard
           </h1>
-          <div className="flex md:justify-between justify-center  md:flex-nowrap flex-wrap text-center text-white items-center sm:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
+          <div className="flex md:justify-between justify-center md:flex-nowrap flex-wrap text-center text-white items-center sm:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
             <div className="bg-[#8a2edf] h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
@@ -78,8 +81,7 @@ const Dashboard = () => {
                 {productCount}
               </p>
             </div>
-            <div className="bg-blue-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg  ">
-              {" "}
+            <div className="bg-blue-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Users
               </p>
@@ -87,7 +89,6 @@ const Dashboard = () => {
               <p className="font-extrabold text-[30px]">{webuserCount}</p>
             </div>
             <div className="bg-red-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
-              {" "}
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Profit
               </p>
@@ -103,38 +104,41 @@ const Dashboard = () => {
               Admin Activity
             </h1>
             <div className=" h-[100px]">
-              {" "}
-              {/* Adjust height based on content */}
               <div className="flex flex-col gap-[20px] font-ubuntu">
-                {activity?.map((value, index) => (
-                  <div
-                    className={`p-4 rounded-lg  fade${
-                      value.Activity.startsWith("Created")
-                        ? "shadow-sm bg-green-600 border border-green-500"
-                        : value.Activity.startsWith("Updated")
-                        ? "shadow-sm bg-blue-600 border border-blue-500"
-                        : value.Activity.startsWith("Deleted")
-                        ? "shadow bg-red-600"
-                        : ""
-                    }`}
-                    key={value.id || index} // Use unique id if available
-                  >
-                    <span className="flex justify-between">
-                      <p className="font-ubuntu text-white text-[15px] font-bold">
-                        {value.Activity}
-                      </p>
-                      <p className="text-white text-[20px]">
-                        {value.Activity.startsWith("Created") ? (
-                          <Tick />
-                        ) : value.Activity.startsWith("Updated") ? (
-                          <Update />
-                        ) : value.Activity.startsWith("Deleted") ? (
-                          <Trash />
-                        ) : null}
-                      </p>
-                    </span>
-                  </div>
-                ))}
+                {activity.slice(0, 10).map(
+                  (
+                    value,
+                    index // Only display last 10 activities
+                  ) => (
+                    <div
+                      className={`p-4 rounded-lg fade${
+                        value.Activity.startsWith("Created")
+                          ? "shadow-sm bg-green-600 border border-green-500"
+                          : value.Activity.startsWith("Updated")
+                          ? "shadow-sm bg-blue-600 border border-blue-500"
+                          : value.Activity.startsWith("Deleted")
+                          ? "shadow bg-red-600"
+                          : ""
+                      }`}
+                      key={value.id || index} // Use unique id if available
+                    >
+                      <span className="flex justify-between">
+                        <p className="font-ubuntu text-white text-[15px] font-bold">
+                          {value.Activity}
+                        </p>
+                        <p className="text-white text-[20px]">
+                          {value.Activity.startsWith("Created") ? (
+                            <Tick />
+                          ) : value.Activity.startsWith("Updated") ? (
+                            <Update />
+                          ) : value.Activity.startsWith("Deleted") ? (
+                            <Trash />
+                          ) : null}
+                        </p>
+                      </span>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>

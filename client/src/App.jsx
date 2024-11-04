@@ -27,9 +27,9 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gray-300">
+      <div className="flex justify-center items-center h-screen bg-secondary">
         <div className="flex flex-col gap-[10px] items-center justify-center ">
-          <p className="font-bold text-[20px] text-[#32609e]">NBU BAGS</p>
+          <p className="font-bold text-[20px] text-primary">NBU BAGS</p>
           <div class="loader"></div>
         </div>
       </div>
@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className=" bg-gray-300 ">
+    <div className="bg-secondary ">
       <MyRoutes />
     </div>
   );

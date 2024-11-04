@@ -8,7 +8,11 @@ export default {
         raleway: ["Raleway", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        primary: "#32609e",
+        secondary: "#d1d5db",
+      },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };

@@ -12,7 +12,7 @@ const Contact = () => {
         <div className="main flex items-start justify-center flex-col">
           {/* Header */}
           <h1 className="text-4xl font-bold font-ubuntu">
-            Contact<span className="text-[#32609e]"> Us</span>
+            Contact<span className="text-primary"> Us</span>
           </h1>
 
           {/* Contact Section */}
@@ -22,13 +22,13 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
+              <button className="bg-primary font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
                 <WhatsApp className="pr-2 h-5 w-auto" />
                 Via WhatsApp
               </button>
             </a>
             <a href="tel:9803087763">
-              <button className="bg-[#32609e] font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
+              <button className="bg-primary font-semibold px-3 py-3 flex items-center rounded-md w-[170px] gap-2">
                 <Phone className="pr-2 h-5 w-auto" />
                 Via Call
               </button>
@@ -68,7 +68,7 @@ const Contact = () => {
             </span>
             <button
               type="submit"
-              className="bg-[#32609e] px-8 hover:bg-gray-950 text-gray-50 mt-3 font-semibold py-3 flex items-center rounded-md  float-end"
+              className="bg-primary px-8 hover:bg-gray-950 text-gray-50 mt-3 font-semibold py-3 flex items-center rounded-md  float-end"
             >
               Send
             </button>
@@ -79,7 +79,7 @@ const Contact = () => {
         {/* Store Location / map  */}
         <div className="md:mt-0 mt-[20px]">
           <h1 className="text-4xl font-bold text-start font-ubuntu">
-            Come<span className="text-[#32609e]"> visit us!</span>
+            Come<span className="text-primary"> visit us!</span>
           </h1>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.426780000495!2d85.30936247405297!3d27.704106325636975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18556ec52155%3A0x2f09a5d4c918952a!2sNarayan%20Bag%20Udyog!5e0!3m2!1sen!2snp!4v1729318385697!5m2!1sen!2snp"

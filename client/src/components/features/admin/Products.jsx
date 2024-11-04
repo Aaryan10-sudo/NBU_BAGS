@@ -137,7 +137,7 @@ const Products = () => {
                             {/* Add to cart button */}
                             <div className="flex justify-center gap-[20px] text-white font-bold">
                               <button
-                                className="w-[230px] h-[0p3x] flex justify-center items-center bg-[#32609e]"
+                                className="w-[230px] h-[0p3x] flex justify-center items-center bg-primary"
                                 onClick={handleEdit(value._id)}
                               >
                                 Update

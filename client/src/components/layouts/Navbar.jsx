@@ -38,7 +38,7 @@ const NavBar = () => {
       <ToastContainer />
       {/* Top Header */}
 
-      <header className="bg-[#32609e] flex justify-between items-center px-4 h-[50px] text-white text-[15px] 2xl:px-40">
+      <header className="bg-primary flex justify-between items-center px-4 md:px-8 h-[50px] text-white text-[15px] 2xl:px-40">
         <p>Carry your world in style</p>
         <p>Pyukha Marg, Kathmandu</p>
       </header>

@@ -28,7 +28,7 @@ const BestSelling = () => {
             clickable: true,
           }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper bg-gray-300"
+          className="mySwiper bg-secondary"
         >
           {/* Product 1 */}
           <SwiperSlide>

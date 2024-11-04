@@ -15,7 +15,7 @@ const Collection = () => {
         url: "/product/read-all",
         method: "GET",
       });
-      setProduct(result?.data?.data);
+      setProduct(result?.data?.data.reverse());
     } catch (error) {
       console.log(error.message);
     }
@@ -37,7 +37,7 @@ const Collection = () => {
             {product.map((value, index) => {
               return (
                 <div
-                  class="w-[197px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+                  class="w-[190px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
                   key={index}
                 >
                   <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[280px] h-[222px] rounded-lg bg-slate-300 ">

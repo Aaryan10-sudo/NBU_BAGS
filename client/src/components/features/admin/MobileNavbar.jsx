@@ -11,7 +11,7 @@ const MobileNavbar = () => {
       <NavLink
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-[#32609e]" : ""
+            isActive ? "text-primary" : ""
           }`
         }
         to="/admin/dashboard"
@@ -23,7 +23,7 @@ const MobileNavbar = () => {
       <NavLink
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-[#32609e]" : ""
+            isActive ? "text-primary" : ""
           }`
         }
         to="/admin/product"
@@ -34,8 +34,8 @@ const MobileNavbar = () => {
 
       <NavLink
         className={({ isActive }) =>
-          `text-[50px] text-white bg-[#32609e] rounded-full w-[45px] h-[45px] flex justify-center items-center overflow-visible ${
-            isActive ? "text-[#32609e]" : ""
+          `text-[50px] text-white bg-primary rounded-full w-[45px] h-[45px] flex justify-center items-center overflow-visible ${
+            isActive ? "text-primary" : ""
           }`
         }
         to="/admin/add-product"
@@ -46,7 +46,7 @@ const MobileNavbar = () => {
       <NavLink
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-[#32609e]" : ""
+            isActive ? "text-primary" : ""
           }`
         }
         to="/admin/tokens"
@@ -58,7 +58,7 @@ const MobileNavbar = () => {
       <NavLink
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${
-            isActive ? "text-[#32609e]" : ""
+            isActive ? "text-primary" : ""
           }`
         }
         to="/admin/password"

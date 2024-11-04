@@ -11,7 +11,7 @@ import ArrowRight from "../ui/ArrowRight";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#32609e] bottom-0 w-[100%] 2xl:px-40">
+    <footer className="bg-primary bottom-0 w-[100%] 2xl:px-40">
       <div className="md:mx-[20px] flex sm:gap-[100px] gap-[30px] text-white p-[20px] border border-transparent border-b-white flex-wrap font-raleway 2xl:justify-between">
         <div className="md:w-[350px]">
           {/* Header */}
@@ -111,7 +111,6 @@ const Footer = () => {
 
           {/* Nexorith social media link */}
           <button className="bg-[url('/forfooter.jpg')] bg-contain bg-center group-hover:bg-none hover:bg-slate-300 group-hover:w-[180px] w-[55px] text-center items-center justify-center flex group transition-all ease-linear px-[10px] duration-300">
-            <ArrowRight className="text-[20px] group-hover:opacity-0" />
             <div className="opacity-0 group-hover:opacity-100 flex gap-[20px]">
               <Facebook />
               <Instagram />
