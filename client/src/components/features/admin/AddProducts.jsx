@@ -7,8 +7,10 @@ import { useDropzone } from "react-dropzone";
 import { hitApi } from "../../../services/HitApi";
 import MobileNavbar from "./MobileNavbar";
 import Loader from "../../ui/Loader";
+import Gallery from "../../ui/Gallery";
 
 const AddProducts = () => {
+  // State variables for product details
   let [productName, setProductName] = useState("");
   let [category, setCategory] = useState("");
   let [price, setPrice] = useState("");
@@ -16,9 +18,10 @@ const AddProducts = () => {
   let [brand, setBrand] = useState("");
   let [image, setImage] = useState(null);
 
+  // Loader state
   let [loader, setLoader] = useState(true);
-  let [loaders, setLoaders] = useState(false);
 
+  // Function to log activity
   const activity = async (product) => {
     const data = {
       Activity: `Created ${product} at ${new Date().toLocaleString()}`,
@@ -35,6 +38,7 @@ const AddProducts = () => {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(false);
@@ -53,16 +57,21 @@ const AddProducts = () => {
         data: data,
       });
       setLoader(true);
+      // Reset form fields after submission
       setProductName("");
       setCategory("");
       setPrice("");
       setProductDescription("");
       setBrand("");
-      setImage("");
+      setImage(null);
       activity(productName);
       toast.success(result.data.message);
-    } catch (error) {}
+    } catch (error) {
+      // Handle error (e.g., show error message)
+    }
   };
+
+  // Handle file drop
   const onDrop = useCallback(async (acceptedFiles) => {
     let fileData = acceptedFiles[0];
     let data = new FormData();
@@ -78,9 +87,12 @@ const AddProducts = () => {
       console.log(error.data.response);
     }
   }, []);
+
+  // Dropzone setup
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
   });
+
   return (
     <>
       <ToastContainer />
@@ -91,12 +103,13 @@ const AddProducts = () => {
         {/* Main Content: NavBar + Dashboard */}
         <div className="flex flex-col w-full">
           <NavBarAd />
-          <div className="overflow-auto h-screen">
+          <div className=" ">
             <form onSubmit={handleSubmit}>
-              <div className="flex sm:flex-row flex-col justify-center items-center gap-[50px] my-[50px]">
+              <div className="flex sm:flex-row flex-col justify-center items-center gap-[50px] mt-[30px] mb-[10px]">
+                {/* Product Image Upload Section */}
                 <div {...getRootProps()} style={{ width: "300px" }}>
-                  <label className="flex justify-center">
-                    Product Image :{" "}
+                  <label className="flex justify-center text-[20px] font-semibold">
+                    Product Image :
                   </label>
                   <input {...getInputProps()} />
                   {isDragActive ? (
@@ -104,36 +117,39 @@ const AddProducts = () => {
                       <p>Drop the files here ...</p>
                     </span>
                   ) : (
-                    <div className="flex justify-center my-[10px]">
-                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                    <div className="flex justify-center my-[5px]">
+                      <span className="h-[280px] w-[230px] bg-slate-500 flex justify-center items-center cursor-pointer rounded-xl">
                         {image ? (
                           <img
                             src={image}
                             alt="Product"
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover rounded-xl"
                           />
                         ) : (
-                          <p className="text-[40px] text-white">+</p>
+                          <span className="text-[50px] text-white">
+                            <Gallery />
+                          </span>
                         )}
                       </span>
                     </div>
                   )}
                 </div>
 
-                <div>
+                {/* Product Details Input Section */}
+                <div className="flex flex-wrap mx-[5px] justify-between w-[full] font-semibold">
                   <div>
-                    <label>Product Name :</label>
+                    <label className="">Product Name :</label>
                     <br />
                     <input
                       type="text"
                       name="productName"
                       id="productName"
                       value={productName}
-                      className="w-[200px] px-[5px]"
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setProductName(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
                   <br />
                   <div>
@@ -144,11 +160,11 @@ const AddProducts = () => {
                       name="category"
                       id="category"
                       value={category}
-                      className="w-[200px] px-[5px]"
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setCategory(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
                   <br />
                   <div>
@@ -159,48 +175,47 @@ const AddProducts = () => {
                       name="price"
                       id="price"
                       value={price}
-                      className="w-[200px] px-[5px]"
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
                   <br />
                   <div>
-                    <label>Product Description :</label>
-                    <br />
-                    <textarea
-                      type="textarea"
-                      name="productDescription"
-                      id="productDescription"
-                      value={productDescription}
-                      className="w-[200px] px-[5px]"
-                      onChange={(e) => {
-                        setProductDescription(e.target.value);
-                      }}
-                    ></textarea>
-                  </div>
-                  <br />
-                  <div>
-                    <label>Brand :</label>
+                    <label className="mt-[10px]">Brand :</label>
                     <br />
                     <input
-                      type="string"
+                      type="text"
                       name="brand"
                       id="brand"
                       value={brand}
-                      className="w-[200px] px-[5px]"
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setBrand(e.target.value);
                       }}
-                    ></input>
+                    />
+                  </div>
+                  <br />
+                  <div className="w-full">
+                    <label>Product Description :</label>
+                    <br />
+                    <textarea
+                      name="productDescription"
+                      id="productDescription"
+                      value={productDescription}
+                      className="w-full h-[100px] px-[10px] text-left rounded-lg border-2 border-gray-400" // Adjusted styles for left alignment
+                      onChange={(e) => {
+                        setProductDescription(e.target.value);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center items-center ">
+              <div className="flex justify-center items-center pb-[20px]">
                 <button
                   type="submit"
-                  className="flex justify-center items-center w-[150px] bg-slate-400 h-[30px]"
+                  className="flex justify-center items-center w-[150px] bg-green-500 h-[40px] rounded-md font-bold text-white"
                 >
                   {loader ? (
                     "Create"

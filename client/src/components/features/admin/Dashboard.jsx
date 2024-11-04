@@ -15,7 +15,6 @@ const Dashboard = () => {
       url: "activity/get",
       method: "GET",
     });
-    console.log(result?.data?.data);
     setActivity(result?.data?.data.reverse() || []); // Store all activities
   };
 

@@ -7,6 +7,7 @@ import NavBarAd from "./NavBarAd";
 import SideBar from "./SideBar";
 import MobileNavbar from "./MobileNavbar";
 import Loader from "../../ui/Loader";
+import Gallery from "../../ui/Gallery";
 
 const UpdateProduct = () => {
   let [productName, setProductName] = useState("");
@@ -108,77 +109,76 @@ const UpdateProduct = () => {
   });
   return (
     <>
-      <div className="flex ">
+      <div className="flex pb-[50px] sm:pb-0 ">
         <SideBar />
 
         <div className="flex flex-col w-full">
           <NavBarAd />
-          <div className=" h-screen">
-            {/* Form section */}
+          <div className=" ">
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col sm:flex-row  justify-center items-center gap-[50px] my-[50px]">
-                {/* Add image using react-dropzone */}
+              <div className="flex sm:flex-row flex-col justify-center items-center gap-[50px] mt-[30px] mb-[10px]">
+                {/* Product Image Upload Section */}
                 <div {...getRootProps()} style={{ width: "300px" }}>
-                  <label className="flex justify-center">
-                    Product Image :{" "}
+                  <label className="flex justify-center text-[20px] font-semibold">
+                    Product Image :
                   </label>
                   <input {...getInputProps()} />
-                  {/* Allows user to drag and drop pictures */}
                   {isDragActive ? (
                     <span className="flex justify-center items-center cursor-pointer">
                       <p>Drop the files here ...</p>
                     </span>
                   ) : (
-                    <div className="flex justify-center sm:my-[10px]">
-                      <span className="h-[280px] w-[200px] bg-slate-500 flex justify-center items-center cursor-pointer">
+                    <div className="flex justify-center my-[5px]">
+                      <span className="h-[280px] w-[230px] bg-slate-500 flex justify-center items-center cursor-pointer rounded-xl">
                         {image ? (
                           <img
                             src={image}
                             alt="Product"
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover rounded-xl"
                           />
                         ) : (
-                          <p className="text-[40px] text-white">+</p>
+                          <span className="text-[50px] text-white">
+                            <Gallery />
+                          </span>
                         )}
                       </span>
                     </div>
                   )}
                 </div>
 
-                {/* Product Details */}
-                <div className="">
-                  {/* Product Name */}
-                  <div className="pb-[20px]">
-                    <label>Product Name :</label>
+                {/* Product Details Input Section */}
+                <div className="flex flex-wrap mx-[5px] justify-between w-[full] font-semibold">
+                  <div>
+                    <label className="">Product Name :</label>
                     <br />
                     <input
                       type="text"
                       name="productName"
                       id="productName"
                       value={productName}
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setProductName(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
-
-                  {/* Category */}
-                  <div className="pb-[20px]">
-                    <label>Category</label>
+                  <br />
+                  <div>
+                    <label>Category :</label>
                     <br />
                     <input
                       type="text"
                       name="category"
                       id="category"
                       value={category}
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setCategory(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
-
-                  {/* Price */}
-                  <div className="pb-[20px]">
+                  <br />
+                  <div>
                     <label>Price :</label>
                     <br />
                     <input
@@ -186,49 +186,47 @@ const UpdateProduct = () => {
                       name="price"
                       id="price"
                       value={price}
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
-                    ></input>
+                    />
                   </div>
-
-                  {/* Product Description */}
-                  <div className="pb-[20px]">
-                    <label>Product Description</label>
+                  <br />
+                  <div>
+                    <label className="mt-[10px]">Brand :</label>
                     <br />
                     <input
-                      type="string"
-                      name="productDescription"
-                      id="productDescription"
-                      value={productDescription}
-                      onChange={(e) => {
-                        setProductDescription(e.target.value);
-                      }}
-                    ></input>
-                  </div>
-
-                  {/* Brand */}
-                  <div className="pb-[0px]">
-                    <label>Brand</label>
-                    <br />
-                    <input
-                      type="string"
+                      type="text"
                       name="brand"
                       id="brand"
                       value={brand}
+                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setBrand(e.target.value);
                       }}
-                    ></input>
+                    />
+                  </div>
+                  <br />
+                  <div className="w-full">
+                    <label>Product Description :</label>
+                    <br />
+                    <textarea
+                      name="productDescription"
+                      id="productDescription"
+                      value={productDescription}
+                      className="w-full h-[100px] px-[10px] text-left rounded-lg border-2 border-gray-400" // Adjusted styles for left alignment
+                      onChange={(e) => {
+                        setProductDescription(e.target.value);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
-
-              {/* Submit button */}
-              <div className="flex justify-center items-center ">
+              <div className="flex justify-center items-center pb-[20px]">
                 <button
                   type="submit"
-                  className="flex justify-center items-center w-[150px] bg-slate-400 h-[30px]"
+                  className="flex justify-center items-center w-[150px] bg-blue-500 h-[40px] rounded-md font-bold text-white"
                 >
                   {loader ? (
                     "Update"
