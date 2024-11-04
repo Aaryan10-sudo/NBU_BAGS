@@ -79,7 +79,12 @@ const Footer = () => {
           <br />
           {/* Socail media link */}
           <div className="flex flex-col gap-[30px] text-[20px] cursor-pointer">
-            <NavLink className="flex">
+            <NavLink
+              className="flex"
+              to={
+                "https://www.facebook.com/profile.php?id=61567289293320&mibextid=LQQJ4d"
+              }
+            >
               <Facebook /> <p className="text-[15px] ml-[10px]">NBU Bags</p>
             </NavLink>
             <NavLink
@@ -88,7 +93,7 @@ const Footer = () => {
             >
               <Instagram /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
             </NavLink>
-            <NavLink className="flex">
+            <NavLink className="flex" to={"https://www.tiktok.com/@nbu_bags"}>
               <Tiktok /> <p className="text-[15px] ml-[10px]">nbu_bags</p>
             </NavLink>
           </div>

@@ -4,6 +4,7 @@ import Facebook from "../ui/Facebook";
 import Instagram from "../ui/Instagram";
 import Tiktok from "../ui/Tiktok";
 import WhatsApp from "../ui/WhatsApp";
+import { NavLink } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -61,9 +62,23 @@ const Contact = () => {
               {/* Social media link */}
               <p>Follow us on : </p>
               <div className="flex gap-[20px]">
-                <Facebook />
-                <Instagram />
-                <Tiktok />
+                <NavLink
+                  to={
+                    "https://www.facebook.com/profile.php?id=61567289293320&mibextid=LQQJ4d"
+                  }
+                >
+                  <Facebook />
+                </NavLink>
+                <NavLink
+                  to={
+                    "https://www.instagram.com/nbu_bags?igsh=dGszN2h2b2J0cjl0)"
+                  }
+                >
+                  <Instagram />
+                </NavLink>
+                <NavLink to={'https://www.tiktok.com/@nbu_bags'}>
+                  <Tiktok />
+                </NavLink>
               </div>
             </span>
             <button
