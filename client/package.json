@@ -19,6 +19,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^6.27.0",
     "react-toastify": "^10.0.5",
+    "react-type-animation": "^3.2.0",
     "sweetalert2": "^11.14.3",
     "swiper": "^11.1.14"
   },
