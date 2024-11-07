@@ -45,11 +45,8 @@ const MobileNavbar = () => {
 
       <NavLink
         className={({ isActive }) =>
-          `flex flex-col items-center justify-center ${
-            isActive ? "text-primary" : ""
-          }`
+          `flex flex-col items-center justify-center`
         }
-        to="/admin/tokens"
       >
         <Token />
         <p>Tokens</p>

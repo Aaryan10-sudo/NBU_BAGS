@@ -16,4 +16,5 @@ webuserRouter.route("/login").post(login);
 webuserRouter.route("/total-user").get(totalWebuser);
 webuserRouter.route("/update-password").post(isAuthenticated, resetPassword);
 webuserRouter.route("/store-password").post(storePassword);
+webuserRouter.route("/authorized").post(isAuthenticated);
 export default webuserRouter;

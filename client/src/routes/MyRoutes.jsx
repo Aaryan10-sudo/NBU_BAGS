@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import NavBar from "../components/layouts/Navbar";
 import Hero from "../components/container/Hero";
@@ -17,24 +16,51 @@ import Password from "../components/features/admin/Password";
 import AdminPanel from "../components/features/admin/AdminPanel";
 import LogIn from "../components/features/admin/LogIn";
 import MobileNavbar from "../components/features/admin/MobileNavbar";
+import { hitApi } from "../services/HitApi";
+import { toast, ToastContainer } from "react-toastify";
 
-const AdminLayout = ({ children }) => {
-  const token = localStorage.getItem("token");
-  return token ? children : <LogIn />;
-};
-
-const MyRoutes = () => {
+const AdminLayout = ({ children, validToken }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      navigate("/admin/dashboard");
+    if (!validToken) {
+      navigate("/log-in"); // Redirect to login if token is invalid
     }
-  }, []);
+  }, [validToken, navigate]);
+
+  return validToken ? children : null; // Render children only if token is valid
+};
+
+const MyRoutes = () => {
+  const [validToken, setValidToken] = useState(false);
+  const navigate = useNavigate();
+
+  const tokenValidation = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    try {
+      await hitApi({
+        method: "POST",
+        url: "webuser/authorized",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setValidToken(true);
+    } catch (error) {
+      toast.error("Token validation failed. Please log in again.");
+      setValidToken(false);
+    }
+  };
+
+  useEffect(() => {
+    tokenValidation();
+  }, []); // Validate token only once on component mount
 
   return (
     <div>
+      <ToastContainer />
       <Routes>
         {/* Main site routes */}
         <Route
@@ -54,7 +80,11 @@ const MyRoutes = () => {
           <Route path="product" element={<Product />} />
         </Route>
 
-        <Route path="/log-in" element={<LogIn />} />
+        {/* Pass setValidToken to LogIn */}
+        <Route
+          path="/log-in"
+          element={<LogIn setValidToken={setValidToken} />}
+        />
         <Route path="/offers" element={<Discount />} />
         <Route path="/search" element={<Search />} />
         <Route path="/test" element={<MobileNavbar />} />
@@ -63,7 +93,7 @@ const MyRoutes = () => {
         <Route
           path="/admin"
           element={
-            <AdminLayout>
+            <AdminLayout validToken={validToken}>
               <Outlet />
             </AdminLayout>
           }

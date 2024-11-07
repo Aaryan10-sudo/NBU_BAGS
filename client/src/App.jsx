@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className="bg-secondary ">
+    <div className="bg-secondary transition-all ease-linear duration-500">
       <MyRoutes />
     </div>
   );

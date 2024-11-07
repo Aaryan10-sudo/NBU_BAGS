@@ -105,7 +105,7 @@ const AddProducts = () => {
           <NavBarAd />
           <div className=" ">
             <form onSubmit={handleSubmit}>
-              <div className="flex sm:flex-row flex-col justify-center items-center gap-[50px] mt-[30px] mb-[10px]">
+              <div className="flex md:flex-row flex-col justify-center items-center gap-[50px] mt-[30px] mb-[10px]">
                 {/* Product Image Upload Section */}
                 <div {...getRootProps()} style={{ width: "300px" }}>
                   <label className="flex justify-center text-[20px] font-semibold">

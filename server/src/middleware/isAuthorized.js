@@ -9,10 +9,14 @@ export const isAuthenticated = async (req, res, next) => {
     let user = await jwt.verify(token, secretKey);
     req._id = user.id;
     next();
+    res.status(200).json({
+      success: true,
+      message: "User authenticated successfully",
+    });
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: "Token not valid",
+      message: "Something went wrong",
     });
   }
 };
