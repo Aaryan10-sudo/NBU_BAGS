@@ -30,7 +30,7 @@ const Product = () => {
               class="w-[197px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
               key={index}
             >
-              <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[280px] h-[222px] rounded-lg bg-slate-300 ">
+              <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[280px] h-[222px] rounded-lg">
                 <img
                   src={value.image}
                   className="rounded-lg  w-full"

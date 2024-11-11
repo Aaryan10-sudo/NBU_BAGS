@@ -40,7 +40,7 @@ const Collection = () => {
                   class="w-[190px] md:w-[20%] p-3 flex flex-col rounded-md shadow-xl"
                   key={index}
                 >
-                  <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[340px] sm:h-[270px] h-[222px] rounded-lg bg-slate-300 ">
+                  <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[340px] sm:h-[270px] h-[222px] rounded-lg">
                     <img
                       src={value.image}
                       className="rounded-lg  w-full"
