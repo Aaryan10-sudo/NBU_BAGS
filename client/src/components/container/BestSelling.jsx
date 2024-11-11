@@ -34,13 +34,13 @@ const BestSelling = () => {
           <SwiperSlide>
             <div className="md:mx-[50px] mx-[20px] 2xl:mx-0 flex sm:flex-row flex-col">
               <img src="bestselling1.png" className="sm:h-[250px]" />
-              <div className="">
+              <div className="px-[30px]">
                 <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
                   BAG 20211
                 </h1>
                 <span className="bg-slate-400">550 sold</span>
                 <br />
-                <p>
+                <p className="">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -62,7 +62,7 @@ const BestSelling = () => {
           <SwiperSlide>
             <div className="md:mx-[50px] mx-[20px] flex sm:flex-row flex-col ">
               <img src="banner3.png" className="sm:h-[250px]" />
-              <div className="">
+              <div className="px-[30px]">
                 <h1 className="text-[30px] mt-[10px] font-extrabold font-ubuntu">
                   BAG 20211
                 </h1>

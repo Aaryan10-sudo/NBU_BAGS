@@ -51,18 +51,18 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="2xl:px-40 sm:px-10">
+    <div className="2xl:px-40 md:px-10">
       {loader ? (
         <div className="flex justify-center items-center h-screen bg-gray-300">
           <div className="loader"></div>
         </div>
       ) : (
         <div>
-          <h1 className="text-center font-extrabold text-[30px] sm:my-[30px] my-[10px] flex items-center justify-center">
+          <h1 className="text-center font-extrabold text-[30px] md:my-[30px] my-[10px] flex items-center justify-center">
             Dashboard
           </h1>
-          <div className="flex md:justify-between justify-center md:flex-nowrap flex-wrap text-center text-white items-center sm:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
-            <div className="bg-[#8a2edf] h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
+          <div className="flex md:justify-between justify-center md:flex-nowrap flex-wrap text-center text-white items-center md:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
+            <div className="bg-[#8a2edf] h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
               </p>
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 Rs. 0
               </p>
             </div>
-            <div className="bg-green-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-green-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Products
               </p>
@@ -80,14 +80,14 @@ const Dashboard = () => {
                 {productCount}
               </p>
             </div>
-            <div className="bg-blue-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-blue-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Users
               </p>
               <br />
               <p className="font-extrabold text-[30px]">{webuserCount}</p>
             </div>
-            <div className="bg-red-600 h-[190px] sm:w-[210px] sm:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-red-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Profit
               </p>
@@ -98,7 +98,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="sm:mx-[30px] mx-[10px] pb-[70px]">
+          <div className="md:mx-[30px] mx-[10px] pb-[70px]">
             <h1 className="font-extrabold text-[30px] py-[20px]">
               Admin Activity
             </h1>
