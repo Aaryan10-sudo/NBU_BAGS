@@ -96,18 +96,18 @@ const Products = () => {
             <NavBarAd />
             <div className="overflow-auto h-screen 2xl:px-40">
               <div>
-                <h1 className="text-center font-extrabold text-[30px] sm:my-[20px] my-[10px] ">
+                <h1 className="text-center font-extrabold text-[30px] lg:my-[20px] my-[10px] ">
                   Products
                 </h1>
                 <div>
-                  <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] sm:pb-[20px] pb-[100px] ">
+                  <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] lg:pb-[20px] pb-[100px] ">
                     {product.map((value, index) => {
                       return (
                         <div
                           class="w-[190px] md:w-[20%] p-3 flex flex-col rounded-md shadow-xl"
                           key={index}
                         >
-                          <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[330px] sm:h-[230px] h-[222px] rounded-lg">
+                          <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[330px] lg:h-[230px] h-[222px] rounded-lg">
                             <img
                               src={value.image}
                               className="rounded-lg  w-full"

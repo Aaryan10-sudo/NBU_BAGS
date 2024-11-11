@@ -72,16 +72,16 @@ const AdminSearch = () => {
         </div>
 
         {/* Main Content: NavBar + Dashboard */}
-        <div className="flex flex-col w-full sm:ml-[220px] overflow-auto">
+        <div className="flex flex-col w-full sm:ml-[220px] overflow-y-scroll relative">
           <NavBarAd />
-          <div className="m-[35px] font-bold text-[20px]">
+          <div className="m-[35px]  font-bold text-[20px]">
             Search Result for <span className="text-blue-500">"{product}"</span>
           </div>
 
           <div className="flex justify-center flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] sm:pb-[20px] pb-[100px]">
             {search.length === 0 ? (
-              <div className="text-gray-500 text-center mt-10">
-                No products found for "
+              <div className="text-gray-500 text-center">
+                No result found for "
                 <span className="text-blue-500">{product}</span>"
               </div>
             ) : (

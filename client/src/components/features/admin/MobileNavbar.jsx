@@ -7,7 +7,7 @@ import Token from "../../ui/Token";
 
 const MobileNavbar = () => {
   return (
-    <div className="bg-white h-[60px] w-full flex justify-between items-center px-[20px] fixed bottom-0 sm:hidden shadow-lg">
+    <div className="bg-white h-[60px] w-full flex justify-between items-center px-[20px] fixed bottom-0 lg:hidden shadow-lg">
       <NavLink
         className={({ isActive }) =>
           `flex flex-col items-center justify-center ${

@@ -61,7 +61,7 @@ const Dashboard = () => {
           <h1 className="text-center font-extrabold text-[30px] md:my-[30px] my-[10px] flex items-center justify-center">
             Dashboard
           </h1>
-          <div className="flex md:justify-between justify-center md:flex-nowrap flex-wrap text-center text-white items-center md:mx-[30px] mx-[10px] md:gap-0 gap-[10px]">
+          <div className="flex md:justify-between justify-center lg:flex-nowrap flex-wrap text-center text-white items-center lg:mx-[30px] mx-[10px] lg:gap-0 gap-[10px]">
             <div className="bg-[#8a2edf] h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
