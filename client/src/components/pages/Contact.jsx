@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 const Contact = () => {
   return (
     <div className="2xl:px-40">
-      <div className=" w-full bg-gray-300 text-gray-700  md:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
+      <div className=" w-full text-gray-700  md:px-10 px-2 flex sm:flex-row flex-col md:justify-between justify-center py-[30px] flex-wrap">
         <div className="main flex items-start justify-center flex-col">
           {/* Header */}
           <h1 className="text-4xl font-bold font-ubuntu">
@@ -42,16 +42,16 @@ const Contact = () => {
             <form className="mt-8" />
             <input
               type="text"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 border-2 "
               placeholder="Name"
             />
             <input
               type="email"
-              className="w-full mt-4 px-4 py-2 border border-gray-300 focus:ring-1 rounded-md focus:outline-none focus:ring-blue-500 focus:invalid:ring-red-500"
+              className="w-full mt-4 px-4 py-2 border border-gray-300 focus:ring-1 rounded-md focus:outline-none focus:ring-blue-500 focus:invalid:ring-red-500 border-2"
               placeholder="Email"
             />
             <textarea
-              className="w-full mt-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 h-32"
+              className="w-full mt-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary-500 h-32 border-2"
               placeholder="Message"
             ></textarea>
 
@@ -76,7 +76,7 @@ const Contact = () => {
                 >
                   <Instagram />
                 </NavLink>
-                <NavLink to={'https://www.tiktok.com/@nbu_bags'}>
+                <NavLink to={"https://www.tiktok.com/@nbu_bags"}>
                   <Tiktok />
                 </NavLink>
               </div>

@@ -18,6 +18,7 @@ import LogIn from "../components/features/admin/LogIn";
 import MobileNavbar from "../components/features/admin/MobileNavbar";
 import { hitApi } from "../services/HitApi";
 import { toast, ToastContainer } from "react-toastify";
+import AdminSearch from "../components/features/admin/AdminSearch";
 
 const AdminLayout = ({ children, validToken }) => {
   const navigate = useNavigate();
@@ -103,6 +104,7 @@ const MyRoutes = () => {
           <Route path="update/:id" element={<UpdateProduct />} />
           <Route path="product" element={<Products />} />
           <Route path="add-product" element={<AddProducts />} />
+          <Route path="search" element={<AdminSearch />}></Route>
         </Route>
       </Routes>
     </div>

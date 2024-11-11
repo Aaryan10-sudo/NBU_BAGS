@@ -27,7 +27,7 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-secondary">
+      <div className="flex justify-center items-center h-screen">
         <div className="flex flex-col gap-[10px] items-center justify-center ">
           <p className="font-bold text-[20px] text-primary">NBU BAGS</p>
           <div class="loader"></div>
@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className="bg-secondary transition-all ease-linear duration-500">
+    <div className=" transition-all ease-linear duration-500">
       <MyRoutes />
     </div>
   );

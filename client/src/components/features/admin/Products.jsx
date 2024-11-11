@@ -104,36 +104,35 @@ const Products = () => {
                     {product.map((value, index) => {
                       return (
                         <div
-                          class="w-[190px] h-[400px] md:w-60 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+                          class="w-[190px] md:w-[20%] p-3 flex flex-col rounded-md shadow-xl"
                           key={index}
                         >
-                          <div class="duration-500  hover:contrast-100 object-cover object-center overflow-hidden  h-[600px] rounded-lg ">
+                          <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[330px] sm:h-[230px] h-[222px] rounded-lg bg-slate-300 ">
                             <img
                               src={value.image}
-                              className="rounded-lg"
+                              className="rounded-lg  w-full"
                               alt="BagImage"
                             />
                           </div>
                           <div class="flex flex-col gap-[10px] w-full">
                             <div class="flex flex-col justify-center items-center w-full">
                               <div class="w-full flex justify-center">
-                                <span class="text-xl font-montserrat font-extrabold text-center">
+                                <span class="text-xl font-montserrat font-extrabold text-center pt-[5px] ">
                                   {value.productName}
                                 </span>
                               </div>
-                              <p class="text-xs text-gray-700 py-[5px] text-center flex items-center justify-center">
+                              <p class="text-xs text-gray-700  h-[38px] text-center tracking-wider pt-[5px] line-clamp-2">
                                 {value.productDescription}
                               </p>
-                              <span class="flex text-black font-ubuntu gap-[20px]">
+                              <span className="flex text-black font-ubuntu gap-[20px] py-[px]">
                                 <p className="text-[12px] flex items-center text-black">
                                   {value.category}
                                 </p>
-                                <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600">
+                                <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600 pt-[5px]">
                                   रु. {value.price}
                                 </p>
                               </span>
                             </div>
-
                             {/* Add to cart button */}
                             <div className="flex justify-center gap-[20px] text-white font-bold">
                               <button

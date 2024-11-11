@@ -85,7 +85,7 @@ const Password = () => {
             <input
               type="password"
               placeholder="Old Password"
-              className="h-[40px] w-[300px] px-[5px]"
+              className="h-[40px] w-[300px] px-[5px] border-2 border-black"
               value={oldPassword}
               onChange={(e) => {
                 setOldPassword(e.target.value);
@@ -95,7 +95,7 @@ const Password = () => {
             <input
               type="password"
               placeholder="New Password"
-              className="h-[40px] w-[300px] px-[5px]"
+              className="h-[40px] w-[300px] px-[5px] border-2 border-black"
               value={newPassword}
               onChange={(e) => {
                 setNewPassword(e.target.value);

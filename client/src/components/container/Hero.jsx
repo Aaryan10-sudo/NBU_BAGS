@@ -26,8 +26,8 @@ const Hero = () => {
   }, [location.pathname]);
 
   return (
-    <div className="bg-[url('/hero.jpg')] bg-cover bg-center md:h-[580px] sm:h-[420px] h-[250px] overflow-hidden 2xl:h-[620px]">
-      <h1 className="text-center sm:p-[30px] p-[10px] sm:text-[30px] text-white font-bold stroke-white">
+    <div className="bg-[url('/hero.jpg')] bg-cover bg-center md:h-[580px] sm:h-[420px] h-[250px] overflow-hidden 2xl:h-[620px] flex items-center justify-center">
+      <h1 className="text-center sm:p-[30px] p-[10px] 2xl:text-[60px] sm:text-[40px] text-white font-bold stroke-white text-[25px]">
         <TypeAnimation
           sequence={
             location.pathname === "/"

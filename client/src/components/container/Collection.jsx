@@ -37,10 +37,10 @@ const Collection = () => {
             {product.map((value, index) => {
               return (
                 <div
-                  class="w-[190px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
+                  class="w-[190px] md:w-[20%] p-3 flex flex-col rounded-md shadow-xl"
                   key={index}
                 >
-                  <div class="duration-500  hover:contrast-100 object-fill overflow-hidden sm:h-[280px] h-[222px] rounded-lg bg-slate-300 ">
+                  <div class="duration-500  hover:contrast-100 object-fill overflow-hidden 2xl:h-[340px] sm:h-[270px] h-[222px] rounded-lg bg-slate-300 ">
                     <img
                       src={value.image}
                       className="rounded-lg  w-full"
@@ -50,7 +50,7 @@ const Collection = () => {
                   <div class="flex flex-col gap-[10px] w-full">
                     <div class="flex flex-col justify-center items-center w-full">
                       <div class="w-full flex justify-center">
-                        <span class="text-xl font-montserrat font-extrabold text-center py-[0px] ">
+                        <span class="text-xl font-montserrat font-extrabold text-center pt-[5px] ">
                           {value.productName}
                         </span>
                       </div>
