@@ -114,9 +114,12 @@ export const deleteProductController = async (req, res, next) => {
 
 export const searchProduct = async (req, res, next) => {
   let item = req.query.item;
+  let sort = req.query.sort; // Expected values: 'asc' or 'desc'
+
   try {
     let pipeline = [];
 
+    // Match stage to filter products based on search term
     let matchStage = {
       $match: {
         $or: [
@@ -128,7 +131,15 @@ export const searchProduct = async (req, res, next) => {
       },
     };
     pipeline.push(matchStage);
+
+    // Add sort stage if sort parameter is provided
+    if (sort === "asc" || sort === "desc") {
+      let sortOrder = sort === "asc" ? 1 : -1;
+      pipeline.push({ $sort: { price: sortOrder } });
+    }
+
     let result = await Product.aggregate(pipeline);
+
     res.status(200).json({
       success: true,
       message: "Search Results",
