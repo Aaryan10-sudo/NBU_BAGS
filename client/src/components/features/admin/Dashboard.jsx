@@ -62,7 +62,7 @@ const Dashboard = () => {
             Dashboard
           </h1>
           <div className="flex md:justify-between justify-center lg:flex-nowrap flex-wrap text-center text-white items-center lg:mx-[30px] mx-[10px] lg:gap-0 gap-[10px]">
-            <div className="bg-[#8a2edf] h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-[#8a2edf] h-[190px] md:w-[210px] md:h-[210px] w-[180px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Sales
               </p>
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 Rs. 0
               </p>
             </div>
-            <div className="bg-green-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-green-600 h-[190px] md:w-[210px] md:h-[210px] w-[180px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Products
               </p>
@@ -80,14 +80,14 @@ const Dashboard = () => {
                 {productCount}
               </p>
             </div>
-            <div className="bg-blue-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-blue-600 h-[190px] md:w-[210px] md:h-[210px] w-[180px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Total Users
               </p>
               <br />
               <p className="font-extrabold text-[30px]">{webuserCount}</p>
             </div>
-            <div className="bg-red-600 h-[190px] md:w-[210px] md:h-[210px] w-[190px] rounded-lg ">
+            <div className="bg-red-600 h-[190px] md:w-[210px] md:h-[210px] w-[180px] rounded-lg ">
               <p className="shadow-sm h-[40px] flex justify-center items-center">
                 Profit
               </p>

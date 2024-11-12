@@ -33,7 +33,7 @@ const Collection = () => {
           </h1>
 
           {/* Product Cards */}
-          <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[10px] md:gap-[20px] gap-[10px] max-w-[1536px] ">
+          <div className="flex  justify-center  flex-wrap md:mx-[40px] mx-[0px] md:gap-[20px] gap-[10px] max-w-[1536px] ">
             {product.map((value, index) => {
               return (
                 <div

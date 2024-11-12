@@ -103,7 +103,7 @@ const AddProducts = () => {
         {/* Main Content: NavBar + Dashboard */}
         <div className="flex flex-col w-full">
           <NavBarAd />
-          <div className="mx-[15px] ">
+          <div className="mx-[px] ">
             <form onSubmit={handleSubmit}>
               <div className="flex md:flex-row flex-col justify-center items-center gap-[50px] mt-[30px] mb-[10px]">
                 {/* Product Image Upload Section */}
