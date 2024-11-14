@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { hitApi } from "../../services/HitApi";
+import { useNavigate } from "react-router-dom";
 
 // Define the Product type alias
 type Product = {
+  _id: string;
   image: string;
   productName: string;
   productDescription: string;
@@ -13,6 +14,7 @@ type Product = {
 
 const ProductsList: React.FC = () => {
   const [product, setProduct] = useState<Product[]>([]);
+  const navigate = useNavigate();
 
   const getAllProduct = async () => {
     try {
@@ -20,6 +22,7 @@ const ProductsList: React.FC = () => {
         url: "/product/read-all",
         method: "GET",
       });
+      console.log(result);
       setProduct(result?.data?.data.reverse());
     } catch (error) {
       console.log(error.message);
@@ -36,6 +39,9 @@ const ProductsList: React.FC = () => {
         <div
           className="w-[190px] md:w-[20%] p-3 flex flex-col rounded-md shadow-xl"
           key={index}
+          onDoubleClick={() => {
+            navigate(`/product/${value._id}`);
+          }}
         >
           <div className="duration-500 hover:contrast-100 object-fill overflow-hidden 2xl:h-[340px] sm:h-[270px] h-[222px] rounded-lg">
             <img
@@ -54,12 +60,12 @@ const ProductsList: React.FC = () => {
               <p className="text-xs text-gray-700 h-[38px] text-center tracking-wider pt-[5px] line-clamp-2">
                 {value.productDescription}
               </p>
-              <span className="flex text-black font-ubuntu gap-[20px] py-[px]">
+              <span className="flex text-black font-ubuntu gap-[20px] py-[px] items-center ">
                 <p className="text-[12px] flex items-center text-black">
                   {value.category}
                 </p>
-                <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600 pt-[5px]">
-                  रु. {value.price}
+                <p className="font-montserrat font-bold text-[20px] flex items-center text-blue-600">
+                  Rs. {value.price}
                 </p>
               </span>
             </div>
@@ -87,7 +93,7 @@ const ProductsList: React.FC = () => {
               <div className="hover-btn">
                 <center>
                   <span className="text-center font-ubuntu">
-                    Rs. {value.price}
+                    रु. {value.price}
                   </span>
                 </center>
               </div>

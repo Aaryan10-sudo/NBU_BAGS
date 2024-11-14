@@ -19,6 +19,7 @@ import MobileNavbar from "../components/features/admin/MobileNavbar";
 import { hitApi } from "../services/HitApi";
 import { toast, ToastContainer } from "react-toastify";
 import AdminSearch from "../components/features/admin/AdminSearch";
+import SpecificProduct from "../components/container/SpecificProduct";
 
 const AdminLayout = ({ children, validToken }) => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const MyRoutes = () => {
         <Route path="/offers" element={<Discount />} />
         <Route path="/search" element={<Search />} />
         <Route path="/test" element={<MobileNavbar />} />
+        <Route path="/product/:id" element={<SpecificProduct />} />
 
         {/* Admin panel routes */}
         <Route

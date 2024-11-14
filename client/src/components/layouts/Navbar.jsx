@@ -49,7 +49,7 @@ const NavBar = () => {
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => navigate("/")}
         >
-          <img src="logo.png" className="h-[50px]" alt="Logo" />
+          <img src="/logo.png" className="h-[50px]" alt="Logo" />
           <p className="font-bold text-[18px] sm:text-[17px]">NBU BAGS</p>
         </div>
 
@@ -119,7 +119,7 @@ const NavBar = () => {
         <div className="w-[70%] bg-white h-full flex flex-col items-start p-6">
           <div className="flex justify-between w-full items-center pb-[10px] border-b border-black">
             <div className="flex gap-2 items-center">
-              <img src="logo.png" className="h-[30px] " alt="Logo" />
+              <img src="/logo.png" className="h-[30px] " alt="Logo" />
               <h1 className="font-bold">NBU BAGS</h1>
             </div>
             <div
