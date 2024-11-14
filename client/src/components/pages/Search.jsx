@@ -69,6 +69,9 @@ const Search = () => {
             <div
               className="w-[190px] md:w-64 bg-gray-50 p-3 flex flex-col rounded-md shadow-md"
               key={index}
+              onDoubleClick={() => {
+                navigate(`/product/${value._id}`);
+              }}
             >
               <div className="duration-500 hover:contrast-100 object-fill overflow-hidden sm:h-[270px] h-[230px] rounded-lg]">
                 <img src={value.image} className="rounded-lg " alt="BagImage" />

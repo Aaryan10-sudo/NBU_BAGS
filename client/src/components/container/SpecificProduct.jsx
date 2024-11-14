@@ -69,7 +69,7 @@ const SpecificProduct = () => {
                 </p>
               </div>
 
-              <div className="text-center my-[10px] lg:my-[20px] bg-blue-500 h-[40px] lg:h-[60px] flex items-center justify-center">
+              <div className="text-center my-[10px] lg:my-[20px] bg-primary h-[40px]  flex items-center justify-center">
                 <h1 className="font-bold text-white font-montserrat lg:text-[20px]">
                   Rs. {product.price}
                 </h1>
