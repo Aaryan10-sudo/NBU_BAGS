@@ -20,6 +20,7 @@ import { hitApi } from "../services/HitApi";
 import { toast, ToastContainer } from "react-toastify";
 import AdminSearch from "../components/features/admin/AdminSearch";
 import SpecificProduct from "../components/container/SpecificProduct";
+import Offers from "../components/pages/Offers";
 
 const AdminLayout = ({ children, validToken }) => {
   const navigate = useNavigate();
@@ -87,9 +88,8 @@ const MyRoutes = () => {
           path="/log-in"
           element={<LogIn setValidToken={setValidToken} />}
         />
-        <Route path="/offers" element={<Discount />} />
+        <Route path="/offers" element={<Offers />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/test" element={<MobileNavbar />} />
         <Route path="/product/:id" element={<SpecificProduct />} />
 
         {/* Admin panel routes */}
