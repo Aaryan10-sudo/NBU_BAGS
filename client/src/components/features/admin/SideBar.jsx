@@ -24,6 +24,16 @@ const SideBar = () => {
         >
           Products
         </NavLink>
+
+        <NavLink
+          to={"/admin/token"}
+          className={({ isActive }) =>
+            isActive ? "text-blue-500" : "hover:text-blue-500 text-white"
+          }
+        >
+          Tokens
+        </NavLink>
+
         <NavLink
           to={"/admin/add-product"}
           className={({ isActive }) =>

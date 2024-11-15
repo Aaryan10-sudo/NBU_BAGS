@@ -44,6 +44,7 @@ const MobileNavbar = () => {
       </NavLink>
 
       <NavLink
+        to={"/admin/token"}
         className={({ isActive }) =>
           `flex flex-col items-center justify-center`
         }

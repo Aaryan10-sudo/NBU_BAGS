@@ -21,6 +21,7 @@ import { toast, ToastContainer } from "react-toastify";
 import AdminSearch from "../components/features/admin/AdminSearch";
 import SpecificProduct from "../components/container/SpecificProduct";
 import Offers from "../components/pages/Offers";
+import Token from "../components/features/admin/Token";
 
 const AdminLayout = ({ children, validToken }) => {
   const navigate = useNavigate();
@@ -35,12 +36,15 @@ const AdminLayout = ({ children, validToken }) => {
 };
 
 const MyRoutes = () => {
-  const [validToken, setValidToken] = useState(false);
+  const [validToken, setValidToken] = useState(null);
   const navigate = useNavigate();
 
   const tokenValidation = async () => {
     const token = localStorage.getItem("token");
-    if (!token) return;
+    if (!token) {
+      setValidToken(false);
+      return;
+    }
 
     try {
       await hitApi({
@@ -52,14 +56,19 @@ const MyRoutes = () => {
       });
       setValidToken(true);
     } catch (error) {
-      toast.error("Token validation failed. Please log in again.");
+      toast.error("Something went wrong");
       setValidToken(false);
+      localStorage.removeItem("token");
     }
   };
 
   useEffect(() => {
     tokenValidation();
-  }, []); // Validate token only once on component mount
+  }, []);
+
+  if (validToken === null) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <div>
@@ -106,7 +115,8 @@ const MyRoutes = () => {
           <Route path="update/:id" element={<UpdateProduct />} />
           <Route path="product" element={<Products />} />
           <Route path="add-product" element={<AddProducts />} />
-          <Route path="search" element={<AdminSearch />}></Route>
+          <Route path="search" element={<AdminSearch />} />
+          <Route path="token" element={<Token />} />
         </Route>
       </Routes>
     </div>

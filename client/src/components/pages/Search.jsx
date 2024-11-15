@@ -41,13 +41,13 @@ const Search = () => {
     <div className="">
       <NavBar />
       {/* Header */}
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <p className="pl-[40px] p-[20px] text-[20px] font-semibold 2xl:mx-40">
           Search result for{" "}
           <span className="text-blue-500">{query.get("product")}</span>
         </p>
         <form
-          className="p-[20px] flex gap-5 items-center"
+          className="p-[20px] flex gap-5 items-center "
           onSubmit={handleSubmit}
         >
           <p>Sort by:</p>
