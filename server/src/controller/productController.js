@@ -170,7 +170,7 @@ export const searchProductController = async (req, res, next) => {
       },
     };
 
-    search.push(k
+    search.push(
       matchCondition,
       { $limit: 3 },
       {
