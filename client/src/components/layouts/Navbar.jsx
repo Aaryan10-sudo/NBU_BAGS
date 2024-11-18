@@ -71,12 +71,12 @@ const NavBar = () => {
         </ul>
 
         {/* Search */}
-        <div className="hidden sm:flex gap-4 items-center">
+        <div className=" sm:flex sm:gap-4 items-center">
           <form onSubmit={handleSubmit} className="relative">
             <input
               type="text"
               placeholder="Search..."
-              className="bg-[#ede9dd] w-[170px] h-[30px] rounded-[5px] px-2 pr-8 outline outline-slate-400"
+              className=" w-[170px] h-[30px] rounded-[5px] px-2 pr-8 outline outline-slate-400"
               value={item}
               onChange={(e) => setItem(e.target.value)}
             />
@@ -94,7 +94,7 @@ const NavBar = () => {
             Log In
           </NavLink>
           <div
-            className="text-black cursor-pointer md:hidden flex items-center"
+            className="hidden text-black cursor-pointer md:hidden sm:flex items-center"
             onClick={toggleMenu}
           >
             <MenuBar />

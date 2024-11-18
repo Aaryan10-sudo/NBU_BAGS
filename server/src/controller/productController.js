@@ -152,3 +152,77 @@ export const searchProduct = async (req, res, next) => {
     });
   }
 };
+
+export const searchProductController = async (req, res, next) => {
+  try {
+    let item = req.query.item;
+    let sort = req.query.sort;
+    let search = [];
+    let matchCondition = {
+      $match: {
+        // match filters document base on specified data meaning if user enter product name only product with product name will display. it works like find specific
+        $or: [
+          // or allows us to have multiple condition to search data
+          { brand: { $regex: item, $options: "i" } }, // $regex allows us to match pattern with user input
+          { category: { $regex: item, $options: "i" } }, //$options is sensitive case i.e. when user search with
+          { productName: { $regex: item, $options: "i" } }, //a single letter they will found all the data containing that letter
+        ],
+      },
+    };
+
+    search.push(k
+      matchCondition,
+      { $limit: 3 },
+      {
+        $sort: { price: sort === "asc" ? 1 : -1 },
+      }
+    ); // push is a array method that add data to array. here the search array is empty with this line. we added the search result to []
+
+    let result = await Product.aggregate(search);
+
+    res.status(200).json({
+      success: true,
+      message: "Search result found",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const searchPoductController = async (req, res, next) => {
+  try {
+    let item = req.query.item;
+    let search = [];
+
+    let matchCondition = {
+      $match: {
+        // match filters document base on specified data meaning if user enter product name only product with product name will display. it works like find specific
+        $or: [
+          // or allows us to have multiple condition to search data
+          { brand: { $regex: item, $options: "i" } }, // $regex allows us to match pattern with user input
+          { category: { $regex: item, $options: "i" } }, //$options is sensitive case i.e. when user search with
+          { productName: { $regex: item, $options: "i" } }, //a single letter they will found all the data containing that letter
+        ],
+      },
+    };
+
+    search.push(matchCondition); // push is a array method that add data to array. here the search array is empty with this line. we added the search result to []
+
+    let result = await Product.aggregate(search);
+
+    res.status(200).json({
+      success: true,
+      message: "Search result found",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

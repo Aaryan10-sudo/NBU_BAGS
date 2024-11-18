@@ -42,17 +42,17 @@ const Search = () => {
       <NavBar />
       {/* Header */}
       <div className="flex justify-between ">
-        <p className="pl-[40px] p-[20px] text-[20px] font-semibold 2xl:mx-40">
-          Search result for{" "}
+        <p className="sm:pl-[40px] sm:p-[20px] px-[5px] py-[10px]  sm:text-[20px] font-semibold 2xl:mx-40">
+          Search result for ``
           <span className="text-blue-500">{query.get("product")}</span>
         </p>
         <form
-          className="p-[20px] flex gap-5 items-center "
+          className="sm:p-[20px] p-[5px] flex sm:gap-5 gap-1 items-center "
           onSubmit={handleSubmit}
         >
-          <p>Sort by:</p>
+          <p className="font-bold">Sort by :</p>
           <select
-            className="border-2 border-black"
+            className="border-2 border-black rounded-md font-medium"
             value={sort} // Bind select value to state
             onChange={handleSortChange} // Use handleSortChange to update state
           >

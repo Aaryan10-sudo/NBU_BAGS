@@ -136,7 +136,7 @@ const AddProducts = () => {
                 </div>
 
                 {/* Product Details Input Section */}
-                <div className="flex flex-wrap mx-[5px] justify-between w-[full] font-semibold">
+                <div className="flex flex-wrap mx-[5px] justify-between  font-semibold">
                   <div>
                     <label className="">Product Name :</label>
                     <br />
@@ -145,7 +145,7 @@ const AddProducts = () => {
                       name="productName"
                       id="productName"
                       value={productName}
-                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
+                      className="w-[190px] px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setProductName(e.target.value);
                       }}
@@ -160,7 +160,7 @@ const AddProducts = () => {
                       name="category"
                       id="category"
                       value={category}
-                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
+                      className="w-[190px] px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setCategory(e.target.value);
                       }}
@@ -175,7 +175,7 @@ const AddProducts = () => {
                       name="price"
                       id="price"
                       value={price}
-                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
+                      className="w-[190px] px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
@@ -190,7 +190,7 @@ const AddProducts = () => {
                       name="brand"
                       id="brand"
                       value={brand}
-                      className="w-full px-[3px] h-[40px] rounded-md border-2 border-gray-400"
+                      className="w-[190px] px-[3px] h-[40px] rounded-md border-2 border-gray-400"
                       onChange={(e) => {
                         setBrand(e.target.value);
                       }}
@@ -204,7 +204,7 @@ const AddProducts = () => {
                       name="productDescription"
                       id="productDescription"
                       value={productDescription}
-                      className="w-full h-[100px] px-[10px] text-left rounded-lg border-2 border-gray-400" // Adjusted styles for left alignment
+                      className="w-[390px] h-[100px] px-[10px] text-left rounded-lg border-2 border-gray-400" // Adjusted styles for left alignment
                       onChange={(e) => {
                         setProductDescription(e.target.value);
                       }}
